@@ -1,0 +1,97 @@
+---
+---
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;800&display=swap');
+
+html {
+  font-family: "Open Sans", "sans-serif";
+  font-size: 18px;
+
+  height: 100vh;
+  min-height: 100vh;
+
+  background-color: #005577;
+}
+
+body {
+  margin: 0 auto;
+
+  min-width: 40rem;
+  max-width: 60rem;
+  width: calc(100% - 10rem);
+
+  background-color: white;
+  min-height: 100vh;
+
+  *:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0.5rem;
+  }
+
+  #discord {
+    width: 40%;
+    margin: 0 auto;
+    display: block;
+
+    img {
+    display: block;
+    width: 100%;
+    }
+
+    margin-top: 2rem;
+  }
+
+  header {
+    padding: 1rem;
+    background-image: url("/city.jpg");
+    background-size: cover;
+    color: white;
+
+    h1 {
+      font-size: 3rem;
+      font-weight: 900;
+
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+
+    h2 {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+  }
+
+  #download {
+    text-align: center;
+    font-size: 2rem;
+  }
+
+  #downloads {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    list-style-type: none;
+    padding: 0;
+
+    // REPLACE WITH A
+    li {
+      padding: 2rem;
+      margin-left: 1rem;
+      margin-right: 1rem;
+      background-color: #227799;
+      border-radius: 16px;
+
+      width: 5rem;
+      height: 5rem;
+
+      img {
+        display: block;
+        width: 100%;
+      }
+    }
+  }
+
+  main {
+    padding: 0.5rem 1rem;
+  }
+}
