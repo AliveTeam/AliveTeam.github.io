@@ -10,12 +10,18 @@
 
 <main markdown="1">
 
+<br>
+<center><iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/R3p4Q9D_KYo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
+
+[Some fancy as hell description here, probably centered too]
+
 ### Download:
 
 <ul id="downloads">
 <li><img src="tux.png"></li>
 <li><a href="https://ci.appveyor.com/api/projects/paulsapps/alive-reversing/artifacts/build/ar-0.1-win32.zip?branch=master&job=Platform%3A%20x86"><img src="windows.png"></a></li>
 <li><img src="macos.png"></li>
+<li><a href="https://github.com/AliveTeam/alive_reversing"><img src="gh.webp"></a></li>
 </ul>
 
 <a id="discord" href="https://discord.gg/khs6KKS"><img src="/dc.png"></a>
@@ -25,7 +31,7 @@
 * Natively supported windowed mode
 * Freely changeable resolution
 * Native support for Linux and MacOS
-* Modern code, that works without issue on Windows
+* Modern code and technology ensues, that the game works without issue on Windows
 * Subtitles for cutscenes
 * A fully open-sourced engine
 
