@@ -22,32 +22,11 @@ body {
   background-color: #efefef;
   min-height: 100vh;
 
-  & > *:last-child {
-    margin-bottom: 0;
-    padding-bottom: 0.5rem;
-  }
-
   a {
     color: #720;
-  }
 
-  #links {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-
-    margin-top: 2rem;
-  }
-
-  #discord, #patreon {
-    width: 30%;
-    margin: 0 auto;
-    display: block;
-
-    img {
-    display: block;
-    width: 100%;
+    &:visited {
+      color: #400;
     }
   }
 
@@ -71,37 +50,6 @@ body {
     }
   }
 
-  #download {
-    text-align: center;
-    font-size: 2rem;
-  }
-
-  #downloads {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-
-    list-style-type: none;
-    padding: 0;
-
-    // REPLACE WITH A
-    li {
-      padding: 2rem;
-      margin-left: 1rem;
-      margin-right: 1rem;
-      background-color: #8f8f8f;
-      border-radius: 16px;
-
-      width: 5rem;
-      height: 5rem;
-
-      img {
-        display: block;
-        width: 100%;
-        height: 100%;
-      }
-    }
-  }
 
   main {
     padding: 0 1rem;
@@ -124,10 +72,62 @@ body {
       font-size: 0.9rem;
     }
 
+    #download {
+      text-align: center;
+      font-size: 2rem;
+    }
+
+    #downloads {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+
+      list-style-type: none;
+      padding: 0;
+
+      // REPLACE WITH A
+      li {
+        padding: 2rem;
+        margin-left: 1rem;
+        margin-right: 1rem;
+        background-color: #8f8f8f;
+        border-radius: 16px;
+
+        width: 5rem;
+        height: 5rem;
+
+        img {
+          display: block;
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+
     #warning {
       text-align: center;
       width: 60%;
       margin: 0 auto;
+    }
+
+    #links {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: center;
+
+      margin-top: 2rem;
+
+      a {
+        width: 30%;
+        margin: 0 auto;
+        display: block;
+
+        img {
+        display: block;
+        width: 100%;
+        }
+      }
     }
   }
 
