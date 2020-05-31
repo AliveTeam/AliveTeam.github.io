@@ -113,15 +113,17 @@ body {
     #links {
       display: flex;
       flex-direction: row;
-      justify-content: space-around;
+      justify-content: center;
       align-items: center;
 
       margin-top: 2rem;
+      margin-bottom: 2rem;
 
       a {
-        width: 30%;
-        margin: 0 auto;
+        width: 20%;
         display: block;
+
+        margin: 0 1rem;
 
         img {
         display: block;
@@ -138,5 +140,7 @@ body {
       margin-top: 0.2rem;
       margin-bottom: 0.2rem;
     }
+
+    padding-bottom: 0.5rem;
   }
 }
