@@ -4,13 +4,48 @@
 
 @media only screen and (max-width: 1080px) {
   html {
-    font-size: 32px;
+    font-size: 14px;
+  }
+
+  body {
+    width: 100%;
+
+    #warning, #roadmap {
+      width: 80%;
+    }
+
+    #links {
+      flex-direction: column;
+
+      a {
+        width: 70%;
+      }
+    }
   }
 }
 
 @media only screen and (min-width: 1080px) {
   html {
     font-size: 18px;
+  }
+
+  body {
+    min-width: 960px;
+    max-width: 1366px;
+
+    width: calc(100% - 10rem);
+
+    #warning, #roadmap {
+      width: 60%;
+    }
+
+    #links  {
+      flex-direction: row;
+
+      a {
+        width: 20%;
+      }
+    }
   }
 }
 
@@ -26,9 +61,6 @@ html {
 body {
   margin: 0 auto;
 
-  min-width: 40rem;
-  max-width: 60rem;
-  width: calc(100% - 10rem);
 
   background-color: #efefef;
   min-height: 100vh;
@@ -67,7 +99,6 @@ body {
 
     #roadmap {
       display: block;
-      width: 60%;
       margin: 0 auto;
 
       img {
@@ -117,13 +148,11 @@ body {
 
     #warning {
       text-align: center;
-      width: 60%;
       margin: 0 auto;
     }
 
     #links {
       display: flex;
-      flex-direction: row;
       justify-content: center;
       align-items: center;
 
@@ -131,7 +160,6 @@ body {
       margin-bottom: 2rem;
 
       a {
-        width: 20%;
         display: block;
 
         margin: 0 1rem;
