@@ -2,9 +2,20 @@
 ---
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;800&display=swap');
 
+@media only screen and (max-width: 1080px) {
+  html {
+    font-size: 32px;
+  }
+}
+
+@media only screen and (min-width: 1080px) {
+  html {
+    font-size: 18px;
+  }
+}
+
 html {
   font-family: "Open Sans", "sans-serif";
-  font-size: 18px;
 
   height: 100vh;
   min-height: 100vh;
