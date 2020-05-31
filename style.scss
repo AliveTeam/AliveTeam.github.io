@@ -9,7 +9,7 @@ html {
   height: 100vh;
   min-height: 100vh;
 
-  background-color: #005577;
+  background-color: #003377;
 }
 
 body {
@@ -22,13 +22,22 @@ body {
   background-color: white;
   min-height: 100vh;
 
-  *:last-child {
+  & > *:last-child {
     margin-bottom: 0;
     padding-bottom: 0.5rem;
   }
 
-  #discord {
-    width: 40%;
+  #links {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+
+    margin-top: 2rem;
+  }
+
+  #discord, #patreon {
+    width: 30%;
     margin: 0 auto;
     display: block;
 
@@ -36,8 +45,6 @@ body {
     display: block;
     width: 100%;
     }
-
-    margin-top: 2rem;
   }
 
   header {
@@ -93,5 +100,38 @@ body {
 
   main {
     padding: 0.5rem 1rem;
+
+    #roadmap {
+      display: block;
+      width: 60%;
+      margin: 0 auto;
+
+      img {
+      display: block;
+      width: 100%;
+      }
+    }
+
+    #subtitle {
+      text-align: center;
+      margin-top: 0.2rem;
+      font-color: #bbb;
+      font-size: 0.9rem;
+    }
+
+    #warning {
+      text-align: center;
+      width: 60%;
+      margin: 0 auto;
+    }
+  }
+
+  footer {
+    p {
+      text-align: center;
+      font-weight: 800;
+      margin-top: 0.2rem;
+      margin-bottom: 0.2rem;
+    }
   }
 }
