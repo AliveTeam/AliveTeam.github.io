@@ -56,20 +56,20 @@ html {
   min-height: 100vh;
 
   background-color: #434;
+  scrollbar-color: #202324 #454a4d
 }
 
 body {
   margin: 0 auto;
-
-
-  background-color: #efefef;
+  background-color: #232728;
+  color: #e8e6e3;
   min-height: 100vh;
 
   a {
-    color: #720;
+    color: #d6754d;
 
     &:visited {
-      color: #400;
+      color: #f9a97f;
     }
   }
 
@@ -97,6 +97,10 @@ body {
   main {
     padding: 0 1rem;
 
+    h3 {
+      text-decoration-line: underline;
+    }
+
     #roadmap {
       display: block;
       margin: 0 auto;
@@ -110,7 +114,6 @@ body {
     #subtitle {
       text-align: center;
       margin-top: 0.2rem;
-      font-color: #bbb;
       font-size: 0.9rem;
     }
 
@@ -132,7 +135,7 @@ body {
         padding: 2rem;
         margin-left: 1rem;
         margin-right: 1rem;
-        background-color: #8f8f8f;
+        background-color: #61686b;
         border-radius: 16px;
 
         width: 5rem;
