@@ -28,18 +28,28 @@ body {
         width: 100%;
     }
 
-    #games div {
-        display: flex;
-        flex-direction: column;
+    #games {
+        display: block !important;
+
+        div {
+            margin-bottom: 1rem;
+        }
+
+        div div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
     }
 
     main {
-        div {
+        & > div {
             display: block !important;
         }
 
         h2 {
             margin-top: 1.5rem !important;
+            text-align: center;
         }
     }
 }
