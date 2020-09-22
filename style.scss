@@ -1,6 +1,8 @@
 ---
 ---
 
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&display=swap');
+
 :root {
     --width: clamp(1300px, 60%, 1920px);
 }
@@ -13,11 +15,12 @@ body {
 
     background-color: #244;
     color: #f2f2e0;
+    font-size: 18px;
+
     a {
         color: #f2f2e0;
         font-weight: bold;
     }
-    font-size: 18px;
 }
 
 @media(orientation: portrait) {
@@ -42,7 +45,6 @@ body {
 }
 
 header {
-    //background-: #aa3300;
     background: url("imgs/city.jpg");
     background-size: 100%;
 
@@ -70,7 +72,6 @@ header {
 
 main {
     background-color: #232728;
-    //padding: 1rem 0;
 
     img {
         display: block;
@@ -120,7 +121,6 @@ main {
             padding: 2rem 0;
 
             & > div {
-                //min-height: 300px;
                 border: 2px solid;
                 padding: 1rem;
                 background: #364144;
@@ -128,7 +128,6 @@ main {
 
             div div {
                 display: flex;
-                //grid-template-columns: repeat(auto-fit, 1fr);
                 justify-content: space-around;
 
                 p {
@@ -153,7 +152,6 @@ main {
         padding-top: 3rem;
         padding-bottom: 3rem;
 
-        //background: #343c3e;
         background: #573d30;
     }
 
@@ -195,8 +193,4 @@ footer {
     background: #222;
 
     padding: 1rem 0;
-    
-    p {
-        //margin: 0;
-    }
 }
