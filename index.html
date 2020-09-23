@@ -28,22 +28,38 @@
 
   <div id="downloads">
     <h2>Download the Engine</h2>
-    <div id="games">
-      <div>
-        <h3>Abe's Oddysee</h3>
-        <div>
-          <p>Coming "Soon!"</p>
-        </div>
-      </div>
-      <div>
-        <h3>Abe's Exoddus</h3>
-        <div>
-          <a href="https://ci.appveyor.com/project/paulsapps/alive-reversing"><p>Windows</p></a>
-          <a href="https://github.com/AliveTeam/alive_reversing"><p>Code</p></a>
-        </div>
-      </div>
+    <div id="links">
+      <a href="https://ci.appveyor.com/project/paulsapps/alive-reversing"><p>Windows</p></a>
+      <a href="https://github.com/AliveTeam/alive_reversing"><p>Code</p></a>
     </div>
-    <center><p>Installing the engine is extremely simple, you only have to drop the executable in the game's folder and it can be started right away.</p></center>
+    <div>
+      <h3>Install guide</h3>
+      <p>First things first, while the engine is free and will stay free, it doesn't come with the
+      game's data. If you want to use it, you need to own either the GOG or Steam version of the
+      games.</p>
+      <p>Secondly, while there is an Abe's Oddysee version packed with the downloads, it doesn't
+      work currently and will crash without much fanfare. <strong>Currently only Abe's Exoddus is
+      playable.</strong></p>
+      <h4>Windows</h4>
+      <ol>
+        <li><p>Navigate to where you installed the game (GOG asks you where you want to install it, with
+            Steam you can right click on the game, select Manage -> Browse local files)</p></li>
+        <li><p>Download R.E.L.I.V.E. from the link above and extract it somewhere.</p></li>
+        <li><p>Copy AliveExeAE.exe and SDL2.dll to the game's folder.</p></li>
+        <li><p>Run the game by launching AliveExeAE.exe.</p></li>
+      </ol>
+      <h4>Linux</h4>
+      <ol>
+        <li><p>Clone the R.E.L.I.V.E. repository
+            from <a href="https://github.com/AliveTeam/alive_reversing">this</a> link.</p></li>
+        <li><p>Install the development libraries for SDL2 using your distribution's package
+            manager. (<code>libsdl2-dev</code> on Ubuntu/Debian, <code>sdl2</code> on Arch)</p></li>
+        <li><p>Navigate to the cloned repository, create a new directory called build. Change
+            directory to it and issue <code>cmake ..</code>. Once this is done, you can issue <code>make</code>.</p></li>
+        <li><p>Copy <code>build/Source/AliveExe/AliveExeAE</code> into the game's folder.</p></li>
+        <li><p>Run the game by launching the newly copied executable.</p></li>
+      </ol>
+    </div>
   </div>
 
   <div id="warning">

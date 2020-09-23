@@ -23,42 +23,12 @@ body {
     }
 }
 
-@media(orientation: portrait) {
-    body {
-        width: 100%;
-    }
-
-    #games {
-        display: block !important;
-
-        div {
-            margin-bottom: 1rem;
-        }
-
-        div div {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-    }
-
-    main {
-        & > div {
-            display: block !important;
-        }
-
-        h2 {
-            margin-top: 1.5rem !important;
-            text-align: center;
-        }
-    }
-}
 
 header {
     background: url("imgs/city.jpg");
     background-size: 100%;
 
-    padding: 2rem;
+    padding: 2rem 4rem;
 
     display: flex;
     flex-direction: column;
@@ -88,8 +58,14 @@ main {
         max-width: 100%;
     }
 
+    code {
+        color: orange;
+        background: #111;
+        padding: 0.2rem 0.5rem;
+    }
+
     & > div {
-        padding: 2rem 2rem;
+        padding: 2rem 4rem;
 
         h2 {
             margin-top: 0;
@@ -121,14 +97,20 @@ main {
     }
 
     #downloads {
-        h2,h3 {text-align: center;}
+        h2 {text-align: center;}
 
-        #games {
+        #links {
             display: grid;
-            grid-template-columns: 30% 30%;
-            justify-content: space-around;
+            grid-template-columns: 15% 15%;
+            justify-content: space-evenly;
 
-            padding: 2rem 0;
+            padding: 1rem 0;
+                a {
+                    text-align: center;
+
+                    display: inline-block;
+                    background: #111;
+                }
 
             & > div {
                 border: 2px solid;
@@ -140,13 +122,6 @@ main {
                 display: flex;
                 justify-content: space-around;
 
-                p {
-                    text-align: center;
-
-                    display: inline-block;
-                    padding: 1rem 2rem;
-                    background: #111;
-                }
             }
         }
     }
@@ -203,4 +178,47 @@ footer {
     background: #222;
 
     padding: 1rem 0;
+}
+
+@media(orientation: portrait) {
+    body {
+        width: 100%;
+    }
+
+    header {
+        padding: 0;
+
+        h1 {
+            width: unset;
+        }
+
+        p {
+            width: unset;
+        }
+    }
+
+    #games {
+        display: block !important;
+
+        div {
+            margin-bottom: 1rem;
+        }
+
+        div div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+
+    main {
+        & > div {
+            display: block !important;
+        }
+
+        h2 {
+            margin-top: 1.5rem !important;
+            text-align: center;
+        }
+    }
 }
