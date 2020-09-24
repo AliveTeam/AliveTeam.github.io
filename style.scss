@@ -64,6 +64,48 @@ main {
         padding: 0.2rem 0.5rem;
     }
 
+    input[type="radio"] {
+        display: none;
+
+        & + label {
+            display: inline-block;
+            border: 1px solid #999;
+            padding: 4px 12px;
+            background-color: #232728;
+            border-radius: 4px 4px 0 0;
+            position: relative;
+            top: 1px;
+        }
+
+        &:checked + label {
+            background-color: #282e2f;
+            border-bottom: 1px solid transparent;
+            font-weight: bold;
+        }
+
+        & ~ .tab {
+
+            background-color: #282e2f;
+            border: 1px solid #999;
+            padding: 12px;
+        }
+    }
+
+    .tab {
+        display: none;
+
+        h4 {
+            margin-top: 0;
+        }
+    }
+
+    #tab1:checked ~ .tab.win,
+    #tab2:checked ~ .tab.arch,
+    #tab3:checked ~ .tab.manual_windows,
+    #tab4:checked ~ .tab.manual_linux {
+        display: block;
+    }
+
     & > div {
         padding: 2rem 4rem;
 
@@ -101,7 +143,7 @@ main {
 
         #links {
             display: grid;
-            grid-template-columns: 15% 15%;
+            grid-template-columns: repeat(2, minmax(min-content, 15%));
             justify-content: space-evenly;
 
             padding: 1rem 0;

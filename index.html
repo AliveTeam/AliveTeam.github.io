@@ -40,25 +40,50 @@
       <p>Secondly, while there is an Abe's Oddysee version packed with the downloads, it doesn't
       work currently and will crash without much fanfare. <strong>Currently only Abe's Exoddus is
       playable.</strong></p>
-      <h4>Windows</h4>
-      <ol>
-        <li><p>Navigate to where you installed the game (GOG asks you where you want to install it, with
-            Steam you can right click on the game, select Manage -> Browse local files)</p></li>
-        <li><p>Download R.E.L.I.V.E. from the link above and extract it somewhere.</p></li>
-        <li><p>Copy AliveExeAE.exe and SDL2.dll to the game's folder.</p></li>
-        <li><p>Run the game by launching AliveExeAE.exe.</p></li>
-      </ol>
-      <h4>Linux</h4>
-      <ol>
-        <li><p>Clone the R.E.L.I.V.E. repository
-            from <a href="https://github.com/AliveTeam/alive_reversing">this</a> link.</p></li>
-        <li><p>Install the development libraries for SDL2 using your distribution's package
-            manager. (<code>libsdl2-dev</code> on Ubuntu/Debian, <code>sdl2</code> on Arch)</p></li>
-        <li><p>Navigate to the cloned repository, create a new directory called build. Change
-            directory to it and issue <code>cmake ..</code>. Once this is done, you can issue <code>make</code>.</p></li>
-        <li><p>Copy <code>build/Source/AliveExe/AliveExeAE</code> into the game's folder.</p></li>
-        <li><p>Run the game by launching the newly copied executable.</p></li>
-      </ol>
+
+      <input type="radio" name="tabs" id="tab1" checked />
+      <label for="tab1">Windows</label>
+
+      <input type="radio" name="tabs" id="tab2" />
+      <label for="tab2">Arch Linux</label>
+
+      <input type="radio" name="tabs" id="tab3" />
+      <label for="tab3">Manual (Windows)</label>
+
+      <input type="radio" name="tabs" id="tab4" />
+      <label for="tab4">Manual (Linux)</label>
+
+      <div class="tab win">
+        <ol>
+          <li><p>Navigate to where you installed the game (GOG asks you where you want to install it, with
+              Steam you can right click on the game, select Manage -> Browse local files)</p></li>
+          <li><p>Download R.E.L.I.V.E. from the link above and extract it somewhere.</p></li>
+          <li><p>Copy AliveExeAE.exe and SDL2.dll to the game's folder.</p></li>
+          <li><p>Run the game by launching AliveExeAE.exe.</p></li>
+        </ol>
+      </div>
+      
+      <div class="tab arch">
+        <p>If you are an Arch Linux user, you can simply download the engine from
+          the <a href="https://aur.archlinux.org/">AUR</a>. The package is
+          called <code>relive-git</code>.</p>
+      </div>
+
+      <div class="tab manual_windows">
+        <p>For instructions please see the <a href="https://github.com/AliveTeam/alive_reversing/blob/master/README.md">README.</a></p>
+      </div>
+
+      <div class="tab manual_linux">
+        <ol>
+          <li><p><code>git clone https://github.com/AliveTeam/alive_reversing.git --recursive</code></p></li>
+          <li><p>Install the development libraries for SDL2 using your distribution's package
+              manager. (<code>libsdl2-dev</code> on Ubuntu/Debian, <code>sdl2</code> on Arch)</p></li>
+          <li><p>Navigate to the cloned repository and call <code>cmake -B build -S .</code> (the dot is important.)</p></li>
+          <li><p>Once this is done, you can issue <code>make</code>.</p></li>
+          <li><p>Copy <code>build/Source/AliveExe/AliveExeAE</code> into the game's folder.</p></li>
+          <li><p>Run the game by launching the newly copied executable.</p></li>
+        </ol>
+      </div>
     </div>
   </div>
 
