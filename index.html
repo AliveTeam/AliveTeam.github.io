@@ -29,29 +29,33 @@
   <div id="downloads">
     <h2>Download the Engine</h2>
     <div id="links">
-      <a href="https://ci.appveyor.com/project/paulsapps/alive-reversing"><p>Windows</p></a>
-      <a href="https://github.com/AliveTeam/alive_reversing"><p>Code</p></a>
+      <a id="windows-download" href="https://ci.appveyor.com/project/paulsapps/alive-reversing"><p>Windows</p></a>
+      <a id="code-download" href="https://github.com/AliveTeam/alive_reversing"><p>Code</p></a>
     </div>
     <div>
       <h3>Install guide</h3>
-      <p>First things first, while the engine is free and will stay free, it doesn't come with the
-      game's data. If you want to use it, you need to own either the GOG or Steam version of the
-      games.</p>
+      <p>First things first: while the engine is free and will stay free, it doesn't come with the game's data. If you want to use it, you need to own either the GOG or Steam version of the games:</p>
+      <p id="game-links">
+        <a href="https://www.gog.com/game/oddworld_abes_oddysee">Abe's Oddysee on GOG</a>
+        <a href="https://www.gog.com/game/oddworld_abes_exoddus">Abe's Exoddus on GOG</a>
+        <a href="https://store.steampowered.com/app/15700/Oddworld_Abes_Oddysee/">Abe's Oddysee on Steam</a>
+        <a href="https://store.steampowered.com/app/15710/Oddworld_Abes_Exoddus/">Abe's Exoddus on Steam</a>
+      </p>
       <p>Secondly, while there is an Abe's Oddysee version packed with the downloads, it doesn't
       work currently and will crash without much fanfare. <strong>Currently only Abe's Exoddus is
       playable.</strong></p>
 
       <input type="radio" name="tabs" id="tab1" checked />
-      <label for="tab1">Windows</label>
+      <label for="tab1">Windows <img class="icon" src="imgs/windows.png"></label>
 
       <input type="radio" name="tabs" id="tab2" />
-      <label for="tab2">Arch Linux</label>
+      <label for="tab2">Arch Linux <img class="icon" src="imgs/tux.png"></label>
 
       <input type="radio" name="tabs" id="tab3" />
-      <label for="tab3">Manual (Windows)</label>
+      <label for="tab3">Manual (Windows) <img class="icon" src="imgs/windows.png"></label>
 
       <input type="radio" name="tabs" id="tab4" />
-      <label for="tab4">Manual (Linux)</label>
+      <label for="tab4">Manual (Linux) <img class="icon" src="imgs/tux.png"></label>
 
       <div class="tab win">
         <ol>
@@ -76,9 +80,8 @@
       <div class="tab manual_linux">
         <ol>
           <li><p><code>git clone https://github.com/AliveTeam/alive_reversing.git --recursive</code></p></li>
-          <li><p>Install the development libraries for SDL2 using your distribution's package
-              manager. (<code>libsdl2-dev</code> on Ubuntu/Debian, <code>sdl2</code> on Arch)</p></li>
-          <li><p>Navigate to the cloned repository and call <code>cmake -B build -S .</code> (the dot is important.)</p></li>
+          <li><p>Install the development libraries for SDL2 using your distribution's package manager (<code>libsdl2-dev</code> on Ubuntu/Debian, <code>sdl2</code> on Arch).</p></li>
+          <li><p>Navigate to the cloned repository and call <code>cmake -B build -S .</code> (the dot is important).</p></li>
           <li><p>Once this is done, you can issue <code>make</code>.</p></li>
           <li><p>Copy <code>build/Source/AliveExe/AliveExeAE</code> into the game's folder.</p></li>
           <li><p>Run the game by launching the newly copied executable.</p></li>

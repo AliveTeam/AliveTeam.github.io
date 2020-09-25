@@ -57,6 +57,12 @@ main {
         display: block;
         max-width: 100%;
     }
+    
+    .icon {
+        display: inline;
+        max-width: 20px;
+        vertical-align: middle;
+    }
 
     code {
         color: orange;
@@ -147,12 +153,35 @@ main {
             justify-content: space-evenly;
 
             padding: 1rem 0;
-                a {
-                    text-align: center;
-
-                    display: inline-block;
-                    background: #111;
+            
+            #windows-download {
+                background-image: url("imgs/windows.png");
+            }
+            
+            #code-download {
+                background-image: url("imgs/gh.webp");
+            }
+            
+            a {
+                background: {
+                    color: #333;
+                    position: center;
+                    repeat: no-repeat;
+                    size: contain;
                 }
+                
+                border-style: outset;
+                display: inline-block;
+                
+                text: {
+                    align: center;
+                    decoration: none;
+                }
+                
+                &:hover, &:focus {
+                    border-style: inset;
+                }
+            }
 
             & > div {
                 border: 2px solid;
@@ -164,6 +193,23 @@ main {
                 display: flex;
                 justify-content: space-around;
 
+            }
+        }
+        
+        #game-links {
+            text-align: center;
+            
+            a {
+                border-right-style: solid;
+                
+                padding: {
+                    left: 1rem;
+                    right: 1rem;
+                }
+                
+                &:first-child {
+                    border-left-style: solid;
+                }
             }
         }
     }
@@ -229,6 +275,7 @@ footer {
 
     header {
         padding: 0;
+        text-align: center;
 
         h1 {
             width: unset;
@@ -261,6 +308,48 @@ footer {
         h2 {
             margin-top: 1.5rem !important;
             text-align: center;
+        }
+        
+        #downloads {
+            input[type="radio"] {
+                & + label {
+                    padding: {
+                        bottom: 1rem;
+                        top: 1rem;
+                    }
+                    
+                    text-align: center;
+                    width: 89%;
+                }
+                
+                & ~ .tab {
+                    padding: 8px;
+                    text-align: center;
+                
+                    ol {
+                        list-style-position: inside;
+                        padding: 0;
+                    }
+                }
+            }
+            
+            #code-download {
+                padding: {
+                    left: 1rem;
+                    right: 1rem;
+                }
+            }
+            
+            #game-links a {
+                display: block;
+                border-style: outset;
+                margin-bottom: 1rem;
+            
+                padding: {
+                    bottom: 1rem;
+                    top: 1rem;
+                }
+            }
         }
     }
 }
