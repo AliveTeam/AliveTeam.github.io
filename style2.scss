@@ -1,0 +1,348 @@
+---
+---
+
+@import 'fonts';
+
+:root {
+    --width: clamp(1300px, 60%, 1920px);
+}
+
+body {
+    font-family: "Montserrat";
+    margin: 0 auto;
+
+    width: var(--width);
+
+    background-color: #244;
+    color: #f2f2e0;
+    font-size: 18px;
+    line-height: 1.35;
+
+    a {
+        color: #f2f2e0;
+        font-weight: bold;
+    }
+}
+
+
+header {
+    background: url("imgs/city.jpg");
+    background-size: 100%;
+
+    padding: 2rem 4rem;
+
+    display: flex;
+    flex-direction: column;
+
+    h1, p {
+        margin: 0;
+        width: max-content;
+        max-width: 100%;
+    }
+
+    h1 {
+        font-size: 4rem;
+    }
+
+    p {
+        font-size: 1.5rem;
+        background: #222;
+        padding: 0.5rem;
+    }
+}
+
+main {
+    background-color: #232728;
+
+    img {
+        display: block;
+        max-width: 100%;
+    }
+    
+    .icon {
+        display: inline;
+        max-width: 20px;
+        vertical-align: middle;
+    }
+
+    code {
+        color: orange;
+        background: #111;
+        padding: 0.2rem 0.5rem;
+    }
+
+    input[type="radio"] {
+        display: none;
+
+        & + label {
+            display: inline-block;
+            border: 1px solid #999;
+            padding: 4px 12px;
+            background-color: #232728;
+            border-radius: 4px 4px 0 0;
+            position: relative;
+            top: 1px;
+        }
+
+        &:checked + label {
+            background-color: #282e2f;
+            border-bottom: 1px solid transparent;
+            font-weight: bold;
+        }
+
+        & ~ .tab {
+
+            background-color: #282e2f;
+            border: 1px solid #999;
+            padding: 12px;
+        }
+    }
+
+    .tab {
+        display: none;
+
+        h4 {
+            margin-top: 0;
+        }
+    }
+
+    #tab1:checked ~ .tab.win,
+    #tab2:checked ~ .tab.arch,
+    #tab3:checked ~ .tab.manual_windows,
+    #tab4:checked ~ .tab.manual_linux {
+        display: block;
+    }
+
+    & > div {
+        padding: 2rem 4rem;
+
+        h2 {
+            margin-top: 0;
+        }
+    }
+
+    h1,h2,h3 {
+        text-decoration: underline;
+        text-decoration-thickness: 3px;
+    }
+
+    figure {
+        width: 80%;
+        margin: 2rem auto;
+
+        a {
+            transition: filter 0.25s;
+        }
+
+        a:hover {
+            filter: brightness(120%);
+        }
+
+        figcaption {
+            text-align: center;
+            margin-top: 0.4em;
+            opacity: 0.7;
+        }
+    }
+
+    #downloads {
+        h2 {text-align: center;}
+
+        #links {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(min-content, 15%));
+            justify-content: space-evenly;
+
+            padding: 1rem 0;
+            
+            a {
+                background: {
+                    color: #333;
+                    position: center;
+                    repeat: no-repeat;
+                    size: contain;
+                }
+                
+                display: inline-block;
+                //border: 1px solid;
+                border-radius: 6px;
+                
+                text: {
+                    align: center;
+                    decoration: none;
+                }
+                
+                &:hover, &:focus {
+                }
+            }
+
+            & > div {
+                border: 2px solid;
+                padding: 1rem;
+                background: #364144;
+            }
+
+            div div {
+                display: flex;
+                justify-content: space-around;
+
+            }
+        }
+        
+        #game-links {
+            text-align: center;
+            
+            a {
+                border-right-style: solid;
+                
+                padding: {
+                    left: 1rem;
+                    right: 1rem;
+                }
+                
+                &:first-child {
+                    border-left-style: solid;
+                }
+            }
+        }
+    }
+
+    #why {
+        background: #406040;
+    }
+
+    #warning {
+
+        display: grid;
+        grid-template-columns: 30% 70%;
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+
+        background: #573d30;
+    }
+
+    #future {
+        background: #4e7882;
+
+        display: grid;
+        grid-template-columns: 30% 70%;
+
+        div {
+            margin-right: 1rem;
+        }
+    }
+
+    #support {
+        display: grid;
+        grid-template-columns: 30% 70%;
+
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+
+        div {
+        }
+
+        #text {
+            margin-left: 1rem;
+        }
+
+        #links {
+        padding: 1.5rem;
+            background: white;
+        }
+    }
+}
+
+footer {
+    text-align: center;
+    font-weight: bold;
+    background: #222;
+
+    padding: 1rem 0;
+}
+
+@media(orientation: portrait) {
+    body {
+        width: 100%;
+    }
+
+    header {
+        padding: 0;
+        text-align: center;
+
+        h1 {
+            width: unset;
+        }
+
+        p {
+            width: unset;
+        }
+    }
+
+    #games {
+        display: block !important;
+
+        div {
+            margin-bottom: 1rem;
+        }
+
+        div div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+
+    main {
+        & > div {
+            display: block !important;
+        }
+
+        h2 {
+            margin-top: 1.5rem !important;
+            text-align: center;
+        }
+        
+        #downloads {
+            input[type="radio"] {
+                & + label {
+                    padding: {
+                        bottom: 1rem;
+                        top: 1rem;
+                    }
+                    
+                    text-align: center;
+                    width: 89%;
+                }
+                
+                & ~ .tab {
+                    padding: 8px;
+                    text-align: center;
+                
+                    ol {
+                        list-style-position: inside;
+                        padding: 0;
+                    }
+                }
+            }
+            
+            #code-download {
+                padding: {
+                    left: 1rem;
+                    right: 1rem;
+                }
+            }
+            
+            #game-links a {
+                display: block;
+                border-style: outset;
+                margin-bottom: 1rem;
+            
+                padding: {
+                    bottom: 1rem;
+                    top: 1rem;
+                }
+            }
+        }
+    }
+}
