@@ -4,18 +4,42 @@
 @import 'fonts';
 
 :root {
-    --width: clamp(1300px, 60%, 1920px);
+    --width: clamp(1300px, 1000px, 1920px);
+}
+
+* {
+    box-sizing: border-box;
+    hyphens: auto;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+figure {
+    margin: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    img,iframe {flex-basis: 100%}
+
+    img {transition: filter 0.2s;}
+    img:hover {filter: brightness(120%);}
+
+    figcaption {text-align: center; margin-top: 0.5em;}
 }
 
 body {
     font-family: "Montserrat";
     margin: 0 auto;
-
-    width: var(--width);
+    min-width: 1300px;
 
     background-color: #244;
     color: #f2f2e0;
-    font-size: 18px;
+    font-size: 16px;
+    line-height: 1.35;
 
     a {
         color: #f2f2e0;
@@ -23,41 +47,145 @@ body {
     }
 }
 
+header > div, main section > div, footer > div {
+    width: var(--width);
+    margin: 0 auto;
+    padding: 2rem 0.4rem;
 
-header {
-    background: url("imgs/city.jpg");
-    background-size: 100%;
-
-    padding: 2rem 4rem;
-
-    display: flex;
-    flex-direction: column;
-
-    h1, p {
-        margin: 0;
-        width: max-content;
-        max-width: 100%;
+    & > :first-child {
+        margin-top: 0;
     }
 
-    h1 {
-        font-size: 4rem;
-    }
-
-    p {
-        font-size: 1.5rem;
-        background: #222;
-        padding: 0.5rem;
+    & > :last-child {
+        margin-bottom: 0;
     }
 }
 
-main {
-    background-color: #232728;
+// Colors and header image
 
-    img {
+header {
+    background-image: url("imgs/city.jpg");
+    background-attachment: fixed;
+    background-size: 100% 100%;
+}
+
+main {
+    #features {background-color: #406040;}
+    #warning {background-color: #573d30;}
+    #guide {background-color: #232728;}
+    #media {background-color: #434;}
+    #roadmap {background-color: #4e7882;}
+    #support {background-color: #232728;}
+}
+
+footer {
+    background-color: #222;
+}
+
+// Title
+
+header {
+    h1 {
+        background: #406040;
+        display: inline-block;
+        padding: 0 0.5rem;
+    }
+
+    #description {
+        background: #222;
         display: block;
-        max-width: 100%;
+        width: Min(80ch, 100%);
+        padding: 1rem;
     }
     
+    p {
+        font-size: 20px;
+    }
+}
+
+// Headers
+
+header div h1 {
+    font-size: 3rem;
+    margin-bottom: 0;
+}
+
+main section h2 {
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+    font-size: 1.75rem;
+}
+
+main section h3 {
+    font-size: 1.25rem;
+
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+
+    & ~ * {
+        margin-top: 0;
+    }
+}
+
+// Main
+
+main section p {
+    width: Min(80ch, 100%);
+    max-width: 100%;
+}
+
+#downloads {
+    h2 {
+        text-align: center;
+        font-size: 2rem;
+        text-decoration: none;
+    }
+
+    #links {
+        display: flex;
+        justify-content: center;
+        grid-gap: 1rem;
+
+        a {
+            margin: 0;
+            padding: 1rem 2rem;
+            border-radius: 6px;
+            text-decoration: none;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        #win   {background: #00aff0;}
+        #code  {background: #222;}
+        #instr {background: #666;}
+    }
+}
+
+#features {
+    ul {
+        list-style-type: none;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: 1fr;
+        grid-gap: 2rem;
+
+        padding: 0;
+
+        li p {
+            margin-bottom: 0;
+        }
+    }
+}
+
+#warning > div, #roadmap > div, #support > div {
+    display: grid;
+    grid-template-columns: 3fr 7fr;
+    grid-gap: 1.5rem;
+
+    h2 {margin-top: 0;}
+}
+
+#guide {
     .icon {
         display: inline;
         max-width: 20px;
@@ -80,7 +208,7 @@ main {
             background-color: #232728;
             border-radius: 4px 4px 0 0;
             position: relative;
-            top: 1px;
+            top: 3px;
         }
 
         &:checked + label {
@@ -100,8 +228,8 @@ main {
     .tab {
         display: none;
 
-        h4 {
-            margin-top: 0;
+        p {
+            width: 80%;
         }
     }
 
@@ -111,245 +239,61 @@ main {
     #tab4:checked ~ .tab.manual_linux {
         display: block;
     }
+}
 
-    & > div {
-        padding: 2rem 4rem;
+#media #content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 2rem;
+}
 
-        h2 {
-            margin-top: 0;
-        }
+#support {
+    #links {
+        background: white;
+        padding: 1rem;
     }
 
-    h1,h2,h3 {
-        text-decoration: underline;
-        text-decoration-thickness: 3px;
+}
+
+// Footer
+
+footer {
+    p {
+        font-weight: bold;
+        text-align: center;
+    }
+}
+
+// Mobile
+
+@media(orientation: portrait) {
+    :root {
+        --width: 95%;
     }
 
-    figure {
-        width: 80%;
-        margin: 2rem auto;
-
-        a {
-            transition: filter 0.25s;
-        }
-
-        a:hover {
-            filter: brightness(120%);
-        }
-
-        figcaption {
-            text-align: center;
-            margin-top: 0.4em;
-            opacity: 0.7;
-        }
+    body {
+        min-width: unset;
     }
 
     #downloads {
-        h2 {text-align: center;}
-
-        #links {
-            display: grid;
-            grid-template-columns: repeat(2, minmax(min-content, 15%));
-            justify-content: space-evenly;
-
-            padding: 1rem 0;
-            
-            #windows-download {
-                background-image: url("imgs/windows.png");
-            }
-            
-            #code-download {
-                background-image: url("imgs/gh.webp");
-            }
-            
-            a {
-                background: {
-                    color: #333;
-                    position: center;
-                    repeat: no-repeat;
-                    size: contain;
-                }
-                
-                border-style: outset;
-                display: inline-block;
-                
-                text: {
-                    align: center;
-                    decoration: none;
-                }
-                
-                &:hover, &:focus {
-                    border-style: inset;
-                }
-            }
-
-            & > div {
-                border: 2px solid;
-                padding: 1rem;
-                background: #364144;
-            }
-
-            div div {
-                display: flex;
-                justify-content: space-around;
-
-            }
-        }
-        
-        #game-links {
-            text-align: center;
-            
-            a {
-                border-right-style: solid;
-                
-                padding: {
-                    left: 1rem;
-                    right: 1rem;
-                }
-                
-                &:first-child {
-                    border-left-style: solid;
-                }
-            }
-        }
+        a {width: 300px; max-width: 100%;}
+        #links {flex-direction: column; align-items: center;}
     }
 
-    #why {
-        background: #406040;
+    #features ul {
+        grid-template-columns: 1fr;
     }
 
-    #warning {
+    #warning > div, #roadmap > div, #support > div {
+        display: block;
 
-        display: grid;
-        grid-template-columns: 30% 70%;
-        padding-top: 3rem;
-        padding-bottom: 3rem;
-
-        background: #573d30;
+        & > img, & > div {margin-bottom: 1rem;}
     }
 
-    #future {
-        background: #4e7882;
-
-        display: grid;
-        grid-template-columns: 30% 70%;
-
-        div {
-            margin-right: 1rem;
-        }
-    }
-
-    #support {
-        display: grid;
-        grid-template-columns: 30% 70%;
-
-        padding-top: 3rem;
-        padding-bottom: 3rem;
-
-        div {
-        }
-
-        #text {
-            margin-left: 1rem;
-        }
-
-        #links {
-        padding: 1.5rem;
-            background: white;
-        }
-    }
-}
-
-footer {
-    text-align: center;
-    font-weight: bold;
-    background: #222;
-
-    padding: 1rem 0;
-}
-
-@media(orientation: portrait) {
-    body {
-        width: 100%;
-    }
-
-    header {
-        padding: 0;
-        text-align: center;
-
-        h1 {
-            width: unset;
-        }
-
-        p {
-            width: unset;
-        }
-    }
-
-    #games {
-        display: block !important;
-
-        div {
-            margin-bottom: 1rem;
-        }
-
-        div div {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-    }
-
-    main {
-        & > div {
-            display: block !important;
-        }
-
-        h2 {
-            margin-top: 1.5rem !important;
-            text-align: center;
-        }
-        
-        #downloads {
-            input[type="radio"] {
-                & + label {
-                    padding: {
-                        bottom: 1rem;
-                        top: 1rem;
-                    }
-                    
-                    text-align: center;
-                    width: 89%;
-                }
-                
-                & ~ .tab {
-                    padding: 8px;
-                    text-align: center;
-                
-                    ol {
-                        list-style-position: inside;
-                        padding: 0;
-                    }
-                }
-            }
-            
-            #code-download {
-                padding: {
-                    left: 1rem;
-                    right: 1rem;
-                }
-            }
-            
-            #game-links a {
-                display: block;
-                border-style: outset;
-                margin-bottom: 1rem;
-            
-                padding: {
-                    bottom: 1rem;
-                    top: 1rem;
-                }
-            }
+    #guide {
+        input[type="radio"] + label {
+            width: 100%;
+            padding: 1rem;
         }
     }
 }
