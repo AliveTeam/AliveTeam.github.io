@@ -155,7 +155,7 @@ main section p {
             font-weight: bold;
         }
 
-        #win   {background: #00aff0;}
+        #win   {background: #07a;}
         #code  {background: #222;}
         #instr {background: #666;}
     }
@@ -274,6 +274,8 @@ footer {
     body {
         min-width: unset;
     }
+
+    main section h2 {text-align: center;}
 
     #downloads {
         a {width: 300px; max-width: 100%;}
