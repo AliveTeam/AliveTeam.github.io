@@ -164,11 +164,15 @@ main section p {
 }
 
 #blog {
-    div ul {
-        //display: grid;
-        //grid-template-columns: repeat(2, 1fr);
-        //grid-gap: 1rem;
+    h2,p {
+        margin-left: auto;
+        margin-right: auto;
 
+        width: 848px;
+        max-width: 100%;
+    }
+
+    div ul {
         width: Min(80ch, 100%);
         margin: 0 auto;
 
@@ -176,12 +180,11 @@ main section p {
         list-style-type: none;
 
         li {
-            border: 1px solid;
             border-radius: 6px;
             padding: 1rem;
             margin-bottom: 1rem;
 
-            background: #111;
+            background: #1e221e;
         }
     }
 }
