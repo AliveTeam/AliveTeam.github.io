@@ -12,6 +12,8 @@ main {
     & > :first-child {
         margin-top: 0;
         margin-bottom: 0;
+        margin-right: 0.25rem;
+        display: inline;
     }
 
     & > :last-child {
@@ -25,8 +27,14 @@ main {
         width: Min(80ch, 100%)
     }
 
+    #poster {
+        display: inline;
+    }
+
     #date {
         font-size: 0.8rem;
+        color: #b3b39b;
+        margin: 0;
     }
 
     hr {
