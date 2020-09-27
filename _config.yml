@@ -1,6 +1,11 @@
 defaults:
   -
     scope:
+      path: "blog"
+    values:
+      layout: "blogpost"
+  -
+    scope:
       path: ""
     values:
       layout: "default"
