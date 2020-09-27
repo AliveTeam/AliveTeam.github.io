@@ -1,0 +1,35 @@
+---
+---
+
+// Blogposts
+
+main {
+    background-color: #303035;
+    padding: 2rem 0.4rem;
+}
+
+#content {
+    & > :first-child {
+        margin-top: 0;
+    }
+
+    & > :last-child {
+        margin-bottom: 0;
+    }
+    
+    width: var(--width);
+    margin: 0 auto;
+
+    p {
+        width: Min(80ch, 100%)
+    }
+
+    #date {
+        font-size: 0.8rem;
+    }
+
+    hr {
+        width: Min(80ch, 100%);
+        margin-left: 0;
+    }
+}
