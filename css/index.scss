@@ -209,6 +209,10 @@ main section p {
         & > img, & > div {margin-bottom: 1rem;}
     }
 
+    #media #content {
+        grid-template-columns: 1fr;
+    }
+
     #guide {
         input[type="radio"] + label {
             width: 100%;

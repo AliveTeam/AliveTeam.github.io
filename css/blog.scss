@@ -3,9 +3,39 @@
 
 // Blogposts
 
+header {
+    h1 a {text-decoration: none;}
+}
+
 main {
     background-color: #303035;
     padding: 2rem 0.4rem;
+
+    display: grid;
+    grid-template-columns: Min(80ch, 80%) auto;
+    justify-content: center;
+    grid-gap: 5rem;
+}
+
+#sidebar {
+    background-color: #1d1d1e;
+    height: min-content;
+    padding: 2rem;
+
+    position: sticky;
+    top: 2rem;
+
+    h3 {
+        margin-top: 0;
+    }
+
+    ul {
+        margin-bottom: 0;
+
+        li:last-child p {
+            margin-bottom: 0;
+        }
+    }
 }
 
 #content {
@@ -20,7 +50,6 @@ main {
         margin-bottom: 0;
     }
     
-    width: var(--width);
     margin: 0 auto;
 
     p {
@@ -40,5 +69,35 @@ main {
     hr {
         width: Min(80ch, 100%);
         margin-left: 0;
+    }
+
+    #nav {
+        display: flex;
+
+        p {
+            text-align: center;
+            margin-bottom: 0;
+
+            a {
+            background: #111;
+            background-radius: 6px;
+            padding: 1rem 2rem;
+            }
+        }
+    }
+}
+
+@media(orientation: portrait) {
+    main {
+        display: block;
+        padding-bottom: 0;
+    }
+
+    #content #nav p {
+        margin-bottom: 2rem;
+    }
+    
+    #sidebar {
+        position: static;
     }
 }
