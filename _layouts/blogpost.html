@@ -4,8 +4,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
     <link rel="stylesheet" href="/css/common.css">
-    <link rel="stylesheet" href="/css/index.css">
-    <link rel="icon" href="imgs/scrab.png">
+    <link rel="stylesheet" href="/css/blog.css">
+    <link rel="icon" href="/imgs/scrab.png">
     <title>R.E.L.I.V.E. Engine</title>
     <!-- OpenGraph stuff -->
     <meta property="og:title" content="R.E.L.I.V.E.">
@@ -17,17 +17,33 @@
   <body>
     <header>
       <div>
-        <h1>R.E.L.I.V.E.</h1>
-        <div id="description">
-          <p><strong>R.E.L.I.V.E.</strong> is a fan effort to create a new engine, capable of replacing Digital Dialect's aging PC port for Oddworld's first two cult-classic games.</p>
-          <p>More than twenty years after their release, both games struggle to run on modern platforms, usually requiring a third-party application like DxWnd just to run them properly.</p>
-          <p>R.E.L.I.V.E. intends to become a complete replacement of both the original AbeWin.exe/Exoddus.exe and any third-party tools, by providing both convenience and compatibility features like:</p>
-        </div>
+        <h1><a href="/">R.E.L.I.V.E.</a></h1>
       </div>
     </header>
 
-
-    {{ content }}
+    <main>
+      <div id="content">
+        <h1>Devlog: {{ page.title }}</h1>
+        <p id="poster"> by {{ page.poster }}</p>
+        <p id="date">Published on {{ page.date | date: "%d.%b.%Y."}}</p>
+        <hr>
+        {{ content }}
+        <div id="nav">
+          {% if page.previous %} <p><a href="{{ page.previous.url }}">Previous</a></p> {% endif %}
+          {% if page.next     %} <p><a href="{{ page.next.url }}">Next</a></p>         {% endif %}
+        </div>
+      </div>
+      <div id="sidebar">
+        <h3>Archive</h3>
+        <ul>
+          {% for post in site.posts %}
+          <li>
+            <p><a href="{{ post.url}}">{{post.title}}</a></p>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </main>
 
     <footer>
       <div>

@@ -1,17 +1,6 @@
 ---
 ---
 
-<header>
-  <div>
-    <h1>R.E.L.I.V.E.</h1>
-    <div id="description">
-    <p><strong>R.E.L.I.V.E.</strong> is a fan effort to create a new engine, capable of replacing Digital Dialect's aging PC port for Oddworld's first two cult-classic games.</p>
-    <p>More than twenty years after their release, both games struggle to run on modern platforms, usually requiring a third-party application like DxWnd just to run them properly.</p>
-    <p>R.E.L.I.V.E. intends to become a complete replacement of both the original AbeWin.exe/Exoddus.exe and any third-party tools, by providing both convenience and compatibility features like:</p>
-    </div>
-  </div>
-</header>
-
 <main>
   <section id="downloads">
     <div>
@@ -177,11 +166,19 @@
       </div>
     </div>
   </section>
-</main>
 
-<footer>
-  <div>
-    <p>2018-2020, The R.E.L.I.V.E. Team</p>
-    <p>Site created by <a href="https://oddwords.hu">Nemin</a> with help by THEONLYDarkShadow.</p>
-  </div>
-</footer>
+  <section id="blog">
+    <div>
+      <h2>Developer log</h2>
+      <p>In this section you can read about what the developers of R.E.L.I.V.E. are working on.</p>
+      <ul>
+        {% for post in site.posts limit: 3 %}
+        <li>
+          <h3><a href="{{post.url}}">{{ post.title }}</a></h3>
+          <p>{{ post.content | truncatewords: 80 }}</p>
+        </li>
+        {% endfor %}
+        </ul>
+    </div>
+  </section>
+</main>

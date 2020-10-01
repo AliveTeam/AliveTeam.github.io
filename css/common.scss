@@ -1,0 +1,114 @@
+---
+---
+
+@import 'fonts';
+
+:root {
+    --width: clamp(1300px, 1000px, 1920px);
+}
+
+* {
+    box-sizing: border-box;
+    hyphens: auto;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+figure {
+    margin: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    img,iframe {flex-basis: 100%}
+
+    img {transition: filter 0.2s;}
+    img:hover {filter: brightness(120%);}
+
+    figcaption {text-align: center; margin-top: 0.5em;}
+}
+
+body {
+    font-family: "Montserrat";
+    margin: 0 auto;
+    min-width: 1300px;
+
+    background-color: #244;
+    color: #f2f2e0;
+    font-size: 16px;
+    line-height: 1.35;
+
+    a {
+        color: #f2f2e0;
+        font-weight: bold;
+    }
+}
+
+header > div, main section > div, footer > div {
+    width: var(--width);
+    margin: 0 auto;
+    padding: 2rem 0.4rem;
+
+    & > :first-child {
+        margin-top: 0;
+    }
+
+    & > :last-child {
+        margin-bottom: 0;
+    }
+}
+
+// Colors and header image
+
+header {
+    background-image: url("/imgs/city.jpg");
+    background-attachment: fixed;
+    background-size: 100% 100%;
+}
+
+footer {
+    background-color: #222;
+}
+
+// Title
+
+header {
+    h1 {
+        background: #406040;
+        display: inline-block;
+        padding: 0 0.5rem;
+    }
+
+    #description {
+        background: #222;
+        display: block;
+        width: Min(80ch, 100%);
+        padding: 1rem;
+    }
+    
+    p {
+        font-size: 20px;
+    }
+}
+
+// Footer
+
+footer {
+    p {
+        font-weight: bold;
+        text-align: center;
+    }
+}
+
+@media(orientation: portrait) {
+    :root {
+        --width: 95%;
+    }
+
+    body {
+        min-width: unset;
+    }
+}
