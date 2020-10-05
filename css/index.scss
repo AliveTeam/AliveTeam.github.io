@@ -9,6 +9,7 @@ main {
     #roadmap {background-color: #4e7882;}
     #support {background-color: #232728;}
     #blog {background-color: #29312a;}
+    #legacy {background-color: #313125;}
 }
 
 // Headers
@@ -186,6 +187,67 @@ main section p {
 
             background: #1e221e;
         }
+    }
+}
+
+#legacy {
+    div {
+        margin-left: auto;
+        margin-right: auto;
+
+        width: 848px;
+        max-width: 100%;
+    }
+}
+
+#legacy ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    list-style-type: none;
+    padding: 0;
+    grid-gap: 1.5rem;
+
+    li {
+	padding: 2rem;
+	background: #25251c;
+
+	text-align: justify;
+
+	img {
+	    margin: 0 auto;
+	    margin-bottom: 1rem;
+	    width: 96px;
+	}
+	
+	h3 {
+	    text-align: center;
+	}
+	
+	& > p {
+	    margin-left: auto;
+	    margin-right: auto;
+
+	}
+
+	a {
+	    margin: 0 auto;
+	    width: min-content;
+	    display: block;
+	    padding: 0.2rem 1rem;
+	    text-decoration: none;
+	    border-radius: 6px;
+	    background: #333;
+	}
+    }
+
+    li:first-child {
+	grid-column: 1 / 3;
+
+	& > p {
+
+	    width: 60ch;
+	}
     }
 }
 
