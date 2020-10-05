@@ -4,7 +4,7 @@
 @import 'fonts';
 
 :root {
-    --width: clamp(1300px, 1000px, 1920px);
+    --width: clamp(1000px, 1000px, 1920px);
 }
 
 * {
@@ -23,7 +23,9 @@ figure {
     display: flex;
     flex-direction: column;
 
-    img,iframe {flex-basis: 100%}
+    // HACK: I'm not sure how to properly size iframe. It doesn't seem
+    // to play nice with flexbox.
+    img,iframe {flex-basis: 260px;}
 
     img {transition: filter 0.2s;}
     img:hover {filter: brightness(120%);}
