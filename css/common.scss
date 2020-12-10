@@ -113,4 +113,8 @@ footer {
     body {
         min-width: unset;
     }
+
+    figure {
+      img,iframe {flex-basis: 50vw;}
+    }
 }
