@@ -99,7 +99,7 @@
           <li><p><code>git clone https://github.com/AliveTeam/alive_reversing.git --recursive</code></p></li>
           <li><p>Install the development libraries for SDL2 using your distribution's package manager: <code>libsdl2-dev</code> on Ubuntu/Debian, <code>sdl2</code> on Arch, <code>SDL2-devel</code> on Fedora, etc.</p></li>
           <li><p>Navigate to the cloned repository and call <code>cmake -B build -S .</code> (the dot is important).</p></li>
-          <li><p>Once this is done, you can issue <code>make</code>.</p></li>
+		<li><p>Once this is done, you can go to <code>cd build</code> then issue <code>make -j$(nproc)</code>.</p></li>
           <li><p>Copy <code>build/Source/AliveExe/AliveExeAE</code> into the game's folder.</p></li>
           <li><p>Run the game by launching the newly copied executable.</p></li>
         </ol>
