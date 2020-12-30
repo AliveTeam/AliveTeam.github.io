@@ -1,120 +1,87 @@
 ---
 ---
 
-@import 'fonts';
-
-:root {
-    --width: clamp(1000px, 1000px, 1920px);
-}
-
 * {
     box-sizing: border-box;
-    hyphens: auto;
 }
 
-img {
-    display: block;
-    max-width: 100%;
+html {
+    scroll-behavior: smooth;
 }
 
-figure {
-    margin: 0;
-
-    display: flex;
-    flex-direction: column;
-
-    // HACK: I'm not sure how to properly size iframe. It doesn't seem
-    // to play nice with flexbox.
-    img,iframe {flex-basis: 260px;}
-
-    img {transition: filter 0.2s;}
-    img:hover {filter: brightness(120%);}
-
-    figcaption {text-align: center; margin-top: 0.5em;}
+:root {
+    --width: 1000px;
 }
 
 body {
-    font-family: "Montserrat";
-    margin: 0 auto;
-    min-width: 1300px;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 200;
+    color: #444;
+    background-color: #fafafa;
 
-    background-color: #244;
-    color: #f2f2e0;
-    font-size: 16px;
-    line-height: 1.35;
-
-    a {
-        color: #f2f2e0;
-        font-weight: bold;
-    }
+    margin: 0;
 }
 
-header > div, main section > div, footer > div {
+h1,h2,h3,h4 {
+    font-weight: 300;
+    color: #111;
+}
+
+main section > div {
     width: var(--width);
     margin: 0 auto;
-    padding: 2rem 0.4rem;
-
-    & > :first-child {
-        margin-top: 0;
-    }
-
-    & > :last-child {
-        margin-bottom: 0;
-    }
 }
 
-// Colors and header image
+main {
+    margin: 0 auto;
+
+    * {
+        max-width: 100%;
+
+        border-radius: 2px;
+    }
+}
 
 header {
-    background-image: url("/imgs/city.jpg");
-    background-attachment: fixed;
-    background-size: 100% 100%;
-}
+    height: 50px;
+    border-bottom: 1.5px solid #444;
+    //padding: 0.6rem;
 
-footer {
-    background-color: #222;
-}
+    & > div {
+        height: inherit;
+        width: var(--width);
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
 
-// Title
+        div {
+            display: flex;
 
-header {
-    h1 {
-        background: #406040;
-        display: inline-block;
-        padding: 0 0.5rem;
-    }
+            h1 {
+                margin: 0;
+                margin-left: 0.3rem;
+                font-size: 2rem;
+            }
 
-    #description {
-        background: #222;
-        display: block;
-        width: Min(80ch, 100%);
-        padding: 1rem;
-    }
-    
-    p {
-        font-size: 20px;
-    }
-}
+            img {
+                display: block;
+                height: 2rem;
+            }
+        }
 
-// Footer
+        nav {
+            display: flex;
+            height: 100%;
+            border-right: 1.5px solid #444;
 
-footer {
-    p {
-        font-weight: bold;
-        text-align: center;
-    }
-}
-
-@media(orientation: portrait) {
-    :root {
-        --width: 95%;
-    }
-
-    body {
-        min-width: unset;
-    }
-
-    figure {
-      img,iframe {flex-basis: 50vw;}
+            a {
+                text-decoration: none;
+                color: #444;
+                padding: 0 1rem;
+                height: 100%;
+                border-left: 1.5px solid #444;
+            }
+        }
     }
 }
