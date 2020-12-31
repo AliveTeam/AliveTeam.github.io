@@ -1,0 +1,9 @@
+---
+---
+
+main {
+    max-width: var(--width);
+
+    display: grid;
+    grid-template-columns: 80ch auto;
+}

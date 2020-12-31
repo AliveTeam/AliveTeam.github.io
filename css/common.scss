@@ -1,16 +1,16 @@
 ---
 ---
 
-* {
-    box-sizing: border-box;
-}
-
 html {
     scroll-behavior: smooth;
 }
 
 :root {
     --width: 1000px;
+    --border-color: #aaa;
+
+    --bg-color: #1b2c19;
+    --font-color: #bda337;
 }
 
 body {
@@ -27,8 +27,23 @@ h1,h2,h3,h4 {
     color: #111;
 }
 
+h2 {
+    font-size: 3rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+code {
+    color: white;
+    background:#444;
+    padding: 0.1rem 0.2rem;
+
+    font-family: "Ubuntu Mono", monospace;
+    font-weight: 400;
+}
+
 main section > div {
-    width: var(--width);
+    max-width: var(--width);
     margin: 0 auto;
 }
 
@@ -44,19 +59,20 @@ main {
 
 header {
     height: 50px;
-    border-bottom: 1.5px solid #444;
-    //padding: 0.6rem;
+    border-bottom: 1.5px solid var(--border-color);
+    background: white;
 
     & > div {
         height: inherit;
-        width: var(--width);
+        max-width: var(--width);
         margin: 0 auto;
         display: flex;
         align-items: center;
         justify-content: space-between;
 
-        div {
+        a {
             display: flex;
+            text-decoration: none;
 
             h1 {
                 margin: 0;
@@ -73,15 +89,32 @@ header {
         nav {
             display: flex;
             height: 100%;
-            border-right: 1.5px solid #444;
+            border-right: 1.5px solid var(--border-color);
 
             a {
                 text-decoration: none;
                 color: #444;
                 padding: 0 1rem;
                 height: 100%;
-                border-left: 1.5px solid #444;
+                border-left: 1.5px solid var(--border-color);
+
+                &:hover {
+                    background-color: #eee;
+                }
             }
         }
+    }
+}
+
+footer {
+    background: white;
+
+    padding: 1rem;
+    border-top: 1.5px solid var(--border-color);
+
+    p {
+        //margin: 0;
+        text-align: center;
+        font-weight: bold;
     }
 }
