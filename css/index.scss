@@ -2,8 +2,7 @@
 ---
 
 main {
-    background: #f7f7f7;
-    #description {background-color: white;}
+    #description {background-color: var(--spec-color);}
 }
 
 #description > div {
@@ -43,7 +42,7 @@ main {
 
         border: 1.5px solid var(--border-color);
         padding: 1rem 2rem;
-        background: white;
+        background: var(--popup-color);
 
         h3 {
             margin-top: 0;
@@ -59,7 +58,7 @@ main {
             a {
                 text-align: center;
                 text-decoration: none;
-                color: #444;
+                color: var(--font-color);
 
                 transition: background-color 0.25s;
 
@@ -67,7 +66,7 @@ main {
                 padding: 0.4rem 0.8rem;
 
                 &:hover {
-                    background-color: #efefef;
+                    background-color: var(--spec-color);
                 }
             }
         }
@@ -85,10 +84,10 @@ main {
         padding: 0;
 
         li {
-            border: 1.5px solid #aaa;
+            border: 1.5px solid var(--border-color);
             padding: 1rem;
 
-            background: white;
+            background: var(--popup-color);
 
             h3 {
                 margin-top: 0;
@@ -125,9 +124,10 @@ figcaption {
 
 #warning {
     margin: 2rem auto;
-    background: rgb(170, 65, 65);
-    border: 1.5px solid darkred;
-    padding: 2rem;
+    //background: rgb(170, 65, 65);
+    background: #8b181d;
+    border: 1.5px solid #59221f;
+    padding: 1.5rem;
 
     box-sizing: border-box;
 
@@ -155,7 +155,7 @@ figcaption {
 
     section { 
         border: 1px solid var(--border-color);
-        background: white;
+        background: var(--popup-color);
 
         & > div {
             width: unset;
@@ -190,20 +190,20 @@ figcaption {
         display:inline-block;
         border:1px solid var(--border-color);
         padding:4px 12px;
-        background-color:#efefef;
+        background-color: var(--popup-color);
         border-radius:4px 4px 0 0;
         position:relative;
         top:2px
     }
 
     input[type="radio"]:checked+label {
-        background-color:white;
+        background-color: var(--spec-color);
         border-bottom:1px solid transparent;
         font-weight:bold
     }
 
     input[type="radio"] ~ .tab {
-        background-color:white;
+        background-color: var(--spec-color);
         border:1px solid var(--border-color);
         padding:12px
     }
@@ -236,10 +236,10 @@ figcaption {
             list-style-type: none;
             border: 1px solid var(--border-color);
             padding: 2rem;
-            background: white;
+            background: var(--popup-color);
 
             a {
-                color: #111;
+                color: var(--header-color);
                 text-decoration: none;
             }
 
@@ -262,7 +262,7 @@ figcaption {
 
         li {
             border: 1.5px solid var(--border-color);
-            background: white;
+            background: var(--popup-color);
             list-style-type: none;
             padding: 2rem;
 
@@ -272,7 +272,7 @@ figcaption {
 
             a {
                 text-decoration: none;
-                color: #444;
+                color: var(--font-color);
 
                 p {
                     text-align: center;

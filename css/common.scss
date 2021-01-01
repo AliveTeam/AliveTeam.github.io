@@ -7,24 +7,41 @@ html {
 
 :root {
     --width: 1000px;
-    --border-color: #aaa;
+    --border-color: #416841;;
+
+    --spec-color: #354d32;
 
     --bg-color: #1b2c19;
-    --font-color: #bda337;
+    //--bg-color: #3a493e;
+    //--popup-color: #43723e;
+    //--popup-color: #20422c;
+    --popup-color: #243b23;
+    //--font-color: #bda337;
+    //--font-color: #d3b22d;
+    --font-color: #fafafa;
+    //--header-color: #d2b83c;
+    //--header-color: #eecf54;
+    --header-color: #ddc358;
 }
 
 body {
     font-family: 'Ubuntu', sans-serif;
     font-weight: 200;
     color: #444;
-    background-color: #fafafa;
+    background-color: var(--bg-color);
+
+    text-rendering: optimizeLegibility;
 
     margin: 0;
 }
 
 h1,h2,h3,h4 {
     font-weight: 300;
-    color: #111;
+    color: var(--header-color);
+}
+
+a {
+    color: var(--header-color);
 }
 
 h2 {
@@ -34,8 +51,8 @@ h2 {
 }
 
 code {
-    color: white;
-    background:#444;
+    color: #efefef;
+    background:#222;
     padding: 0.1rem 0.2rem;
 
     font-family: "Ubuntu Mono", monospace;
@@ -49,6 +66,9 @@ main section > div {
 
 main {
     margin: 0 auto;
+    background: var(--bg-color);
+    color: var(--font-color);
+
 
     * {
         max-width: 100%;
@@ -60,7 +80,7 @@ main {
 header {
     height: 50px;
     border-bottom: 1.5px solid var(--border-color);
-    background: white;
+    background: var(--popup-color);
 
     & > div {
         height: inherit;
@@ -93,13 +113,13 @@ header {
 
             a {
                 text-decoration: none;
-                color: #444;
+                color: var(--font-color);
                 padding: 0 1rem;
                 height: 100%;
                 border-left: 1.5px solid var(--border-color);
 
                 &:hover {
-                    background-color: #eee;
+                    background-color: #283f26;
                 }
             }
         }
@@ -107,13 +127,14 @@ header {
 }
 
 footer {
-    background: white;
+    background: var(--popup-color);
 
     padding: 1rem;
     border-top: 1.5px solid var(--border-color);
 
     p {
         //margin: 0;
+        color: var(--font-color);
         text-align: center;
         font-weight: bold;
     }
