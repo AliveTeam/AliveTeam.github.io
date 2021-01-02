@@ -20,9 +20,11 @@ html
     &[theme="scrabania"]
     {
         --border-color: #c7a65e;
-        --spec-color: #8d6e3a; 
-        --bg-color: #2f201a;
-        --popup-color: #635234; 
+        //--spec-color: #8d6e3a; 
+        --spec-color: #9d4646; 
+        --bg-color: #3f1d0f;
+        //--popup-color: #635234; 
+        --popup-color: #894721;
         --font-color: #fafafa;
         --header-color: #ddc358;
     }
@@ -44,6 +46,17 @@ html
         --bg-color: #10203a;
         --popup-color: #203040;
         --font-color: #fafafa;
+        --header-color: #ddc358;
+    }
+
+    &[theme="brew"]
+    {
+        --border-color: #513a85;
+        --spec-color: #39304f; 
+        --bg-color: #212;
+        --popup-color: #2a2040;
+        --font-color: #fafafa;
+        //--header-color: #0a880a;
         --header-color: #ddc358;
     }
 }

@@ -5,6 +5,27 @@ main {
     #description {background-color: var(--spec-color);}
 }
 
+#description:before {
+    content: ' ';
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    opacity: 0.6;
+    background-image: url('/imgs/bg.jpg');
+    background-repeat: no-repeat;
+    background-position: 50% 0;
+    background-size: cover;
+}
+
+#description {
+    z-index: 2;
+    position: relative;
+}
+
 #description > div {
     display: grid;
 
@@ -12,6 +33,7 @@ main {
     grid-gap: 3rem;
     justify-content: center;
 
+    position: relative;
 
     img {
         display: block;
@@ -29,46 +51,37 @@ main {
 
     padding-top: 2rem;
     padding-bottom: 2rem;
-}
 
-#downloads {
-    padding-top: 3rem;
-    padding-bottom: 1rem;
+    #downloads {
+        position: absolute;
+        bottom: -4rem;
 
-    & > div {
-        display: block;
-        margin: 0 auto;
-        width: max-content;
+        background-color: #222;
 
-        border: 1.5px solid var(--border-color);
-        padding: 1rem 2rem;
-        background: var(--popup-color);
-
-        h3 {
-            margin-top: 0;
+        a {
+            border: 1.5px solid #222;
+            padding: 0.5rem;
             text-align: center;
-            font-size: 1.5rem;
+            text-decoration: none;
+            background: #c39e27;
+            color: #222;
+            margin: 0 auto;
+            display: block;
+            font-weight: 400;
         }
 
-        #links {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            grid-gap: 1rem;
 
-            a {
-                text-align: center;
-                text-decoration: none;
-                color: var(--font-color);
+        padding: 1rem;
+        width: 300px;
+        box-sizing: border-box;
 
-                transition: background-color 0.25s;
+        border: 1.5px solid #444;
 
-                border: 1px solid var(--border-color);
-                padding: 0.4rem 0.8rem;
-
-                &:hover {
-                    background-color: var(--spec-color);
-                }
-            }
+        h3 {
+            text-align: center;
+            margin-top: 0;
+            color: #c39e27;
+            font-weight: 400;
         }
     }
 }
