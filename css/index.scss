@@ -240,7 +240,6 @@ figcaption {
 
             a {
                 color: var(--header-color);
-                text-decoration: none;
             }
 
             h3 {
@@ -278,7 +277,15 @@ figcaption {
                     text-align: center;
                     border: 1.5px solid var(--border-color);
                     padding: 0.4rem 0;
+                    background-color: var(--popup-color);
+
+                    transition: background-color 0.25s;
+
+                    &:hover {
+                        background-color: var(--spec-color);
+                    }
                 }
+
             } 
         }
     }

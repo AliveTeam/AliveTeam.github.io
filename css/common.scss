@@ -5,23 +5,83 @@ html {
     scroll-behavior: smooth;
 }
 
+html
+{
+    &[theme="monsaic"] 
+    {
+        --border-color: #416841;
+        --spec-color: #354d32;
+        --bg-color: #202a20;
+        --popup-color: #243b23;
+        --font-color: #fafafa;
+        --header-color: #ddc358;
+    }
+
+    &[theme="scrabania"]
+    {
+        --border-color: #c7a65e;
+        --spec-color: #8d6e3a; 
+        --bg-color: #2f201a;
+        --popup-color: #635234; 
+        --font-color: #fafafa;
+        --header-color: #ddc358;
+    }
+
+    &[theme="stockyardsv1"]
+    {
+        --border-color: #c7a65e;
+        --spec-color: #30304a; 
+        --bg-color: #10102a;
+        --popup-color: #202040; 
+        --font-color: #fafafa;
+        --header-color: #ddc358;
+    }
+
+    &[theme="stockyardsv2"]
+    {
+        --border-color: #3a5d85;
+        --spec-color: #30404f; 
+        --bg-color: #10203a;
+        --popup-color: #203040;
+        --font-color: #fafafa;
+        --header-color: #ddc358;
+    }
+}
+
 :root {
     --width: 1000px;
-    --border-color: #416841;;
 
-    --spec-color: #354d32;
+    // Monsaic theme
+    //--border-color: #416841;
+    //--spec-color: #354d32;
+    //--bg-color: #202a20;
+    //--popup-color: #243b23;
+    //--font-color: #fafafa;
+    //--header-color: #ddc358;
 
-    --bg-color: #1b2c19;
-    //--bg-color: #3a493e;
-    //--popup-color: #43723e;
-    //--popup-color: #20422c;
-    --popup-color: #243b23;
-    //--font-color: #bda337;
-    //--font-color: #d3b22d;
+    // Scrabania theme
+    /*--border-color: #c7a65e;
+    --spec-color: #8d6e3a; 
+    --bg-color: #2f201a;
+    --popup-color: #635234; 
     --font-color: #fafafa;
-    //--header-color: #d2b83c;
-    //--header-color: #eecf54;
-    --header-color: #ddc358;
+    --header-color: #ddc358;*/
+
+    // Stockyards theme V1
+    /*--border-color: #c7a65e;
+    --spec-color: #30304a; 
+    --bg-color: #10102a;
+    --popup-color: #202040; 
+    --font-color: #fafafa;
+    --header-color: #ddc358;*/
+
+    // Stockyards theme V2
+    /*--border-color: #c7a65e;
+    --spec-color: #30404f; 
+    --bg-color: #10203a;
+    --popup-color: #203040;
+    --font-color: #fafafa;
+    --header-color: #ddc358;*/
 }
 
 body {
@@ -33,6 +93,8 @@ body {
     text-rendering: optimizeLegibility;
 
     margin: 0;
+
+    font-size: 18px;
 }
 
 h1,h2,h3,h4 {
@@ -118,8 +180,14 @@ header {
                 height: 100%;
                 border-left: 1.5px solid var(--border-color);
 
+                align-items: center;
+
+                p {
+                    margin: 0;
+                }
+
                 &:hover {
-                    background-color: #283f26;
+                    background-color: var(--spec-color);
                 }
             }
         }
