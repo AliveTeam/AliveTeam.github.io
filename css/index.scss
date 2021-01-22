@@ -2,31 +2,13 @@
 ---
 
 main {
-    #description {background-color: var(--spec-color);}
+    #title {background-color: var(--spec-color);}
 }
 
-#description:before {
-    content: ' ';
-    display: block;
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 0;
-    opacity: 0.6;
-    background-image: url('/imgs/bg.jpg');
-    background-repeat: no-repeat;
-    background-position: 50% 0;
-    background-size: cover;
-}
+@import "header_bg";
+#title::before {background-image: url('/imgs/bg.jpg');}
 
-#description {
-    z-index: 2;
-    position: relative;
-}
-
-#description > div {
+#title > div {
     display: grid;
 
     grid-template-columns: auto 300px;
@@ -97,18 +79,7 @@ main {
         padding: 0;
 
         li {
-            border: 1.5px solid var(--border-color);
             padding: 1rem;
-
-            background: var(--popup-color);
-
-            h3 {
-                margin-top: 0;
-            }
-
-            p {
-                margin-bottom: 0;
-            }
         }
     }
 }
@@ -137,8 +108,7 @@ figcaption {
 
 #warning {
     margin: 2rem auto;
-    //background: rgb(170, 65, 65);
-    background: #8b181d;
+    background: #71171a;
     border: 1.5px solid #59221f;
     padding: 1.5rem;
 
@@ -147,93 +117,97 @@ figcaption {
     h3 {
         margin-top: 0;
         color: white;
-        font-weight: 800;
+        font-weight: 600;
     }
 
     p {
         margin-bottom: 0;
         color: white;
-    font-weight: 600;
     }
 }
 
-#halver {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-auto-rows: 1fr;
-    grid-gap: 2rem;
+#roadmap {
+    #halver {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 2rem;
+    }
+}
 
-    max-width: var(--width);
-    margin: 2rem auto;
+#support { 
+    margin-top: 2rem;
+    margin-bottom: 2rem;
 
-    section { 
-        border: 1px solid var(--border-color);
-        background: var(--popup-color);
+    & > div {
+        width: unset;
+        padding: 2rem;
+        box-sizing: border-box;
 
-        & > div {
-            width: unset;
-            padding: 2rem;
-
-            h2 {
-                font-size: 2rem;
-                margin-top: 0;
-                margin-bottom: 1rem;
-            }
+        h2 {
+            font-size: 2rem;
+            margin-top: 0;
+            margin-bottom: 1rem;
         }
+    }
 
-        #links {
-            width: 70%;
-            margin: 2rem auto;
+    #links {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 1fr;
+        grid-gap: 1rem;
+
+        a {
+            //background-color: whitesmoke;
+            padding: 1rem;
+            box-sizing: border-box;
+
+            display: flex;
+            align-items: center;
+
+            filter: brightness(130%) grayscale(1);
+            transition: filter 0.25s;
+
+            &:hover {
+                filter: brightness(160%) grayscale(0);
+            }
         }
     }
 }
 
 #guide {
-    .icon {
-        display:inline;
-        max-width:20px;
-        vertical-align:middle
-    }
-
-    input[type="radio"] {
-        display:none
-    }
-
-    input[type="radio"]+label {
-        display:inline-block;
-        border:1px solid var(--border-color);
-        padding:4px 12px;
-        background-color: var(--popup-color);
-        border-radius:4px 4px 0 0;
-        position:relative;
-        top:2px
-    }
-
-    input[type="radio"]:checked+label {
+    details {
+        border: 1px solid var(--border-color);
         background-color: var(--spec-color);
-        border-bottom:1px solid transparent;
-        font-weight:bold
-    }
 
-    input[type="radio"] ~ .tab {
-        background-color: var(--spec-color);
-        border:1px solid var(--border-color);
-        padding:12px
-    }
+        margin-bottom: 1rem;
 
-    .tab {
-        display:none;
-
-        p {
-            width:80%
+        &[open] summary {
+            border-bottom: 1px solid var(--border-color);
         }
-    }
 
-    #tab1:checked ~ .tab.win,
-    #tab2:checked ~ .tab.arch,
-    #tab3:checked ~ .tab.manual_windows,
-    #tab4:checked ~ .tab.manual_linux {
-        display:block
+        summary {
+            display: grid;
+            align-items: center;
+            grid-template-columns: 32px auto;
+            background-color: var(--popup-color);
+            padding: 0.5rem;
+            grid-gap: 1rem;
+        }
+
+        & > div {
+            padding: 1rem;
+
+            ol {
+                padding-left: 1rem;
+                margin: 0;
+
+                & > li:first-child p { margin-top: 0;}
+                & > li:last-child p { margin-bottom: 0;}
+            }
+
+            & > p:first-child { margin-top: 0;}
+            & > p:last-child { margin-bottom: 0;}
+        }
     }
 }
 
@@ -247,67 +221,18 @@ figcaption {
 
         li {
             list-style-type: none;
-            border: 1px solid var(--border-color);
             padding: 2rem;
-            background: var(--popup-color);
 
             a {
                 color: var(--header-color);
-            }
-
-            h3 {
-                margin-top: 0;
             }
         }
     }
 }
 
-#legacy > div {
-    padding: 1rem;
-
-    ul {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        grid-gap: 1rem;
-
-        padding: 0;
-
-        li {
-            border: 1.5px solid var(--border-color);
-            background: var(--popup-color);
-            list-style-type: none;
-            padding: 2rem;
-
-            h3 {
-                margin-top: 0;
-            }
-
-            a {
-                text-decoration: none;
-                color: var(--font-color);
-
-                p {
-                    text-align: center;
-                    border: 1.5px solid var(--border-color);
-                    padding: 0.4rem 0;
-                    background-color: var(--popup-color);
-
-                    transition: background-color 0.25s;
-
-                    &:hover {
-                        background-color: var(--spec-color);
-                    }
-                }
-
-            } 
-        }
-    }
-
-    #intro {
-        display: grid;
-        grid-template-columns: auto 160px;
-        grid-gap: 1rem;
-
-        h2 {margin-top: 0;}
+@media (orientation: portrait) {
+    #title > div #downloads {
+        position: static;
+        margin-top: 2rem;
     }
 }

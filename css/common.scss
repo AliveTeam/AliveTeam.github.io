@@ -1,6 +1,33 @@
 ---
 ---
 
+.popup {
+    border: 1.5px solid var(--border-color);
+    background-color: var(--popup-color);
+
+    & > *:first-child {
+        margin-top: 0;
+    }
+
+    & > *:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.button {
+    text-decoration: none;
+    padding: 0.4rem 0;
+    border: 1.5px solid var(--border-color);
+    text-align: center;
+    display: block;
+    color: var(--font-color);
+
+    transition: background-color 0.25s;
+    &:hover {
+        background-color: var(--spec-color);
+    }
+}
+
 html {
     scroll-behavior: smooth;
 }
@@ -63,44 +90,12 @@ html
 
 :root {
     --width: 1000px;
-
-    // Monsaic theme
-    //--border-color: #416841;
-    //--spec-color: #354d32;
-    //--bg-color: #202a20;
-    //--popup-color: #243b23;
-    //--font-color: #fafafa;
-    //--header-color: #ddc358;
-
-    // Scrabania theme
-    /*--border-color: #c7a65e;
-    --spec-color: #8d6e3a; 
-    --bg-color: #2f201a;
-    --popup-color: #635234; 
-    --font-color: #fafafa;
-    --header-color: #ddc358;*/
-
-    // Stockyards theme V1
-    /*--border-color: #c7a65e;
-    --spec-color: #30304a; 
-    --bg-color: #10102a;
-    --popup-color: #202040; 
-    --font-color: #fafafa;
-    --header-color: #ddc358;*/
-
-    // Stockyards theme V2
-    /*--border-color: #c7a65e;
-    --spec-color: #30404f; 
-    --bg-color: #10203a;
-    --popup-color: #203040;
-    --font-color: #fafafa;
-    --header-color: #ddc358;*/
 }
 
 body {
     font-family: 'Ubuntu', sans-serif;
     font-weight: 200;
-    color: #444;
+    color: var(--font-color);
     background-color: var(--bg-color);
 
     text-rendering: optimizeLegibility;
@@ -108,6 +103,10 @@ body {
     margin: 0;
 
     font-size: 18px;
+
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 h1,h2,h3,h4 {
@@ -143,7 +142,8 @@ main {
     margin: 0 auto;
     background: var(--bg-color);
     color: var(--font-color);
-
+    flex: 1;
+    width: 100%;
 
     * {
         max-width: 100%;
@@ -218,5 +218,52 @@ footer {
         color: var(--font-color);
         text-align: center;
         font-weight: bold;
+    }
+}
+
+@media (orientation: portrait) {
+    :root {
+        --width: 95%;
+    }
+
+    div, ul {
+        grid-template-columns: 1fr !important;
+        justify-content: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    header {
+        & > div {
+            display: block;
+            width: 100%;
+            max-width: unset;
+            padding: 0.2rem;
+            box-sizing: border-box;
+            
+            nav {
+                display: block;
+                border-right: none;
+
+                a {
+                    border-left: none;
+                    padding: 0;
+                    padding-top: 0.2rem;
+                    padding-bottom: 0.2rem;
+                }
+            }
+        }
+
+        height: unset;
+    }
+
+    #title > div {
+        padding: 1rem !important;
+        grid-gap: 1rem !important;
+
+        img {
+            margin: 0 auto;
+            max-width: 240px !important;
+        }
     }
 }

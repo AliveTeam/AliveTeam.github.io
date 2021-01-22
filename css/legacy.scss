@@ -1,0 +1,57 @@
+---
+---
+
+@import "header_bg";
+#title::before {background-image: url('/imgs/bg3.png');}
+
+#legacy > div {
+    ul {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 1rem;
+
+        padding: 0;
+
+        li {
+            list-style-type: none;
+            padding: 2rem;
+        }
+    }
+
+    h2 {margin-top: 0;}
+
+}
+
+#title {
+  z-index: 2;
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+
+  & > div {
+    display: grid;
+    grid-template-columns: auto 240px;
+    grid-gap: 3rem;
+    align-items: center;
+    margin-bottom: 2rem;
+    text-align: justify;
+
+    z-index: 2;
+    position: relative;
+    width: var(--width);
+    margin: 0 auto;
+    padding: 2rem;
+
+    p:first-of-type {
+        margin-top: 0;
+    }
+  }
+
+
+  h1 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-size: 4rem;
+  }
+}

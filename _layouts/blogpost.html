@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" theme="brew">
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
@@ -22,40 +22,47 @@
           <h1>R.E.L.I.V.E.</h1>
         </a>
         <nav>
-          <a href="/index.html#downloads"><p>Downloads</p></a>
+          <a href="/index.html#guide"><p>Downloads</p></a>
           <a href="/index.html#features"><p>Features</p></a>
+          <a href="/blog"><p>Blog</p></a>
+          <a href="/legacy"><p>Legacy</p></a>
           <a href="/index.html#support"><p>Support us!</p></a>
         </nav>
       </div>
     </header>
 
     <main>
-      <div id="content">
-        <h1>Devlog: {{ page.title }}</h1>
-        <p id="poster"> by {{ page.poster }}</p>
-        <p id="date">Published on {{ page.date | date: "%d.%b.%Y."}}</p>
-        <hr>
-        {{ content }}
-        <div id="nav">
-          {% if page.previous %} <p><a href="{{ page.previous.url }}">Previous</a></p> {% endif %}
-          {% if page.next     %} <p><a href="{{ page.next.url }}">Next</a></p>         {% endif %}
+      <div id="title">
+        <div>
+          <h1>Devlog: {{ page.title }}</h1>
+          <p id="poster"> by {{ page.poster }}</p>
         </div>
       </div>
-      <div id="sidebar">
-        <h3>Archive</h3>
-        <ul>
-          {% for post in site.posts %}
-          <li>
-            <p><a href="{{ post.url}}">{{post.title}}</a></p>
-          </li>
-          {% endfor %}
-        </ul>
+      <div id="blogpost">
+        <div id="content" class="popup">
+          {{ content }}
+          <p>Published on {{ page.date | date: "%d.%b.%Y."}}</p>
+          <div id="nav">
+            {% if page.previous %} <p><a href="{{ page.previous.url }}">Previous</a></p> {% endif %}
+            {% if page.next     %} <p><a href="{{ page.next.url }}">Next</a></p>         {% endif %}
+          </div>
+        </div>
+        <div id="sidebar">
+          <h3>Archive</h3>
+          <ul>
+            {% for post in site.posts %}
+            <li>
+              <p><a href="{{ post.url}}">{{post.title}}</a></p>
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
       </div>
     </main>
 
     <footer>
       <div>
-        <p>2018-2020, The R.E.L.I.V.E. Team</p>
+        <p>2018-2021, The R.E.L.I.V.E. Team</p>
         <p>Site created by <a href="https://oddwords.hu">Nemin</a> with help by THEONLYDarkShadow.</p>
       </div>
     </footer>

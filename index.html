@@ -1,8 +1,10 @@
 ---
 ---
 
+<link rel="stylesheet" href="/css/index.css">
+
 <main>
-  <section id="description">
+  <section id="title">
     <div>
       <div>
         <h1>R.E.L.I.V.E.</h1>
@@ -18,8 +20,6 @@
       <div id="downloads">
         <h3>Downloads & Instructions</h3>
         <div id="links">
-          <!--<a id="win"   href="https://ci.appveyor.com/project/paulsapps/alive-reversing?branch=master">Windows</a>
-          <a id="code"  href="https://github.com/AliveTeam/alive_reversing">Code</a>-->
           <a id="instr" href="#guide">R.E.L.I.V.E. ABE'S STORY</a>
         </div>
       </div>
@@ -27,28 +27,26 @@
     </div>
   </section>
 
-
-  
   <section id="features">
     <div>
       <h2>Features</h2>
       <ul>
-        <li>
+        <li class="popup">
           <h3>Native Resolution Support</h3>
           <p>It doesn't matter if your monitor is FullHD, 4k or perhaps an old rectangle CRT monitor, R.E.L.I.V.E. supports all.</p>
-        <li>
+        <li class="popup">
           <h3>Windowed mode</h3>
           <p>No more need for DxWnd or similar, simply press F12 and the game goes into windowed mode or back to fullscreen on the fly.</p>
-        <li>
+        <li class="popup">
           <h3>Modern Platforms</h3>
           <p>R.E.L.I.V.E. natively supports <strong>Windows 10</strong>, <strong>MacOS</strong> and <strong>Linux</strong>.</p>
-        <li>
+        <li class="popup">
           <h3>Modern Technologies</h3>
           <p>The re-write uses the modern and cross-platform <a href="https://www.libsdl.org/index.php">SDL2 Graphics Library</a>, instead of the long deprecated DirectDraw API.</p>
-        <li>
+        <li class="popup">
           <h3>Open Source</h3>
           <p>R.E.L.I.V.E. is a fully <a href="https://github.com/AliveTeam/alive_reversing">open-source codebase</a>, which you can freely use for your own projects or extend as you see fit.</p>
-        <li>
+        <li class="popup">
           <h3>Numerous Bugfixes</h3>
           <p>Tired of the crashes and weird things the game sometimes does? Worry not, the project's scope includes fixing all of these!</p>
       </ul>
@@ -90,57 +88,57 @@
       work currently and will crash without much fanfare. <strong>Currently only Abe's Exoddus is
       playable.</strong></p>
 
-      <input type="radio" name="tabs" id="tab1" checked />
-      <label for="tab1">Windows <img class="icon" src="imgs/windows.png"></label>
+      <details>
+        <summary><img srC="/imgs/windows.png"><span>Windows</span></summary>
+        <div>
+          <ol>
+            <li><p>Open <a href="https://ci.appveyor.com/project/paulsapps/alive-reversing?branch=master">this link</a>, click on your platform (most likely x64), click on Artifacts and finally download the zip on the top of the list.</p></li>
+            <li><p>Unzip it somewhere.</p></li>
+            <li><p>Navigate to where you installed the game (GOG asks you where you want to install it, with
+                Steam you can right click on the game, select Manage -> Browse local files).</p></li>
+            <li><p>Copy AliveExeAE.exe and SDL2.dll to the game's folder from the unzipped folder.</p></li>
+            <li><p>Run the game by launching AliveExeAE.exe.</p></li>
+          </ol>
+        </div>
+      </details>
 
-      <input type="radio" name="tabs" id="tab2" />
-      <label for="tab2">Arch Linux <img class="icon" src="imgs/arch.png"></label>
+      <details>
+        <summary><img srC="/imgs/arch.png"><span>Arch Linux</span></summary>
+        <div>
+          <p>If you are an Arch Linux user, you can simply download the engine from
+            the <a href="https://aur.archlinux.org/">AUR</a>. The package is
+            called <code>relive-git</code>.</p>
+        </div>
+      </details>
 
-      <input type="radio" name="tabs" id="tab3" />
-      <label for="tab3">Manual (Windows) <img class="icon" src="imgs/vs.png"></label>
+      <details>
+        <summary><img srC="/imgs/vs.png"><span>Manual (Windows)</span></summary>
+        <div>
+          <p>For instructions please see the <a href="https://github.com/AliveTeam/alive_reversing/blob/master/README.md">README.</a></p>
+        </div>
+      </details>
 
-      <input type="radio" name="tabs" id="tab4" />
-      <label for="tab4">Manual (Linux) <img class="icon" src="imgs/tux.png"></label>
-      
-      <div class="tab win">
-        <ol>
-          <li><p>Open <a href="https://ci.appveyor.com/project/paulsapps/alive-reversing?branch=master">this link</a>, click on your platform (most likely x64), click on Artifacts and finally download the zip on the top of the list.</p></li>
-          <li><p>Unzip it somewhere.</p></li>
-          <li><p>Navigate to where you installed the game (GOG asks you where you want to install it, with
-              Steam you can right click on the game, select Manage -> Browse local files).</p></li>
-          <li><p>Copy AliveExeAE.exe and SDL2.dll to the game's folder from the unzipped folder.</p></li>
-          <li><p>Run the game by launching AliveExeAE.exe.</p></li>
-        </ol>
-      </div>
-      
-      <div class="tab arch">
-        <p>If you are an Arch Linux user, you can simply download the engine from
-          the <a href="https://aur.archlinux.org/">AUR</a>. The package is
-          called <code>relive-git</code>.</p>
-      </div>
-
-      <div class="tab manual_windows">
-        <p>For instructions please see the <a href="https://github.com/AliveTeam/alive_reversing/blob/master/README.md">README.</a></p>
-      </div>
-
-      <div class="tab manual_linux">
-        <ol>
-          <li><p><code>git clone https://github.com/AliveTeam/alive_reversing.git --recursive</code></p></li>
-          <li><p>Install the development libraries for SDL2 using your distribution's package manager: <code>libsdl2-dev</code> on Ubuntu/Debian, <code>sdl2</code> on Arch, <code>SDL2-devel</code> on Fedora, etc.</p></li>
-          <li><p>Navigate to the cloned repository and call <code>cmake -B build -S .</code> (the dot is important).</p></li>
-          <li><p>Once this is done, you can issue <code>make</code>.</p></li>
-          <li><p>Copy <code>build/Source/AliveExe/AliveExeAE</code> into the game's folder.</p></li>
-          <li><p>Run the game by launching the newly copied executable.</p></li>
-        </ol>
-      </div>
+      <details>
+        <summary><img srC="/imgs/tux.png"><span>Manual (Linux)</span></summary>
+        <div>
+          <ol>
+            <li><p><code>git clone https://github.com/AliveTeam/alive_reversing.git --recursive</code></p></li>
+            <li><p>Install the development libraries for SDL2 using your distribution's package manager: <code>libsdl2-dev</code> on Ubuntu/Debian, <code>sdl2</code> on Arch, <code>SDL2-devel</code> on Fedora, etc.</p></li>
+            <li><p>Navigate to the cloned repository and call <code>cmake -B build -S .</code> (the dot is important).</p></li>
+            <li><p>Once this is done, you can issue <code>make</code>.</p></li>
+            <li><p>Copy <code>build/Source/AliveExe/AliveExeAE</code> into the game's folder.</p></li>
+            <li><p>Run the game by launching the newly copied executable.</p></li>
+          </ol>
+        </div>
+      </details>
     </div>
   </section>
 
-  <div id="halver">
-    <section id="roadmap">
-      <div>
+  <section id="roadmap">
+    <div>
+      <h2>The Future</h2>
+      <div id="halver">
         <div>
-          <h2>The Future</h2>
           <p>After the engine is fully reimplemented, the focus will shift to adding new features that were never part of the original.</p>
           <ul>
             <li>More platforms (<a href="https://www.youtube.com/watch?v=R3p4Q9D_KYo">sneak peek</a>).</li>
@@ -157,80 +155,24 @@
           <figcaption>Click on the image to see it in full size.</figcaption>
         </figure>
       </div>
-    </section>
-
-    <section id="support">
-      <div>
-        <div id="text">
-          <h2>Support Us!</h2>
-          <p>R.E.L.I.V.E. is made by a bunch of volunteers in their free time. If you have good
-            programming skills, feel free
-            to <a href="https://github.com/AliveTeam/alive_reversing">fork</a> the project and help us out
-            with code or documentation; or if you feel adventurous, we could always use a few
-            playtesters.</p>
-          <p>If you're less technically-inclined, but would still like to help, you can support the
-            project with a donation using the links below.</p>
-        </div>
-        <div id="links">
-          <a href="https://discord.gg/khs6KKS"><img alt="Join the Discord!" src="imgs/dc.png"></a>
-          <a href="https://www.patreon.com/alive"><img alt="Support on Patreon!" src="imgs/patreon.png"></a>
-          <a href="https://paypal.me/paulsapps"><img alt="Support on PayPal!" src="imgs/paypal.png"></a>
-        </div>
-      </div>
-    </section>
-  </div>
-
-  <section id="blog">
-    <div>
-      <h2>Developer Log</h2>
-      <p>In this section you can read about what the developers of R.E.L.I.V.E. are working on.</p>
-      <ul>
-        {% for post in site.posts limit: 3 %}
-        <li>
-          <h3><a href="{{post.url}}">{{ post.title }}</a></h3>
-          <p>{{ post.content | truncatewords: 80 }}</p>
-        </li>
-        {% endfor %}
-        </ul>
     </div>
   </section>
 
-  <section id="legacy">
-    <div>
-      <div id="intro">
-        <div>
-          <h2>Legacy</h2>
-          <p>In this section we would like a moment to remember what came before R.E.L.I.V.E. and also
-          provide you with a convenient place to download these relics if you're so inclined.</p>
-          <p>Please be aware that none of these tools are supported in any shape or form by the
-          developers of this project and the intention is to make them completely obsolete. If something
-          goes wrong; we're sorry, but you're on your own!</p>
-        </div>
-        <img src="imgs/ple.png" alt="Paul's Level Editor">
+  <section id="support">
+    <div class="popup">
+      <div id="text">
+        <h2>Support Us!</h2>
+        <p>R.E.L.I.V.E. is made by a bunch of volunteers in their free time. If you have good
+          programming skills, feel free to join our Discord below and help us out with code or 
+          documentation; or if you feel adventurous, we could always use a few playtesters.</p>
+        <p>If you're less technically-inclined, but would still like to help, you can support the
+          project with a donation on PayPal or Patreon.</p>
       </div>
-      <ul>
-        <li>
-          <h3>Paul's Level Editor</h3>
-          <p>This piece of software is well known by all who wield the arcane art of creating custom
-          levels for AO and AE. It is without much exaggeration the project that made it all
-          possible.</p>
-          <p>Also, it is a huge mess of eldritch hacks, held together only by duct tape and
-          the continued faith of the fandom.</p>
-	  <a href="/legacy/Editor_0.6.2.zip"><p>Download</p></a>
-	</li>
-	<li>
-	  <h3>Sprite / CAM Extractor</h3>
-	  <p>With this app you can extract the backgrounds and sprites of the games into individual
-	  images.</p>
-	  <a href="/legacy/Decoder_0.5.rar"><p>Download</p></a>
-	</li>
-	<li>
-	  <h3>LVL Extractor / Builder</h3>
-	  <p>This app can deconstruct LVL files into their individual parts and then reconstruct
-	  them again.</p>
-	  <a href="/legacy/LVL_Extractor_and_Builder.zip"><p>Download</p></a>
-	</li>
-      </ul>
+      <div id="links">
+        <a href="https://discord.gg/khs6KKS"><img alt="Join the Discord!" src="imgs/dc.png"></a>
+        <a href="https://www.patreon.com/alive"><img alt="Support on Patreon!" src="imgs/patreon.png"></a>
+        <a href="https://paypal.me/paulsapps"><img alt="Support on PayPal!" src="imgs/paypal.png"></a>
+      </div>
     </div>
   </section>
 </main>
