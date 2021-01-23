@@ -1,120 +1,269 @@
 ---
 ---
 
-@import 'fonts';
+.popup {
+    border: 1.5px solid var(--border-color);
+    background-color: var(--popup-color);
 
-:root {
-    --width: clamp(1000px, 1000px, 1920px);
-}
-
-* {
-    box-sizing: border-box;
-    hyphens: auto;
-}
-
-img {
-    display: block;
-    max-width: 100%;
-}
-
-figure {
-    margin: 0;
-
-    display: flex;
-    flex-direction: column;
-
-    // HACK: I'm not sure how to properly size iframe. It doesn't seem
-    // to play nice with flexbox.
-    img,iframe {flex-basis: 260px;}
-
-    img {transition: filter 0.2s;}
-    img:hover {filter: brightness(120%);}
-
-    figcaption {text-align: center; margin-top: 0.5em;}
-}
-
-body {
-    font-family: "Montserrat";
-    margin: 0 auto;
-    min-width: 1300px;
-
-    background-color: #244;
-    color: #f2f2e0;
-    font-size: 16px;
-    line-height: 1.35;
-
-    a {
-        color: #f2f2e0;
-        font-weight: bold;
-    }
-}
-
-header > div, main section > div, footer > div {
-    width: var(--width);
-    margin: 0 auto;
-    padding: 2rem 0.4rem;
-
-    & > :first-child {
+    & > *:first-child {
         margin-top: 0;
     }
 
-    & > :last-child {
+    & > *:last-child {
         margin-bottom: 0;
     }
 }
 
-// Colors and header image
+.button {
+    text-decoration: none;
+    padding: 0.4rem 0;
+    border: 1.5px solid var(--border-color);
+    text-align: center;
+    display: block;
+    color: var(--font-color);
+
+    transition: background-color 0.25s;
+    &:hover {
+        background-color: var(--spec-color);
+    }
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+html
+{
+    &[theme="monsaic"] 
+    {
+        --border-color: #416841;
+        --spec-color: #354d32;
+        --bg-color: #202a20;
+        --popup-color: #243b23;
+        --font-color: #fafafa;
+        --header-color: #ddc358;
+    }
+
+    &[theme="scrabania"]
+    {
+        --border-color: #c7a65e;
+        //--spec-color: #8d6e3a; 
+        --spec-color: #9d4646; 
+        --bg-color: #3f1d0f;
+        //--popup-color: #635234; 
+        --popup-color: #894721;
+        --font-color: #fafafa;
+        --header-color: #ddc358;
+    }
+
+    &[theme="stockyardsv1"]
+    {
+        --border-color: #c7a65e;
+        --spec-color: #30304a; 
+        --bg-color: #10102a;
+        --popup-color: #202040; 
+        --font-color: #fafafa;
+        --header-color: #ddc358;
+    }
+
+    &[theme="stockyardsv2"]
+    {
+        --border-color: #3a5d85;
+        --spec-color: #30404f; 
+        --bg-color: #10203a;
+        --popup-color: #203040;
+        --font-color: #fafafa;
+        --header-color: #ddc358;
+    }
+
+    &[theme="brew"]
+    {
+        --border-color: #513a85;
+        --spec-color: #39304f; 
+        --bg-color: #212;
+        --popup-color: #2a2040;
+        --font-color: #fafafa;
+        //--header-color: #0a880a;
+        --header-color: #ddc358;
+    }
+}
+
+:root {
+    --width: 1000px;
+}
+
+body {
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 200;
+    color: var(--font-color);
+    background-color: var(--bg-color);
+
+    text-rendering: optimizeLegibility;
+
+    margin: 0;
+
+    font-size: 18px;
+
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+h1,h2,h3,h4 {
+    font-weight: 300;
+    color: var(--header-color);
+}
+
+a {
+    color: var(--header-color);
+}
+
+h2 {
+    font-size: 3rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+code {
+    color: #efefef;
+    background:#222;
+    padding: 0.1rem 0.2rem;
+
+    font-family: "Ubuntu Mono", monospace;
+    font-weight: 400;
+}
+
+main section > div {
+    max-width: var(--width);
+    margin: 0 auto;
+}
+
+main {
+    margin: 0 auto;
+    background: var(--bg-color);
+    color: var(--font-color);
+    flex: 1;
+    width: 100%;
+
+    * {
+        max-width: 100%;
+
+        border-radius: 2px;
+    }
+}
 
 header {
-    background-image: url("/imgs/city.jpg");
-    background-attachment: fixed;
-    background-size: 100% 100%;
+    height: 50px;
+    border-bottom: 1.5px solid var(--border-color);
+    background: var(--popup-color);
+
+    & > div {
+        height: inherit;
+        max-width: var(--width);
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        a {
+            display: flex;
+            text-decoration: none;
+
+            h1 {
+                margin: 0;
+                margin-left: 0.3rem;
+                font-size: 2rem;
+            }
+
+            img {
+                display: block;
+                height: 2rem;
+            }
+        }
+
+        nav {
+            display: flex;
+            height: 100%;
+            border-right: 1.5px solid var(--border-color);
+
+            a {
+                text-decoration: none;
+                color: var(--font-color);
+                padding: 0 1rem;
+                height: 100%;
+                border-left: 1.5px solid var(--border-color);
+
+                align-items: center;
+
+                p {
+                    margin: 0;
+                }
+
+                &:hover {
+                    background-color: var(--spec-color);
+                }
+            }
+        }
+    }
 }
 
 footer {
-    background-color: #222;
-}
+    background: var(--popup-color);
 
-// Title
+    padding: 1rem;
+    border-top: 1.5px solid var(--border-color);
 
-header {
-    h1 {
-        background: #406040;
-        display: inline-block;
-        padding: 0 0.5rem;
-    }
-
-    #description {
-        background: #222;
-        display: block;
-        width: Min(80ch, 100%);
-        padding: 1rem;
-    }
-    
     p {
-        font-size: 20px;
-    }
-}
-
-// Footer
-
-footer {
-    p {
-        font-weight: bold;
+        //margin: 0;
+        color: var(--font-color);
         text-align: center;
+        font-weight: bold;
     }
 }
 
-@media(orientation: portrait) {
+@media (orientation: portrait) {
     :root {
         --width: 95%;
     }
 
-    body {
-        min-width: unset;
+    div, ul {
+        grid-template-columns: 1fr !important;
+        justify-content: center;
+        margin-left: auto;
+        margin-right: auto;
     }
 
-    figure {
-      img,iframe {flex-basis: 50vw;}
+    header {
+        & > div {
+            display: block;
+            width: 100%;
+            max-width: unset;
+            padding: 0.2rem;
+            box-sizing: border-box;
+            
+            nav {
+                display: block;
+                border-right: none;
+
+                a {
+                    border-left: none;
+                    padding: 0;
+                    padding-top: 0.2rem;
+                    padding-bottom: 0.2rem;
+                }
+            }
+        }
+
+        height: unset;
+    }
+
+    #title > div {
+        padding: 1rem !important;
+        grid-gap: 1rem !important;
+
+        img {
+            margin: 0 auto;
+            max-width: 240px !important;
+        }
     }
 }
