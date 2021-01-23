@@ -191,6 +191,7 @@ figcaption {
         }
 
         summary {
+            cursor: pointer;
             background-color: var(--popup-color);
             list-style-type: none;
 
@@ -200,6 +201,10 @@ figcaption {
                 grid-template-columns: 32px auto;
                 padding: 0.5rem;
                 grid-gap: 1rem;
+            }
+
+            img {
+                width: 32px;
             }
         }
 
@@ -240,6 +245,10 @@ figcaption {
 }
 
 @media (orientation: portrait) {
+    code {
+        line-break: anywhere;
+    }
+
     #title > div #downloads {
         position: static;
         margin-top: 2rem;
