@@ -175,6 +175,11 @@ figcaption {
 }
 
 #guide {
+    // For Chrome
+    details summary::-webkit-details-marker {
+        display:none;
+    }
+
     details {
         border: 1px solid var(--border-color);
         background-color: var(--spec-color);
@@ -186,12 +191,16 @@ figcaption {
         }
 
         summary {
-            display: grid;
-            align-items: center;
-            grid-template-columns: 32px auto;
             background-color: var(--popup-color);
-            padding: 0.5rem;
-            grid-gap: 1rem;
+            list-style-type: none;
+
+            & > div {
+                display: inline-grid;
+                align-items: center;
+                grid-template-columns: 32px auto;
+                padding: 0.5rem;
+                grid-gap: 1rem;
+            }
         }
 
         & > div {
