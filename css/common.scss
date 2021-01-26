@@ -105,6 +105,7 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    min-width: calc(var(--width) * 1.1);
 }
 
 h1,h2,h3,h4 {
@@ -264,5 +265,9 @@ footer {
             margin: 0 auto;
             max-width: 240px !important;
         }
+    }
+
+    body {
+        min-width: unset;
     }
 }
