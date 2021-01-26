@@ -73,7 +73,7 @@
 
   <section id="guide">
     <div>
-      <h2>Installation Guide</h2>
+      <h2>Downloads</h2>
 
       <div id="warning">
         <h3>Here be Scrabs!</h3>
@@ -91,7 +91,41 @@
       <p>First things first: while the engine is free and will stay free, it doesn't come with the
       game's data. If you want to use it, you need to own either the GOG or Steam version of the
       games. If you don't own the games, you can <a href="http://www.oddworld.com/buy-games/">buy the games here.</a></p>
-      <details>
+
+      <div id="binaries">
+        <div class="popup">
+          <img width="96px" src="imgs/windows.webp">
+          <h1>Windows</h1>
+          <div>
+            <div>
+              <a href="https://ci.appveyor.com/api/projects/paulsapps/alive-reversing/artifacts/build/RELIVE_Binaries_Lite_Debug_x86.zip?branch=master&job=Platform%3A%20x86&pr=false">Download 32-bit</a>
+            </div>
+            <div>
+              <a href="https://ci.appveyor.com/api/projects/paulsapps/alive-reversing/artifacts/build/RELIVE_Binaries_Lite_Debug_x64.zip?branch=master&job=Platform%3A%20x64&pr=false">Download 64-bit</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="popup">
+          <img width="96px" src="imgs/arch.webp">
+          <h1>Arch Linux</h1>
+          <div>
+            <p>Use your favorite method to install <code>relive-git</code> from the <a href="https://aur.archlinux.org/">AUR.</a></p>
+          </div>
+        </div>
+
+        <div class="popup">
+          <img width="96px" src="imgs/gh.webp">
+          <h1>Source code</h1>
+          <div>
+            <code>git clone --recursive https://github.com/AliveTeam/alive_reversing</code>
+          </div>
+        </div>
+      </div>
+
+      <h2>Installation Guide</h2>
+
+      <details open>
         <summary>
           <div>
             <img alt="Windows" src="/imgs/windows_s.webp">
@@ -100,27 +134,13 @@
         </summary>
         <div>
           <ol>
-            <li><p>Open <a href="https://ci.appveyor.com/project/paulsapps/alive-reversing?branch=master">this link</a>, click on your platform (most likely x64), click on Artifacts and finally download the zip on the top of the list.</p></li>
+            <li><p>Download the zip that fits your architecture (most likely 64-bits) from the links above.</p></li>
             <li><p>Unzip it somewhere.</p></li>
             <li><p>Navigate to where you installed the game (GOG asks you where you want to install it, with
                 Steam you can right click on the game, select Manage -> Browse local files).</p></li>
             <li><p>Copy AliveExeAE.exe and SDL2.dll to the game's folder from the unzipped folder.</p></li>
             <li><p>Run the game by launching AliveExeAE.exe.</p></li>
           </ol>
-        </div>
-      </details>
-
-      <details>
-        <summary>
-          <div>
-            <img alt="Arch Linux" src="/imgs/arch_s.webp">
-            <span>Arch Linux</span>
-          </div>
-        </summary>
-        <div>
-          <p>If you are an Arch Linux user, you can simply download the engine from
-            the <a href="https://aur.archlinux.org/">AUR</a>. The package is
-            called <code>relive-git</code>.</p>
         </div>
       </details>
 

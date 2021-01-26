@@ -224,6 +224,45 @@ figcaption {
             & > p:last-child { margin-bottom: 0;}
         }
     }
+
+    #binaries {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 1rem;
+        margin: 2rem auto;
+
+        & > div {
+            padding: 1rem;
+            text-align: center;
+            
+            & > div {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                grid-gap: 1rem;
+                word-break: break-word;
+
+                p {
+                    margin: 0;
+                    font-size: 1.2rem;
+                }
+
+                div {
+                    a {
+                        padding: 0.5rem;
+                        background-color: #c39e27;
+                        color: #222;
+                        text-decoration: none;
+                        font-weight: 400;
+                        box-sizing: border-box;
+                        display: block;
+                        font-size: 1.25rem;
+                    }
+                }
+            }
+        }
+    }
 }
 
 #blog {
