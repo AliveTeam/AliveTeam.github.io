@@ -42,11 +42,11 @@
       <div id="blogpost">
         <div id="content" class="popup">
           {{ content }}
-          <p>Published on {{ page.date | date: "%d.%b.%Y."}}</p>
-          <div id="nav">
-            {% if page.previous %} <p><a href="{{ page.previous.url }}">Previous</a></p> {% endif %}
-            {% if page.next     %} <p><a href="{{ page.next.url }}">Next</a></p>         {% endif %}
-          </div>
+	<nav id="footer">
+	  <p>{% if page.previous %}<a href="{{ page.previous.url }}">Previous</a>{% endif %}</p>
+	  <p>Published on {{ page.date | date: "%d.%b.%Y."}}</p>
+	  <p>{% if page.next     %}<a href="{{ page.next.url }}">Next</a>{% endif %}</p>
+	</nav>
         </div>
         <div id="sidebar">
           <h3>Archive</h3>
