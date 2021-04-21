@@ -31,6 +31,7 @@ main {
 
     margin: 0 auto;
 
+    padding: 0;
     padding-top: 2rem;
     padding-bottom: 2rem;
 
@@ -108,12 +109,29 @@ figcaption {
 }
 
 #warning {
-    margin: 2rem auto;
+    margin: 1rem auto;
     background: #71171a;
     border: 1.5px solid #59221f;
     padding: 1.5rem;
 
     box-sizing: border-box;
+
+    h3 {
+        margin-top: 0;
+        color: white;
+        font-weight: 600;
+    }
+
+    p {
+        margin-bottom: 0;
+        color: white;
+    }
+}
+
+#buygames {
+    margin: 1rem auto;
+    background: #343;
+    padding: 1.5rem;
 
     h3 {
         margin-top: 0;
@@ -229,7 +247,7 @@ figcaption {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         grid-gap: 1rem;
-        margin: 2rem auto;
+        margin: 1rem auto;
 
         & > div {
             padding: 1rem;
