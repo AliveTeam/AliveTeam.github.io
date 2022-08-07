@@ -6,7 +6,7 @@
 <main>
   <section id="title">
     <div>
-      <div>
+      <div id="title_blurb">
         <h1>R.E.L.I.V.E.</h1>
         <p><strong>R.E.L.I.V.E.</strong> is a fan effort to create a new engine, capable of replacing Digital Dialect's aging
           PC port for Oddworld's first two cult-classic games.</p>
@@ -36,13 +36,13 @@
           <p>It doesn't matter if your monitor is FullHD, 4k or perhaps an old rectangle CRT monitor, R.E.L.I.V.E. supports all.</p>
         <li class="popup">
           <h3>Windowed mode</h3>
-          <p>No more need for DxWnd or similar, simply press F12 and the game goes into windowed mode or back to fullscreen on the fly.</p>
+          <p>Simply press F12 and the game goes into windowed mode or back to fullscreen on the fly.</p>
         <li class="popup">
           <h3>Modern Platforms</h3>
           <p>R.E.L.I.V.E. natively supports <strong>Windows 10</strong>, <strong>MacOS</strong> and <strong>Linux</strong>.</p>
         <li class="popup">
-          <h3>Modern Technologies</h3>
-          <p>The re-write uses the modern and cross-platform <a href="https://www.libsdl.org/index.php">SDL2 Graphics Library</a>, instead of the long deprecated DirectDraw API.</p>
+          <h3>Controller Support</h3>
+          <p>No need to fiddle with Steam or other third-party tools, just plug your gamepad in before starting the game and it'll work.</p>
         <li class="popup">
           <h3>Open Source</h3>
           <p>R.E.L.I.V.E. is a fully <a href="https://github.com/AliveTeam/alive_reversing">open-source codebase</a>, which you can freely use for your own projects or extend as you see fit.</p>
@@ -75,6 +75,23 @@
     <div>
       <h2>Downloads</h2>
 
+      <div id="binaries">
+        <a href="https://github.com/AliveTeam/qt-editor/releases/latest">
+            <img width="96px" src="imgs/download.webp">
+            <p>Stable Release</p>
+        </a>
+
+        <a href="https://aur.archlinux.org/packages/relive-git">
+          <img width="96px" src="imgs/arch_black.webp">
+          <p>Arch Linux</p>
+        </a>
+
+        <a href="https://github.com/AliveTeam/alive_reversing">
+          <img width="96px" src="imgs/gh.webp">
+          <p>Source code</p>
+        </a>
+      </div>
+
       <div id="warning">
         <h3>Here be Scrabs!</h3>
         <p>
@@ -94,37 +111,6 @@
         files to anyone.</p>
         <p>If you don't own the games, you can <a href="http://www.oddworld.com/buy-games/">buy them
         here.</a></p>
-      </div>
-
-      <div id="binaries">
-        <div class="popup">
-          <img width="96px" src="imgs/windows.webp">
-          <h1>Windows</h1>
-          <div>
-            <div>
-              <a href="https://ci.appveyor.com/api/projects/paulsapps/alive-reversing/artifacts/build/RELIVE_Binaries_Lite_Debug_x86.zip?branch=master&job=Platform%3A%20x86&pr=false">Download 32-bit</a>
-            </div>
-            <div>
-              <a href="https://ci.appveyor.com/api/projects/paulsapps/alive-reversing/artifacts/build/RELIVE_Binaries_Lite_Debug_x64.zip?branch=master&job=Platform%3A%20x64&pr=false">Download 64-bit</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="popup">
-          <img width="96px" src="imgs/arch.webp">
-          <h1>Arch Linux</h1>
-          <div>
-            <p>Use your favorite method to install <code>relive-git</code> from the <a href="https://aur.archlinux.org/">AUR.</a></p>
-          </div>
-        </div>
-
-        <div class="popup">
-          <img width="96px" src="imgs/gh.webp">
-          <h1>Source code</h1>
-          <div>
-            <code>git clone --recursive https://github.com/AliveTeam/alive_reversing</code>
-          </div>
-        </div>
       </div>
 
       <h2>Installation Guide</h2>
@@ -152,12 +138,12 @@
       <details>
         <summary>
           <div>
-            <img alt="Visual Studio" src="/imgs/vs_s.webp">
-            <span>Manual (Windows)</span>
+            <img alt="Arch" src="/imgs/arch_s.webp">
+            <span>Arch Linux</span>
           </div>
         </summary>
         <div>
-          <p>For instructions please see the <a href="https://github.com/AliveTeam/alive_reversing/blob/master/README.md">README.</a></p>
+          <p>After installing <code>relive-git</code> simply launch <code>relive-ao</code> or <code>relive-ae</code> from a terminal or use the start menu entries.</p>
         </div>
       </details>
 
@@ -165,21 +151,40 @@
         <summary>
           <div>
             <img alt="Tux" src="/imgs/tux_s.webp">
-            <span>Manual (Linux)</span>
+            <span>Manual Linux</span>
           </div>
         </summary>
         <div>
-          <p>These instructions work for both Abe's Oddysee and Abe's Exoddus.</p>
-          <ol>
-            <li><p><code>git clone https://github.com/AliveTeam/alive_reversing.git --recursive</code></p></li>
-            <li><p>Install the development libraries for SDL2 using your distribution's package manager: <code>libsdl2-dev</code> on Ubuntu/Debian, <code>sdl2</code> on Arch, <code>SDL2-devel</code> on Fedora, etc.</p></li>
-            <li><p>Navigate to the cloned repository and call <code>cmake -B build -S .</code> (the dot is important).</p></li>
-            <li><p>Once this is done, you can issue <code>make</code>.</p></li>
-            <li><p>Copy <code>build/Source/relive/relive</code> into the respective game's folder.</p></li>
-            <li><p>Run the game by launching the newly copied executable.</p></li>
-          </ol>
+          <p>Extract <code>relive</code> into the preferred game's folder and install your distribution's SDL package.</p>
         </div>
       </details>
+
+      <details>
+        <summary>
+          <div>
+            <img alt="Visual Studio" src="/imgs/gh_s.webp">
+            <span>Compile from Source</span>
+          </div>
+        </summary>
+        <div>
+          <p>For instructions please see the <a href="https://github.com/AliveTeam/alive_reversing/blob/master/README.md">README.</a></p>
+        </div>
+      </details>
+    </div>
+  </section>
+
+  <section id="editor">
+    <div>
+      <h2>Editor</h2>
+
+      <div class="downloads">
+        <div>
+          <a href="https://github.com/AliveTeam/qt-editor/releases/latest">Download</a>
+        </div>
+        <div>
+          <a href="https://github.com/AliveTeam/qt-editor">Browse</a>
+        </div>
+      </div>
     </div>
   </section>
 

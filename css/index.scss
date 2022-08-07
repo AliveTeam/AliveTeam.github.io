@@ -32,8 +32,14 @@ main {
     margin: 0 auto;
 
     padding: 0;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+
+    #title_blurb {
+        background: rgba(0,0,0, 0.3);
+        border: 1px solid #333;
+        padding: 0 1rem;
+    }
 
     #downloads {
         position: absolute;
@@ -110,16 +116,16 @@ figcaption {
 
 #warning {
     margin: 1rem auto;
-    background: #71171a;
-    border: 1.5px solid #59221f;
-    padding: 1.5rem;
-
-    box-sizing: border-box;
+    border: 1px solid var(--border-color);
+    border-left: 10px solid #71171a;;
+    background: var(--popup-color);
+    padding: 1rem;
 
     h3 {
         margin-top: 0;
         color: white;
-        font-weight: 600;
+        font-weight: 200;
+        font-size: 1.6rem;
     }
 
     p {
@@ -130,13 +136,16 @@ figcaption {
 
 #buygames {
     margin: 1rem auto;
-    background: #343;
-    padding: 1.5rem;
+    border: 1px solid var(--border-color);
+    border-left: 10px solid #454;
+    background: var(--popup-color);
+    padding: 1rem;
 
     h3 {
         margin-top: 0;
         color: white;
-        font-weight: 600;
+        font-weight: 200;
+        font-size: 1.6rem;
     }
 
     p {
@@ -245,38 +254,36 @@ figcaption {
 
     #binaries {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        grid-gap: 1rem;
-        margin: 1rem auto;
+        grid-template-columns: repeat(auto-fit, 280px);
+        justify-content: center;
+        gap: 2rem;
 
-        & > div {
-            padding: 1rem;
-            text-align: center;
-            
-            & > div {
-                display: flex;
-                justify-content: center;
-                align-items: center;
+        margin-bottom: 2.5rem;
 
-                grid-gap: 1rem;
-                word-break: break-word;
+        a {
+            text-decoration: none;
+            padding: 0.75rem;
+
+            border: 1px solid var(--border-color);
+            background-color: var(--popup-color);
+
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+
+            p {
+                font-size: 1.25rem;
+            }
+
+            &:hover {
+                background-color: var(--header-color);
 
                 p {
-                    margin: 0;
-                    font-size: 1.2rem;
+                    color: var(--popup-color);
                 }
 
-                div {
-                    a {
-                        padding: 0.5rem;
-                        background-color: #c39e27;
-                        color: #222;
-                        text-decoration: none;
-                        font-weight: 400;
-                        box-sizing: border-box;
-                        display: block;
-                        font-size: 1.25rem;
-                    }
+                img {
+                    filter: brightness(0);
                 }
             }
         }

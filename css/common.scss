@@ -84,10 +84,22 @@ html
         //--header-color: #0a880a;
         --header-color: #ddc358;
     }
+
+    &[theme="brewv2"]
+    {
+        --color: 120;
+        --bg-color: hsl(var(--color), 20%, 17.5%);
+        --header-color: hsl(48, 66%, 60%);
+        --font-color: hsl(0, 0%, 95%);
+
+        --border-color: hsl(var(--color), 20%, 30%);
+        --spec-color: hsl(var(--color), 20%, 15%); 
+        --popup-color: hsl(var(--color), 20%, 12.5%);
+    }
 }
 
 :root {
-    --width: 1000px;
+    --width: 1100px;
 }
 
 body {
