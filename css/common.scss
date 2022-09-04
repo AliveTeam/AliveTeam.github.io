@@ -30,6 +30,34 @@
     }
 }
 
+.warning {
+    margin: 1rem auto;
+    border: 1px solid var(--border-color);
+    padding: 1rem;
+
+    h3 {
+        margin-top: 0;
+        color: white;
+        font-weight: 200;
+        font-size: 1.6rem;
+    }
+
+    p {
+        margin-bottom: 0;
+        color: white;
+    }
+
+    &#backwards, &#bugs, &#disclaimer {
+        border-left: 10px solid #71171a;;
+        background: var(--popup-color);
+    }
+
+    &#buygames {
+        border-left: 10px solid #454;
+        background: var(--popup-color);
+    }
+}
+
 html
 {
     &[theme="monsaic"] 
