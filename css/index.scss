@@ -10,13 +10,23 @@ main {
 
 div.downloads {
     display: grid;
-    grid-template-columns: repeat(auto-fit, 280px);
+    grid-template-columns: repeat(auto-fit, 220px);
     justify-content: center;
     gap: 2rem;
 
     margin: 2.5rem 0;
 
+    .item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
     a {
+        flex-basis: 100%;
+        width: 100%;
+        justify-self: end;
+
         text-decoration: none;
         padding: 0.75rem;
 
@@ -24,11 +34,18 @@ div.downloads {
         background-color: var(--popup-color);
 
         display: flex;
+        flex-flow: column nowrap;
         align-items: center;
-        gap: 1rem;
+        justify-content: center;
 
         p {
-            font-size: 1.25rem;
+            font-size: 1rem;
+            margin: 0;
+            text-align: center;
+        }
+
+        p.release {
+            font-size: 0.75rem;
         }
 
         &:hover {
@@ -94,7 +111,7 @@ div.downloads {
             margin: 0 auto;
             display: block;
             font-weight: 400;
-        }
+}
 
 
         padding: 1rem;
@@ -259,15 +276,6 @@ figcaption {
         }
     }
 
-}
-
-#editor {
-    div > img:first-of-type {
-        display: block;
-        width: 75%;
-
-        margin: 1rem auto;
-    }
 }
 
 #blog {

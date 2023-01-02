@@ -3,6 +3,39 @@
 
 <link rel="stylesheet" href="/css/index.css">
 
+<script>
+  async function setDate(url, accessor, selector) {
+    const request = await fetch(url);
+    const json = await request.json();
+    const date = new Date(accessor(json));
+    const formatted = new Intl.DateTimeFormat("en-UK", {year: "numeric", month: "short", day: "numeric"}).format(date)
+
+    document.querySelector(selector).innerText = `(${formatted})`
+  }
+
+  window.addEventListener("load", () => {
+
+    setDate(
+      "https://api.github.com/repos/paulsapps/alive_reversing/commits/abi_break_refcount",
+      json => json.commit.author.date,
+      "#last_beta"
+    )
+
+    setDate(
+      "https://api.github.com/repos/AliveTeam/alive_reversing/releases/latest",
+      json => json.created_at,
+      "#last_stable"
+    )
+
+    setDate(
+      "https://api.github.com/repos/AliveTeam/qt-editor/releases/latest",
+      json => json.created_at,
+      "#editor_stable"
+    )
+  })
+
+</script>
+
 <main>
   <section id="title">
     <div>
@@ -23,22 +56,14 @@
   
   <section id="guide">
     <div>
-
       <div class="downloads">
-        <a href="https://github.com/AliveTeam/alive_reversing/releases/latest">
-            <img width="96px" src="imgs/download.webp">
-            <p>Stable Release</p>
-        </a>
+        {% include download.html link="https://github.com/AliveTeam/alive_reversing/releases/latest" text="Stable Release" button="Download" image="download.webp" release="last_stable" %}
 
-        <a href="https://aur.archlinux.org/packages/relive-git">
-          <img width="96px" src="imgs/arch_black.webp">
-          <p>Arch Linux</p>
-        </a>
+        {% include download.html link="https://dev.azure.com/MrSapps/AliveRev/_build?definitionId=1" text="Development Build" button="Download" image="gear.webp" release="last_beta" %}
 
-        <a href="https://github.com/AliveTeam/alive_reversing">
-          <img width="96px" src="imgs/gh.webp">
-          <p>Source code</p>
-        </a>
+        {% include download.html link="https://aur.archlinux.org/packages/relive-git" text="AUR" button="Visit Page" image="arch_black.webp" %}
+
+        {% include download.html link="https://github.com/AliveTeam/alive_reversing" text="Source Code" button="Browse" image="gh.webp" %}
       </div>
 
       <div class="warning" id="bugs">
@@ -174,17 +199,12 @@
 
       <img src="imgs/editor2.png">
 
-      <p>R.E.L.I.V.E. proudly presents the new Level Editor, replacing the old <i>Paul's Level Editor,</i> featuring a lot more options; a brand new, more user-friendly UI; and a lot less unexpected crashes.</p>
+      <p>R.E.L.I.V.E. proudly presents the new Level Editor, replacing the <a href="/legacy.html">legacy</a> <i>Paul's Level Editor,</i> featuring a lot more options; a brand new, more user-friendly UI; and a lot less unexpected crashes.</p>
 
       <div class="downloads">
-        <a href="https://github.com/AliveTeam/qt-editor/releases/latest">
-            <img width="96px" src="imgs/download.webp">
-            <p>Stable Release</p>
-        </a>
-        <a href="https://github.com/AliveTeam/qt-editor">
-            <img width="96px" src="imgs/gh.webp">
-            <p>Browse Code</p>
-        </a>
+        {% include download.html link="https://github.com/AliveTeam/qt-editor/releases/latest" text="Stable Release" button="Download" image="download.webp" release="editor_stable" %}
+
+        {% include download.html link="https://github.com/AliveTeam/qt-editor" text="Source Code" button="Browse" image="gh.webp" %}
       </div>
 
       <div class="warning" id="backwards">

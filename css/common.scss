@@ -265,13 +265,6 @@ footer {
         --width: 95%;
     }
 
-    :not(summary) > div, ul {
-        grid-template-columns: 1fr !important;
-        justify-content: center;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
     header {
         & > div {
             display: block;
