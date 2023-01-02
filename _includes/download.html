@@ -1,0 +1,10 @@
+<div class="item">
+    <img width="96px" src="imgs/{{ include.image }}">
+    <p>{{ include.text }}</p>
+    <a href="{{ include.link }}">
+      <p>{{ include.button }}</p>
+      {% if include.release %}
+      <p class="release" id="{{ include.release }}">...</p>
+      {% endif %}
+    </a>
+</div>
