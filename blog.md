@@ -5,7 +5,7 @@ layout: default
 
 <link rel="stylesheet" href="/css/blog_index.css">
 
-<div id="title">
+<div id="title" markdown=0>
     <div>
         <h1>Devlog</h1>
         <p>Here you can find all the development-related blogposts the team wrote since the beginning.</p>
