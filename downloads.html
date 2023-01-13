@@ -1,0 +1,148 @@
+---
+---
+
+<script>
+  async function setDate(url, accessor, selector) {
+    const request = await fetch(url);
+    const json = await request.json();
+    const date = new Date(accessor(json));
+    const formatted = new Intl.DateTimeFormat("en-UK", {year: "numeric", month: "short", day: "numeric"}).format(date)
+
+    document.querySelector(selector).innerText = `(${formatted})`
+  }
+
+  false && window.addEventListener("load", () => {
+
+    setDate(
+      "https://api.github.com/repos/paulsapps/alive_reversing/commits/abi_break_refcount",
+      json => json.commit.author.date,
+      "#last_beta"
+    )
+
+    setDate(
+      "https://api.github.com/repos/AliveTeam/alive_reversing/releases/latest",
+      json => json.created_at,
+      "#last_stable"
+    )
+
+    setDate(
+      "https://api.github.com/repos/AliveTeam/qt-editor/releases/latest",
+      json => json.created_at,
+      "#editor_stable"
+    )
+  })
+</script>
+
+<main>
+  <section>
+  <div>
+    <div class="downloads">
+      {% include download.html link="https://github.com/AliveTeam/alive_reversing/releases/latest" text="Stable Release" button="Download" image="download.webp" release="last_stable" %}
+
+      {% include download.html link="https://dev.azure.com/MrSapps/AliveRev/_build?definitionId=1" text="Development Build" button="Download" image="gear.webp" release="last_beta" %}
+
+      {% include download.html link="https://aur.archlinux.org/packages/relive-git" text="AUR" button="Visit Page" image="arch_black.webp" %}
+
+      {% include download.html link="https://github.com/AliveTeam/alive_reversing" text="Source Code" button="Browse" image="gh.webp" %}
+    </div>
+
+    <div class="warning" id="bugs">
+      <h3>Here be Scrabs!</h3>
+      <p>
+        While currently both Abe's Oddysee and Abe's Exoddus are in a playable state, both can present unexpected bugs, 
+        crashes and other regressions from the base game. We're working hard on fixing these and your reports help a lot to 
+        nail down where the issues are. If you'd like to see the list of current bugs or report one yourself feel free to check 
+        out the <a href="https://github.com/AliveTeam/alive_reversing/projects/1">bug-tracker.</a>
+      </p>
+    </div>
+
+    <div class="warning" id="buygames">
+      <h3>You have to own the games!</h3>
+      <p>R.E.L.I.V.E. is a passion project created by fans and it will always be free to download
+      and to tinker with. However, since it is just an engine, you have to own the actual game
+      files to use the project.</p>
+      <p>The developers behind R.E.L.I.V.E. do not condone piracy and will never provide the game
+      files to anyone.</p>
+      <p>If you don't own the games, you can <a href="http://www.oddworld.com/buy-games/">buy them
+      here.</a></p>
+    </div>
+
+      <h2>Installation Guide</h2>
+
+      <details>
+        <summary>
+          <div>
+            <img alt="Windows" src="/imgs/windows_s.webp">
+            <span>Windows</span>
+          </div>
+        </summary>
+        <div>
+          <p>These instructions work for both Abe's Oddysee and Abe's Exoddus.</p>
+          <ol>
+            <li><p>Download the zip that fits your architecture (most likely 64-bits) from the links above.</p></li>
+            <li><p>Unzip it somewhere.</p></li>
+            <li><p>Navigate to where you installed the game (GOG asks you where you want to install it, with
+                Steam you can right click on the game, select Manage -> Browse local files).</p></li>
+            <li><p>Copy relive.exe and SDL2.dll to the respective game's folder from the unzipped folder.</p></li>
+            <li><p>Run the game by launching relive.exe.</p></li>
+          </ol>
+        </div>
+      </details>
+
+      <details>
+        <summary>
+          <div>
+            <img alt="Arch" src="/imgs/arch_s.webp">
+            <span>Arch Linux</span>
+          </div>
+        </summary>
+        <div>
+          <p>After installing <code>relive-git</code> simply launch <code>relive-ao</code> or <code>relive-ae</code> from a terminal or use the start menu entries.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>
+          <div>
+            <img alt="Tux" src="/imgs/tux_s.webp">
+            <span>Manual Linux</span>
+          </div>
+        </summary>
+        <div>
+          <p>Extract <code>relive</code> into the preferred game's folder and install your distribution's SDL package.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>
+          <div>
+            <img alt="Visual Studio" src="/imgs/gh_s.webp">
+            <span>Compile from Source</span>
+          </div>
+        </summary>
+        <div>
+          <p>For instructions please see the <a href="https://github.com/AliveTeam/alive_reversing/blob/master/README.md">README.</a></p>
+        </div>
+      </details>
+  </div>
+  </section>
+
+  <section id="editor">
+    <div>
+      <h2>Level Editor</h2>
+
+      <p>R.E.L.I.V.E. proudly presents the new Level Editor, replacing the <a href="/legacy.html">legacy</a> <i>Paul's Level Editor,</i> featuring a lot more options; a brand new, more user-friendly UI; and a lot less unexpected crashes.</p>
+
+      <div class="downloads">
+        {% include download.html link="https://github.com/AliveTeam/qt-editor/releases/latest" text="Stable Release" button="Download" image="download.webp" release="editor_stable" %}
+
+        {% include download.html link="https://github.com/AliveTeam/qt-editor" text="Source Code" button="Browse" image="gh.webp" %}
+      </div>
+
+      <div class="warning" id="backwards">
+        <h3>No backwards compatibility!</h3>
+        <p>Levels created using the new editor are only compatible with R.E.L.I.V.E. Trying to use them with the retail engine will most likely result in a crash or other unexpected bugs and glitches.</p>
+      </div>
+    </div>
+  </section>
+</main>

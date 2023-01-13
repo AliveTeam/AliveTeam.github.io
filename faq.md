@@ -66,6 +66,10 @@ In terms of upcoming features, the following are being worked on:
   
   It is also planned to include an in-game level editor, which would allow mappers to build and test their levels without having to use external tools.
 
+- ### Community Feature Requests
+
+  The community is encouraged to post their feature requests under the project's [GitHub](https://github.com/AliveTeam/alive_reversing/projects/1) page.
+
 </details>
 
 <details>
