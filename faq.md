@@ -6,7 +6,8 @@
 <section>
 <div>
 
-## So what is R.E.L.I.V.E.?
+<details>
+<summary markdown=0>So what is R.E.L.I.V.E.?  </summary>
 
 R.E.L.I.V.E. is a drop-in engine reimplementation for Oddworld: Abe's Oddysee and Exoddus.
 
@@ -18,13 +19,10 @@ In practical terms it is a simple executable you can just drop into the games' r
 [OpenRA]: https://www.openra.net/
 [NXEngine]: https://nxengine.sourceforge.io/
 
-</div>
-</section>
+</details>
 
-<section>
-<div>
-
-## Sounds good, but what exactly can it do?
+<details>
+<summary markdown=0>Sounds good, but what exactly can it do?</summary>
 
 As of now, R.E.L.I.V.E.:
 
@@ -38,13 +36,10 @@ As of now, R.E.L.I.V.E.:
 
 The engine allows all of this while also remaining faithful to the original games. The intent is that (besides not encountering bugs) there should be no noticeable gameplay difference between playing the retail version and R.E.L.I.V.E.
 
-</div>
-</section>
+</details>
 
-<section>
-<div>
-
-## What further features can I expect from the project?
+<details>
+<summary markdown=0>What further features can I expect from the project?</summary>
 
 <figure markdown=0>
 <a href="imgs/roadmap.webp" target="_blank">
@@ -71,13 +66,10 @@ In terms of upcoming features, the following are being worked on:
   
   It is also planned to include an in-game level editor, which would allow mappers to build and test their levels without having to use external tools.
 
-</div>
-</section>
+</details>
 
-<section>
-<div>
-
-## How can I be sure that R.E.L.I.V.E. delivers the same experience as the retail version?
+<details>
+<summary markdown=0>How can I be sure that R.E.L.I.V.E. delivers the same experience as the retail version?</summary>
 
 The simplest way is to just [download] the engine and see for yourself. ;)
 
@@ -101,37 +93,29 @@ But for people looking for a more in-depth answer, the project utilizes several 
 
   The development team includes people with long-term R.E. and Oddworld-hacking experience and also members of the speedrunning community. Because of this many errors have been caught simply by the people working on it being aware of the inner workings of the game.
 
-</div>
-</section>
+</details>
 
-<section>
-<div>
-
-## Are you affiliated with Oddworld Inhabitants?
+<details>
+<summary markdown=0>Are you affiliated with Oddworld Inhabitants?</summary>
 
 **No.** R.E.L.I.V.E. is a completely volunteer-driven fan project. The team is largely made up of members of the now-defunct Oddworld Forums and the Oddworld Speedrunning community. The list of contributors can be found [here](https://github.com/AliveTeam/alive_reversing/graphs/contributors).
 
 As the project is distributed freely, we rely on donations. You can find the list of donors [here](/index.html#supporters-list) and if you wish to donate yourself, you can do so on [Patreon](https://www.patreon.com/alive) or [PayPal](https://paypal.me/paulsapps).
 
-</div>
-</section>
+</details>
 
-<section>
-<div>
+<details>
 
-## Wait, aren't you distributing a paid game?
+<summary markdown=0>Wait, aren't you distributing a paid game?</summary>
 
 **No.** While R.E.L.I.V.E. is passion project that will always be free to download and tinker with, it requires the original game data to function. The developers of the project do not condone piracy and will not provide these game files to anyone.
 
 If you do not own the games, you can buy them [here](http://www.oddworld.com/buy-games/).
 
-</div>
-</section>
+</details>
 
-<section>
-<div>
-
-## Does R.E.L.I.V.E. require stronger specs?
+<details>
+<summary markdown=0>Does R.E.L.I.V.E. require stronger specs?</summary>
 
 Despite the code being far more modern, the answer is **no.** 
 
@@ -139,15 +123,14 @@ R.E.L.I.V.E. was made with running on as many platforms as possible in mind and 
 
 Any computer made in the last two decades should easily be able to run it. The engine so far has been tested to run on a Thinkpad T60 and even jury-rigged to launch on Windows XP, using an ancient £10 GPU.
 
-</div>
-</section>
+</details>
 
-<section>
-<div>
-
-## Why "R.E.L.I.V.E."?
+<details>
+<summary markdown=0>Why "R.E.L.I.V.E."?</summary>
 
 The engine's name is a portmanteau of A.L.I.V.E. (the name of the old engine that drives AO and AE) and the abbreviation of Reverse Engineering. It is also a pun referring to the fact that it breathes new life into these old games and allows them to work as new.
+
+</details>
 
 </div>
 </section>
