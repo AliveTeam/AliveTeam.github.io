@@ -94,40 +94,6 @@ div.downloads {
         border: 1px solid #333;
         padding: 0 1rem;
     }
-
-    #downloads {
-        position: absolute;
-        bottom: -4rem;
-
-        background-color: #222;
-
-        a {
-            border: 1.5px solid #222;
-            padding: 0.5rem;
-            text-align: center;
-            text-decoration: none;
-            background: #c39e27;
-            color: #222;
-            margin: 0 auto;
-            display: block;
-            font-weight: 400;
-}
-
-
-        padding: 1rem;
-        width: 300px;
-        box-sizing: border-box;
-
-        border: 1.5px solid #444;
-
-        p {
-            font-size: 1.2rem;
-            text-align: center;
-            margin-top: 0;
-            color: #c39e27;
-            font-weight: 400;
-        }
-    }
 }
 
 #features {

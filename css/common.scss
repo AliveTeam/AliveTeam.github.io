@@ -124,6 +124,16 @@ html
         --spec-color: hsl(var(--color), 20%, 15%); 
         --popup-color: hsl(var(--color), 20%, 12.5%);
     }
+
+    &[theme="bright"]
+    {
+        --border-color: hsl(0, 0%, 40%);
+        --bg-color: hsl(48, 10%, 85%);
+        --popup-color: hsl(48, 20%, 80%);
+        --font-color: hsl(0, 0%, 10%);
+        --spec-color: hsl(260, 15%, 60%);
+        --header-color: hsl(260, 100%, 20%);
+    }
 }
 
 :root {
