@@ -8,60 +8,6 @@ main {
 @import "header_bg";
 #title::before {background-image: url('/imgs/bg.webp');}
 
-div.downloads {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, 220px);
-    justify-content: center;
-    gap: 2rem;
-
-    margin: 2.5rem 0;
-
-    .item {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    a {
-        flex-basis: 100%;
-        width: 100%;
-        justify-self: end;
-
-        text-decoration: none;
-        padding: 0.75rem;
-
-        border: 1px solid var(--border-color);
-        background-color: var(--popup-color);
-
-        display: flex;
-        flex-flow: column nowrap;
-        align-items: center;
-        justify-content: center;
-
-        p {
-            font-size: 1rem;
-            margin: 0;
-            text-align: center;
-        }
-
-        p.release {
-            font-size: 0.75rem;
-        }
-
-        &:hover {
-            background-color: var(--header-color);
-
-            p {
-                color: var(--popup-color);
-            }
-
-            img {
-                filter: brightness(0);
-            }
-        }
-    }
-}
-
 #title > div {
     display: grid;
 
@@ -127,14 +73,6 @@ div.downloads {
     }
 }
 
-#roadmap {
-    #halver {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-gap: 2rem;
-    }
-}
-
 #support { 
     margin-top: 2rem;
     margin-bottom: 2rem;
@@ -183,58 +121,6 @@ div.downloads {
             list-style-type: none;
         }
     }
-}
-
-#guide {
-    // For Chrome
-    details summary::-webkit-details-marker {
-        display:none;
-    }
-
-    details {
-        border: 1px solid var(--border-color);
-        background-color: var(--spec-color);
-
-        margin-bottom: 1rem;
-
-        &[open] summary {
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        summary {
-            cursor: pointer;
-            background-color: var(--popup-color);
-            list-style-type: none;
-
-            & > div {
-                display: inline-grid;
-                align-items: center;
-                grid-template-columns: 32px auto;
-                padding: 0.5rem;
-                grid-gap: 1rem;
-            }
-
-            img {
-                width: 32px;
-            }
-        }
-
-        & > div {
-            padding: 1rem;
-
-            ol {
-                padding-left: 1rem;
-                margin: 0;
-
-                & > li:first-child p { margin-top: 0;}
-                & > li:last-child p { margin-bottom: 0;}
-            }
-
-            & > p:first-child { margin-top: 0;}
-            & > p:last-child { margin-bottom: 0;}
-        }
-    }
-
 }
 
 #blog {
