@@ -1,0 +1,28 @@
+---
+---
+
+details {
+  border: 1px solid var(--border-color);
+  box-sizing: border-box;
+
+  margin-bottom: 1rem;
+
+  div {
+    padding: 0.5rem;
+
+    *:first-child {margin-top: 0;}
+    *:last-child {margin-bottom: 0;}
+  }
+
+  summary {
+    border-bottom: 1px solid var(--border-color);
+    display: block;
+    font-size: 1.25rem;
+    box-sizing: border-box;
+
+    padding: 0.5rem;
+
+    color: var(--header-color);
+    background: var(--spec-color);
+  }
+}

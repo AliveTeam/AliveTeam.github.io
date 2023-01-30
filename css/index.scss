@@ -5,11 +5,6 @@
 
 :root {
   --mWidth: 1100px;
-  --bg: hsl(260, 20%, 20%);
-  --header-color: hsl(48, 66%, 60%);
-  --font-color: hsl(0, 0%, 95%);
-
-  --c-1: hsl(0, 0, 0%);
 }
 
 body {
@@ -59,10 +54,11 @@ section {
   background-size: 100%;
 
   padding-bottom: 0;
+  padding-top: 6rem;
 
   >div {
     background: white;
-    // border: 1px solid black;
+    // border: 1px solid var(--border);
     padding: 1rem 2rem;
     box-sizing: content-box;
     background-color: var(--bg);
@@ -151,9 +147,11 @@ section {
 
     >div {
       width: Min(350px, 100vw);
-      border: 1px solid black;
+      border: 1px solid var(--border);
       padding: 0.5rem;
       box-sizing: border-box;
+
+      background: var(--panel);
 
       .type {
         display: flex;
@@ -193,8 +191,13 @@ section {
           text-decoration: none;
 
           padding: 0.5rem 0;
-          border: 1px solid black;
-          color: black;
+          border: 1px solid var(--border);
+          color: var(--font-color);
+
+          &:hover {
+            background: var(--header-color);
+            color: black;
+          }
         }
       }
 
@@ -227,7 +230,7 @@ section {
       justify-content: center;
       align-items: center;
 
-      border: 1px solid black;
+      border: 1px solid var(--border);
       padding: 0.5rem;
 
       box-sizing: border-box;
@@ -252,7 +255,7 @@ section {
 
 #blog>div {
   >div {
-    border: 1px solid black;
+    border: 1px solid var(--border);
     padding: 0.5rem;
 
     *:first-child {margin-top: 0;}

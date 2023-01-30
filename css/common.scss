@@ -3,150 +3,42 @@
 
 @import "fonts";
 
-.popup {
-    border: 1.5px solid var(--border-color);
-    background-color: var(--popup-color);
+@import "header";
+@import "footer";
 
-    & > *:first-child {
-        margin-top: 0;
-    }
-
-    & > *:last-child {
-        margin-bottom: 0;
-    }
-}
-
-.button {
-    text-decoration: none;
-    padding: 0.4rem 0;
-    border: 1.5px solid var(--border-color);
-    text-align: center;
-    display: block;
-    color: var(--font-color);
-
-    transition: background-color 0.25s;
-    &:hover {
-        background-color: var(--spec-color);
-    }
-}
-
-.warning {
-    margin: 1rem auto;
-    border: 1px solid var(--border-color);
-    padding: 1rem;
-
-    h3 {
-        margin-top: 0;
-        color: white;
-        font-weight: 200;
-        font-size: 1.6rem;
-    }
-
-    p {
-        margin-bottom: 0;
-        color: white;
-    }
-
-    &#backwards, &#bugs, &#disclaimer {
-        border-left: 10px solid #71171a;;
-        background: var(--popup-color);
-    }
-
-    &#buygames {
-        border-left: 10px solid #454;
-        background: var(--popup-color);
-    }
+:root {
+    --width: 1100px;
 }
 
 html
 {
-    &[theme="monsaic"] 
-    {
-        --border-color: #416841;
-        --spec-color: #354d32;
-        --bg-color: #202a20;
-        --popup-color: #243b23;
-        --font-color: #fafafa;
-        --header-color: #ddc358;
-    }
-
-    &[theme="scrabania"]
-    {
-        --border-color: #c7a65e;
-        //--spec-color: #8d6e3a; 
-        --spec-color: #9d4646; 
-        --bg-color: #3f1d0f;
-        //--popup-color: #635234; 
-        --popup-color: #894721;
-        --font-color: #fafafa;
-        --header-color: #ddc358;
-    }
-
-    &[theme="stockyardsv1"]
-    {
-        --border-color: #c7a65e;
-        --spec-color: #30304a; 
-        --bg-color: #10102a;
-        --popup-color: #202040; 
-        --font-color: #fafafa;
-        --header-color: #ddc358;
-    }
-
-    &[theme="stockyardsv2"]
-    {
-        --border-color: #3a5d85;
-        --spec-color: #30404f; 
-        --bg-color: #10203a;
-        --popup-color: #203040;
-        --font-color: #fafafa;
-        --header-color: #ddc358;
-    }
-
-    &[theme="brew"]
-    {
-        --border-color: #513a85;
-        --spec-color: #39304f; 
-        --bg-color: #212;
-        --popup-color: #2a2040;
-        --font-color: #fafafa;
-        //--header-color: #0a880a;
-        --header-color: #ddc358;
-    }
-
-    &[theme="brewv2"]
+    &[theme="old"]
     {
         --color: 260;
         --bg-color: hsl(var(--color), 20%, 17.5%);
-        --header-color: hsl(48, 66%, 60%);
+        --header-color: hsl(48, 77%, 50%);
         --font-color: hsl(0, 0%, 95%);
 
         --border-color: hsl(var(--color), 20%, 30%);
-        --spec-color: hsl(var(--color), 20%, 15%); 
-        --popup-color: hsl(var(--color), 20%, 12.5%);
+        --spec-color: hsl(var(--color), 20%, 16%); 
+        --popup-color: hsl(var(--color), 20%, 14.5%);
     }
 
-    &[theme="bright"]
+    &[theme="dark"]
     {
-        --border-color: hsl(0, 0%, 40%);
-        --bg-color: hsl(48, 10%, 85%);
-        --popup-color: hsl(48, 20%, 80%);
-        --font-color: hsl(0, 0%, 10%);
-        --spec-color: hsl(260, 15%, 60%);
-        --header-color: hsl(260, 100%, 20%);
-    }
-}
+        --header-color: hsl(48, 66%, 60%);
+        --font-color: hsl(0, 0%, 95%);
 
-:root {
-    --width: 1400px;
+        --bg: hsl(260, 20%, 20%);
+        --panel: hsl(260, 20%, 25%);
+        --border: hsl(260, 20%, 40%);
+    }
 }
 
 body {
-    font-family: 'Ubuntu', sans-serif;
-    font-weight: 200;
+    font-family: 'Montserrat', sans-serif;
     color: var(--font-color);
     background-color: var(--bg-color);
-
-    text-rendering: optimizeLegibility;
 
     margin: 0;
 
@@ -206,7 +98,7 @@ main {
     flex: 1;
     width: 100%;
 
-    line-height: 1.5;
+    // line-height: 1.5;
 
     * {
         max-width: 100%;
@@ -215,116 +107,58 @@ main {
     }
 }
 
-header {
-    height: 50px;
-    border-bottom: 1.5px solid var(--border-color);
-    background: var(--popup-color);
+.popup {
+    border: 1.5px solid var(--border-color);
+    background-color: var(--popup-color);
 
-    & > div {
-        height: inherit;
-        max-width: var(--width);
-        margin: 0 auto;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
+    & > *:first-child {
+        margin-top: 0;
+    }
 
-        a {
-            display: flex;
-            text-decoration: none;
-
-            h1 {
-                margin: 0;
-                margin-left: 0.3rem;
-                font-size: 2rem;
-            }
-
-            img {
-                display: block;
-                height: 2rem;
-            }
-        }
-
-        nav {
-            display: flex;
-            height: 100%;
-            border-right: 1.5px solid var(--border-color);
-
-            a {
-                text-decoration: none;
-                color: var(--font-color);
-                padding: 0 1rem;
-                height: 100%;
-                border-left: 1.5px solid var(--border-color);
-
-                align-items: center;
-
-                p {
-                    margin: 0;
-                }
-
-                &:hover {
-                    background-color: var(--spec-color);
-                }
-            }
-        }
+    & > *:last-child {
+        margin-bottom: 0;
     }
 }
 
-footer {
-    background: var(--popup-color);
+.button {
+    text-decoration: none;
+    padding: 0.4rem 0;
+    border: 1.5px solid var(--border-color);
+    text-align: center;
+    display: block;
+    color: var(--font-color);
 
+    transition: background-color 0.25s;
+    &:hover {
+        background-color: var(--spec-color);
+    }
+}
+
+.warning {
+    margin: 1rem auto;
+    border: 1px solid var(--border-color);
     padding: 1rem;
-    border-top: 1.5px solid var(--border-color);
+
+    h3 {
+        margin-top: 0;
+        color: white;
+        font-weight: 200;
+        font-size: 1.6rem;
+    }
 
     p {
-        //margin: 0;
-        color: var(--font-color);
-        text-align: center;
-        font-weight: bold;
+        margin-bottom: 0;
+        color: white;
+    }
+
+    &#backwards, &#bugs, &#disclaimer {
+        border-left: 10px solid #71171a;;
+        background: var(--popup-color);
+    }
+
+    &#buygames {
+        border-left: 10px solid #454;
+        background: var(--popup-color);
     }
 }
 
-@media (orientation: portrait) {
-    :root {
-        --width: 95%;
-    }
-
-    header {
-        & > div {
-            display: block;
-            width: 100%;
-            max-width: unset;
-            padding: 0.2rem;
-            box-sizing: border-box;
-            
-            nav {
-                display: block;
-                border-right: none;
-
-                a {
-                    border-left: none;
-                    padding: 0;
-                    height: 48px;
-                    margin-top: 0.1rem;
-                    margin-bottom: 0.1rem;
-                }
-            }
-        }
-
-        height: unset;
-    }
-
-    #title > div {
-        padding: 1rem !important;
-        grid-gap: 1rem !important;
-
-        img {
-            margin: 0 auto;
-            max-width: 240px !important;
-        }
-    }
-
-    body {
-        min-width: unset;
-    }
-}
