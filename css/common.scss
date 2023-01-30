@@ -5,50 +5,33 @@
 
 @import "header";
 @import "footer";
+@import "theme";
 
 :root {
     --width: 1100px;
 }
 
-html
-{
-    &[theme="old"]
-    {
-        --color: 260;
-        --bg-color: hsl(var(--color), 20%, 17.5%);
-        --header-color: hsl(48, 77%, 50%);
-        --font-color: hsl(0, 0%, 95%);
-
-        --border-color: hsl(var(--color), 20%, 30%);
-        --spec-color: hsl(var(--color), 20%, 16%); 
-        --popup-color: hsl(var(--color), 20%, 14.5%);
-    }
-
-    &[theme="dark"]
-    {
-        --header-color: hsl(48, 66%, 60%);
-        --font-color: hsl(0, 0%, 95%);
-
-        --bg: hsl(260, 20%, 20%);
-        --panel: hsl(260, 20%, 25%);
-        --border: hsl(260, 20%, 40%);
-    }
-}
-
 body {
-    font-family: 'Montserrat', sans-serif;
-    color: var(--font-color);
-    background-color: var(--bg-color);
+    background: var(--bg);
+    font-family: 'Montserrat';
+    font-size: 16px;
 
     margin: 0;
+    padding: 0;
 
-    font-size: 18px;
+    color: var(--font-color);
+    h1,a { color: var(--header-color); }
 
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
-    min-width: calc(var(--width) * 1.1);
+    main {
+        flex-basis: 100%;
+        flex-grow: 1;
+    }
 }
+
+* {box-sizing: border-box;}
 
 figure {
     margin: 0;
@@ -56,25 +39,10 @@ figure {
     p {
         margin: 0;
     }
-}
 
-figcaption {
-    text-align: center;
-}
-
-h1,h2,h3,h4 {
-    font-weight: 300;
-    color: var(--header-color);
-}
-
-a {
-    color: var(--header-color);
-}
-
-h2 {
-    font-size: 1.5rem;
-    margin-top: 1.25rem;
-    margin-bottom: 1.25rem;
+    figcaption {
+        text-align: center;
+    }
 }
 
 code {
@@ -86,79 +54,60 @@ code {
     font-weight: 400;
 }
 
-main section > div {
-    max-width: var(--width);
-    margin: 0 auto;
-}
 
-main {
-    margin: 0 auto;
-    background: var(--bg-color);
-    color: var(--font-color);
-    flex: 1;
-    width: 100%;
-
-    // line-height: 1.5;
-
-    * {
-        max-width: 100%;
-
-        border-radius: 2px;
-    }
-}
-
+/*
 .popup {
-    border: 1.5px solid var(--border-color);
-    background-color: var(--popup-color);
+border: 1.5px solid var(--border-color);
+background-color: var(--popup-color);
 
-    & > *:first-child {
-        margin-top: 0;
-    }
+& > *:first-child {
+margin-top: 0;
+}
 
-    & > *:last-child {
-        margin-bottom: 0;
-    }
+& > *:last-child {
+margin-bottom: 0;
+}
 }
 
 .button {
-    text-decoration: none;
-    padding: 0.4rem 0;
-    border: 1.5px solid var(--border-color);
-    text-align: center;
-    display: block;
-    color: var(--font-color);
+text-decoration: none;
+padding: 0.4rem 0;
+border: 1.5px solid var(--border-color);
+text-align: center;
+display: block;
+color: var(--font-color);
 
-    transition: background-color 0.25s;
-    &:hover {
-        background-color: var(--spec-color);
-    }
+transition: background-color 0.25s;
+&:hover {
+background-color: var(--spec-color);
+}
 }
 
 .warning {
-    margin: 1rem auto;
-    border: 1px solid var(--border-color);
-    padding: 1rem;
+margin: 1rem auto;
+border: 1px solid var(--border-color);
+padding: 1rem;
 
-    h3 {
-        margin-top: 0;
-        color: white;
-        font-weight: 200;
-        font-size: 1.6rem;
-    }
-
-    p {
-        margin-bottom: 0;
-        color: white;
-    }
-
-    &#backwards, &#bugs, &#disclaimer {
-        border-left: 10px solid #71171a;;
-        background: var(--popup-color);
-    }
-
-    &#buygames {
-        border-left: 10px solid #454;
-        background: var(--popup-color);
-    }
+h3 {
+margin-top: 0;
+color: white;
+font-weight: 200;
+font-size: 1.6rem;
 }
 
+p {
+margin-bottom: 0;
+color: white;
+}
+
+&#backwards, &#bugs, &#disclaimer {
+border-left: 10px solid #71171a;;
+background: var(--popup-color);
+}
+
+&#buygames {
+border-left: 10px solid #454;
+background: var(--popup-color);
+}
+}
+ */
