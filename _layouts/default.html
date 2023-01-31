@@ -15,29 +15,10 @@
     <meta property="og:image" content="https://aliveteam.github.io/imgs/scrab.webp">
   </head>
   <body>
-    <header>
-      <div>
-        <a href="/index.html">
-          <img alt="R.E.L.I.V.E. Engine logo" src="/imgs/scrab.webp">
-          <h1>R.E.L.I.V.E.</h1>
-        </a>
-        <nav>
-          <a href="/downloads"><p>Downloads</p></a>
-          <a href="/faq"><p>FAQ</p></a>
-          <a href="/blog"><p>Blog</p></a>
-          <a href="/legacy"><p>Legacy</p></a>
-          <a href="/index.html#support"><p>Support us!</p></a>
-        </nav>
-      </div>
-    </header>
+{% include header.html %}
 
 {{ content }}
 
-    <footer>
-      <div>
-        <p>2018-2023, The R.E.L.I.V.E. Team</p>
-        <p>Site created by <a href="https://oddwords.hu">Nemin</a> with help by THEONLYDarkShadow.</p>
-      </div>
-    </footer>
+{% include footer.html %}
   </body>
 </html>
