@@ -20,7 +20,7 @@
 
       <div id="description">
         <p><strong>R.E.L.I.V.E.</strong> is a fan effort to create a new, cross-platform engine, capable of replacing
-        Digital Dialect's aging PC port for Oddworld's first two cult-classic games.</p>
+        Digital Dialect's aging PC ports for Oddworld's first two cult-classic games.</p>
         <p>More than twenty years after their release, both games struggle to run on modern platforms; usually requiring a
         third-party application like DxWnd just to run them properly or outright refusing to work for some.</p>
         <p>R.E.L.I.V.E. intends to become a complete replacement of both the original AbeWin.exe/Exoddus.exe and any
@@ -163,6 +163,19 @@
       </div>
     </section>
 
+
+
+    <section id="blog">
+      <div>
+        <p class="header">Latest on the Blog</p>
+
+        <div>
+          <h3><a href="{{site.posts[0].url}}">{{site.posts[0].title}}</a></h3>
+          <p>{{site.posts[0].content | truncatewords: 300}}</p>
+        </div>
+      </div>
+    </section>
+
     <section id="support">
       <div>
         <p class="header">Support us</p>
@@ -225,16 +238,4 @@
           </div>
         </div>
     </section>
-
-    <section id="blog">
-      <div>
-        <p class="header">Latest on the Blog</p>
-
-        <div>
-          <h3><a href="{{site.posts[0].url}}">{{site.posts[0].title}}</a></h3>
-          <p>{{site.posts[0].content | truncatewords: 300}}</p>
-        </div>
-      </div>
-    </section>
-
   </main>
