@@ -4,7 +4,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap');
 
 section {
-  padding: 3rem 2rem;
+  padding: 2rem 2rem;
 
   .header {
     font-size: 2.5rem;
@@ -17,13 +17,6 @@ section {
     width: fit-content;
     box-sizing: content-box;
   }
-
-  &>div {
-    width: var(--width);
-    margin: 0 auto;
-
-    max-width: calc(100vw - 4rem);
-  }
 }
 
 #splash {
@@ -33,11 +26,10 @@ section {
   background-size: 100%;
 
   padding-bottom: 0;
-  padding-top: 6rem;
+  padding-top: 4rem;
 
   >div {
     background: white;
-    // border: 1px solid var(--border);
     padding: 1rem 2rem;
     box-sizing: content-box;
     background-color: var(--bg);
@@ -49,12 +41,14 @@ section {
     margin-top: 0;
     margin-bottom: 0.25rem;
 
+    line-height: 1;
   }
 
   h2 {
     font-size: 2rem;
     font-weight: 600;
     margin-top: 0;
+    line-height: 1;
   }
 
   #start {
@@ -62,7 +56,7 @@ section {
     justify-content: space-between;
 
     img {
-      max-height: 10rem;
+      max-height: 9rem;
     }
   }
 
@@ -96,7 +90,7 @@ section {
     margin: 0 auto;
     
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(auto-fit, Min(calc(100vw - 4rem), 525px));
     list-style-type: none;
 
     p {
@@ -107,7 +101,7 @@ section {
       font-weight: 500;
       font-size: 1.25rem;
       display: block;
-      margin-bottom: 0.5rem;
+      color: var(--header-color);
     }
 
   }
@@ -116,16 +110,14 @@ section {
 #downloads>div {
   .header {text-align: center;}
 
-  >div {
+  .panels {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     flex-wrap: wrap;
     row-gap: 1rem;
-    width: var(--width);
-    margin: 0 auto;
 
     >div {
-      width: Min(350px, 100vw);
+      width: Min(355px, 100vw);
       border: 1px solid var(--border);
       padding: 0.5rem;
       box-sizing: border-box;
@@ -181,19 +173,40 @@ section {
       }
 
       &.editor .links a:last-of-type {
-        padding: 1.85rem 0;
+        padding: 2rem 0;
       }
 
+    }
+  }
+
+  .buttons {
+    margin-top: 1rem;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 1rem;
+
+    a {
+      font-size: 1.5rem;
+
+      color: var(--font-color);
+      &:hover {
+        color: black;
+        background: var(--header-color);
+      }
+
+      text-align: center;
+      flex-basis: calc(50% - 0.5rem);
+
+      padding: 1rem 0;
+      border: 1px solid var(--border);
+      background: var(--panel);
     }
   }
 }
 
 #support>div {
-  >div {
-    width: var(--width);
-    margin: 0 auto;
-  }
-
   .links {
 
     display: grid;
@@ -213,6 +226,8 @@ section {
       padding: 0.5rem;
 
       box-sizing: border-box;
+      background: var(--panel);
+      &:hover {background: var(--header-color);}
     }
 
     img {
@@ -220,22 +235,39 @@ section {
     }
   }
 
-  #supporters-list ul {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    justify-content: center;
 
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
+  #supporters-list {
+    margin-top: 2rem;
+
+    border: 1px solid var(--border);
+    background: var(--panel);
+    padding: 0.5rem;
+
+    h2 {
+      margin-top: 0;
+      border-bottom: 0.2rem solid var(--header-color);
+      width: fit-content;
+    }
+
+    ul {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, 200px);
+      row-gap: 0.5rem;
+
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+    }
   }
 }
 
 #blog>div {
   >div {
+    background: var(--panel);
     border: 1px solid var(--border);
     padding: 0.5rem;
+
+    h3 a {font-size: 2rem; text-decoration: none;}
 
     *:first-child {margin-top: 0;}
     *:last-child {margin-bottom: 0;}

@@ -1,12 +1,12 @@
 header {
     height: 50px;
-    border-bottom: 1.5px solid var(--border-color);
-    background: hsl(260, 20%, 15%);
+    border-bottom: 1.5px solid var(--border);
+    background: hsl(260, 30%, 17.5%);
 
     position: sticky;
     top: 0;
 
-    & > div {
+    >div {
         height: inherit;
         max-width: var(--width);
         margin: 0 auto;
@@ -14,9 +14,22 @@ header {
         align-items: center;
         justify-content: space-between;
 
+        >a {
+            border-left: 1px solid var(--border);
+            border-right: 1px solid var(--border);
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+
         a {
             display: flex;
             text-decoration: none;
+
+            align-items: center;
+
+            &:hover {
+                background-color: var(--panel);
+            }
 
             h1 {
                 margin: 0;
@@ -33,14 +46,14 @@ header {
         nav {
             display: flex;
             height: 100%;
-            border-right: 1.5px solid var(--border-color);
+            border-right: 1.5px solid var(--border);
 
             a {
                 text-decoration: none;
                 color: var(--font-color);
                 padding: 0 1rem;
                 height: 100%;
-                border-left: 1.5px solid var(--border-color);
+                border-left: 1.5px solid var(--border);
 
                 align-items: center;
 
@@ -49,7 +62,7 @@ header {
                 }
 
                 &:hover {
-                    background-color: var(--spec-color);
+                    background-color: var(--panel);
                 }
             }
         }
