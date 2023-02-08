@@ -43,8 +43,12 @@
           </li>
           <li class="popup">
             <p>
-            <span>Windowed mode</span>
-            <span>Simply press F12 and the game goes into windowed mode or back to fullscreen on the fly.</span>
+            <span>Video Settings</span>
+            <span>
+              F12 switches fullscreen-mode on and off on the fly.<br>
+              F11 toggles between preserving the aspect-ratio or stretching your game.<br>
+              F10 allows you to apply a smoothing filter or enjoy your pixels raw.
+            </span>
             </p>
           </li>
           <li class="popup">
@@ -83,7 +87,7 @@
         <script src="./fetch_links.js"></script>
 
         <div class="panels">
-          <div class="stable">
+          <div class="downloadPanel stable">
             <div class="type">
               <p>Stable</p>
               <p class="release" id="last_stable">(...)</p>
@@ -106,7 +110,7 @@
             </div>
           </div>
 
-          <div class="beta">
+          <div class="downloadPanel beta">
             <div class="type">
               <p>Beta</p>
               <p class="release" id="last_beta">(...)</p>
@@ -143,8 +147,8 @@
 
       <div class="warning" id="buygames">
         <h3>You have to own the games!</h3>
-        <p>R.E.L.I.V.E. is a passion project created by fans and it will always be free to download and to tinker with. However, since it is just an engine, you
-          have to own the actual game files to use the project.</p>
+        <p>R.E.L.I.V.E. is a passion project created by fans and it will always be free to download and to tinker with. However, since it is
+        just an engine, you have to own the actual game files to use the project.</p>
         <p>The developers behind R.E.L.I.V.E. do not condone piracy and will never provide the game files to anyone.</p>
         <p>If you don't own the games, you can <a href="http://www.oddworld.com/buy-games/">buy them here.</a></p>
       </div>
@@ -155,18 +159,38 @@
       <div>
         <p class="header">Level Editor</p>
 
-          <div class="editor">
-            <div class="type">
-              <p>Level Editor</p>
-              <p class="release" id="editor_stable">(...)</p>
-            </div>
+        <div class="imageWrapper">
+          <img src="/imgs/editor2.png">
+        </div>
 
-            <div class="links">
-              <a class="artifact" data-type="editor_win64" href="https://github.com/AliveTeam/qt-editor/releases/latest">Download</a>
-              <a class="artifact" data-type="editor_win32" href="https://github.com/AliveTeam/qt-editor/releases/latest">Windows 32-bit</a>
-              <a href="https://github.com/AliveTeam/qt-editor">Source</a>
-            </div>
+        <div class="split">
+          <div class="text">
+            <p>Team R.E.L.I.V.E. proudly presents the replacement for the <a href="/legacy.html">legacy</a> <i>Paul's Level Editor.</i></p>
+            <p>Compared to the old editor it allows for editing far more kinds of objects, removes the arbitrarty limitations the original engine imposed,
+            and features a vastly improved user interface.</p>
           </div>
+
+            <div class="downloadPanel editor">
+              <div class="type">
+                <p>Level Editor</p>
+                <p class="release" id="editor_stable">(...)</p>
+              </div>
+
+              <div class="links">
+                <a class="artifact" data-type="editor_win64" href="https://github.com/AliveTeam/qt-editor/releases/latest">Download</a>
+                <a class="artifact" data-type="editor_win32" href="https://github.com/AliveTeam/qt-editor/releases/latest">Windows 32-bit</a>
+                <a href="https://github.com/AliveTeam/qt-editor">Source</a>
+              </div>
+            </div>
+        </div>
+
+        <div class="warning">
+          <h3>Not backwards-compatible!</h3>
+          <p>The new editor waas created with R.E.L.I.V.E. in mind. Trying to use levels edited with it in the retail engine is likely to
+          result in crashes, bugs, and glitches. Support for the old engine and the legacy editor are not part of the scope of the project
+          and users are encouraged to upgrade.</p>
+        </div>
+
       </div>
     </section>
 

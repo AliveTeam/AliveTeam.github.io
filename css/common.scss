@@ -71,3 +71,22 @@ code {
     font-family: "Ubuntu Mono", monospace;
     font-weight: 400;
 }
+
+.warning {
+    background: var(--panel);
+    border: 1px solid var(--lightGray);
+
+    border-left: 10px solid var(--red);
+
+    margin: 2rem 0;
+    padding: 0.5rem;
+
+    h3 {
+    margin-bottom: 0.5rem; 
+    line-height: 1;
+    font-size: 1.5rem;
+    }
+
+    *:first-child {margin-top: 0;}
+    *:last-child {margin-bottom: 0;}
+}

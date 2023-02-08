@@ -107,7 +107,37 @@ section {
   }
 }
 
+#downloads {
+  background: hsl(100, 20%, 30%);
+  --panel: hsl(100, 20%, 35%);
+  --border: hsl(100, 20%, 15%);
+}
+
+#blog {
+  background: #111;
+  --panel: #222;
+  --border: #333;
+}
+
+#support {
+  --font-color: #222;
+
+  --header-color: #444;
+  --bg: hsl(48, 65%, 45%);
+  --panel: #efefef;
+  --border: hsl(48, 75%, 30%);
+
+  background: var(--bg);
+  color: var(--font-color);
+
+
+  .header {
+    border-bottom-color: #efefef; 
+  }
+}
+
 #downloads>div {
+
   .header {text-align: center;}
 
   .panels {
@@ -116,66 +146,8 @@ section {
     flex-wrap: wrap;
     row-gap: 1rem;
 
-    >div {
-      width: Min(355px, 100vw);
-      border: 1px solid var(--border);
-      padding: 0.5rem;
-      box-sizing: border-box;
-
-      background: var(--panel);
-
-      .type {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-
-        p {
-          margin: 0;
-
-          &:first-child {
-            font-size: 1.5rem;
-          }
-        }
-      }
-
-      .links {
-        margin-top: 0.5rem;
-
-        display: flex;
-        flex-direction: column;
-
-        gap: 0.25rem;
-
-        div {
-          display: flex;
-          gap: 0.25rem;
-        }
-
-        >a:first-of-type {
-          padding: 1rem 0;
-          font-size: 1.25rem;
-        }
-
-        a {
-          text-align: center;
-          flex-basis: 100%;
-          text-decoration: none;
-
-          padding: 0.5rem 0;
-          border: 1px solid var(--border);
-          color: var(--font-color);
-
-          &:hover {
-            background: var(--header-color);
-            color: black;
-          }
-        }
-      }
-
-      &.editor .links a:last-of-type {
-        padding: 2rem 0;
-      }
-
+    .downloadPanel {
+      width: Min(370px, 100vw);
     }
   }
 
@@ -188,6 +160,7 @@ section {
     gap: 1rem;
 
     a {
+      min-width: 370px;
       font-size: 1.5rem;
 
       color: var(--font-color);
@@ -261,6 +234,26 @@ section {
   }
 }
 
+#editor>div {
+  .imageWrapper {width: Min(1000px); max-width: calc(100% - 4rem); margin: 1rem auto; img {width: 100%;}}
+
+  .split {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+
+    .text {
+      flex-basis: 40%;
+      flex-grow: 1;
+    }
+
+    .downloadPanel {
+      width: Min(400px, 100vw);
+    }
+  }
+}
+
 #blog>div {
   >div {
     background: var(--panel);
@@ -272,4 +265,65 @@ section {
     *:first-child {margin-top: 0;}
     *:last-child {margin-bottom: 0;}
   }
+}
+
+.downloadPanel {
+  border: 1px solid var(--border);
+  padding: 0.5rem;
+  box-sizing: border-box;
+
+  background: var(--panel);
+
+  .type {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    p {
+      margin: 0;
+
+      &:first-child {
+        font-size: 1.5rem;
+      }
+    }
+  }
+
+  .links {
+    margin-top: 0.5rem;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 0.25rem;
+
+    div {
+      display: flex;
+      gap: 0.25rem;
+    }
+
+    >a:first-of-type {
+      padding: 1rem 0;
+      font-size: 1.25rem;
+    }
+
+    a {
+      text-align: center;
+      flex-basis: 100%;
+      text-decoration: none;
+
+      padding: 0.5rem 0;
+      border: 1px solid var(--border);
+      color: var(--font-color);
+
+      &:hover {
+        background: var(--header-color);
+        color: black;
+      }
+    }
+  }
+
+  &.editor .links a:last-of-type {
+    padding: 2rem 0;
+  }
+
 }
