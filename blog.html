@@ -12,9 +12,13 @@ layout: default
     </div>
 </div>
 
-<div markdown=1 id="blog_root">
-{% for post in site.posts %}
-* {: .popup} ### [{{post.title}}]({{post.url}})
-    {{ post.content | truncatewords: 40 }} 
-{% endfor %}
+<div id="blog_root">
+    <ul>
+    {% for post in site.posts %}
+    <li class="popup">
+        <a href="{{post.url}}"> <p class="header">{{post.title}}</p></a>
+        <div class="content"> {{ post.content | truncatewords: 40 }} </div>
+    </li>
+    {% endfor %}
+    </ul>
 </div>

@@ -3,97 +3,73 @@
 
 @import "header_bg";
 #title::before {
-  background-image: url("/imgs/bg2.webp");
+  background-image: url("/imgs/bg1.webp");
 }
 
 #blogpost {
-  max-width: var(--width);
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 75% 25%;
-  grid-gap: 1rem;
+  width: Min(var(--width), 100vw);
+  margin: 1rem auto;
 
-  padding: 2rem 0;
-}
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 
-h1 {
-  margin-top: 0;
+  border: 1px solid var(--border);
+  box-sizing: border-box;
 }
 
 #content {
-  padding: 1rem;
-  text-align: justify;
+  max-width: 800px;
+  flex-basis: 800px;
 
-  li {
-    margin-bottom: 0.75rem;
+  display: flex;
+  flex-direction: column;
+
+  border-right: 1px solid var(--border);
+
+  >div {
+    flex-basis: 100%;
+    padding: 1rem;
+    background-color: var(--panel);
+
+    >*:first-child {margin-top: 0;}
+    >*:last-child {margin-bottom: 0;}
   }
-}
 
-#poster {
-  font-size: 1.5rem;
-  margin: 0;
+  video,img {
+    max-width: 100%;
+  }
 }
 
 #sidebar {
-  height: max-content;
-  position: sticky;
-  top: 1rem;
-
-  border: 1.5px solid var(--border-color);
-  background: var(--popup-color);
-
-  padding: 1rem;
-
-  ul {
-    padding-left: 1rem;
-  }
+  flex-basis: 298px;
 
   h3 {
-    margin-top: 0;
-  }
-}
-
-#footer {
-  background: var(--spec-color);
-  padding: 1rem;
-  margin: -1rem;
-  margin-top: 3rem;
-
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-
-  p {
-    margin-top: 0;
-    margin-bottom: 0;
-
-    min-width: 115px;
-  }
-
-  a {
-    padding: 0.5rem 1rem;
-    background: #222;
-    border: 1px solid var(--border-color);
-    box-sizing: border-box;
-
-    text-decoration: none;
-    display: block;
-    width: 100%;
     text-align: center;
-    font-weight: bold;
-
     margin: 0;
+    padding: 0.5rem 0;
+    background-color: #222;
   }
-}
 
-@media (orientation: portrait) {
-  #blogpost {
-    display: block;
-    text-align: justify;
+  ul {
+    margin: 0;
+    padding: 0.5rem;
+    padding-left: 1.5rem;
 
-    #sidebar {
-      margin-top: 1rem;
-      position: static;
+    li {
+      margin-top: 0;
+      margin-bottom: 1rem;
+
+      p {
+        margin: 0;
+      }
     }
   }
+}
+
+#switcher {
+  display: flex;
+  justify-content: space-around;
+  border-top: 1px solid var(--border);
+  background-color: #222;
 }

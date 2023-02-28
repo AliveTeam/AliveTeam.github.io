@@ -73,8 +73,9 @@ code {
 }
 
 .warning {
-    background: var(--panel);
-    border: 1px solid var(--lightGray);
+    background: rgba( black, 0.4 );
+    color: #eeeeef;
+    border: 1px solid var(--darkGray);
 
     border-left: 10px solid var(--red);
 
@@ -87,6 +88,6 @@ code {
     font-size: 1.5rem;
     }
 
-    *:first-child {margin-top: 0;}
-    *:last-child {margin-bottom: 0;}
+    >*:first-child {margin-top: 0;}
+    >*:last-child {margin-bottom: 0;}
 }

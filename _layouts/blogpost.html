@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" theme="brewv2">
+<html lang="en" theme="dark">
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
@@ -27,8 +27,10 @@
       </div>
       <div id="blogpost">
         <div id="content" class="popup">
+          <div>
           {{ content }}
-	<nav id="footer">
+          </div>
+	<nav id="switcher">
 	  <p>{% if page.previous %}<a href="{{ page.previous.url }}">Previous</a>{% endif %}</p>
 	  <p>Published on {{ page.date | date: "%d.%b.%Y."}}</p>
 	  <p>{% if page.next     %}<a href="{{ page.next.url }}">Next</a>{% endif %}</p>

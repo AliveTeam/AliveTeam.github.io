@@ -5,16 +5,18 @@
 
 <main>
 
+
+<div id="title" markdown=0>
+    <div>
+        <h1>Frequently Asked Questions</h1>
+        <p>Some questions and answers about the nitty-gritty of the project.</p>
+    </div>
+</div>
+
 <section>
 <div>
 
-<div id="title">
-
-# Frequently Asked Questions
-
-Some questions and answers about the nitty-gritty of the project.
-
-</div>
+<br>
 
 <details>
 <summary markdown=0>So what is R.E.L.I.V.E.?  </summary>
@@ -22,7 +24,7 @@ Some questions and answers about the nitty-gritty of the project.
 
 R.E.L.I.V.E. is a drop-in engine reimplementation for Oddworld: Abe's Oddysee and Exoddus created by dedicated fans.
 
-It is similar to projects like [OpenMW], [OpenRA], [NXEngine], and several other engines, which all intend to fix issues in older games, allow new features to be added to them, and allow curious people to study how exactly these games work under the hood.
+It is similar to programs like [OpenMW], [OpenRA], [NXEngine], and several other similar projects, which all intend to fix issues in older games, allow new features to be added to them, and allow curious people to study how exactly these games work under the hood.
 
 In practical terms it is a simple executable you can just drop into the games' respective folder and enjoy the numerous bug-fixes and QoL features it provides. R.E.L.I.V.E. works with the Steam, the GOG, and even the early disk-based version of the game as well. 
 
@@ -92,7 +94,7 @@ In terms of upcoming features, the following are being worked on:
 <summary markdown=0>How can I be sure that R.E.L.I.V.E. delivers the same experience as the retail version?</summary>
 <div>
 
-The simplest way is to just [download](/downloads) the engine and see for yourself. ;)
+The simplest way is to just [download](/index.html#downloads) the engine and see for yourself. ;)
 
 But for people looking for a more in-depth answer, the project utilizes several methods:
 
@@ -157,7 +159,7 @@ Any computer made in the last two decades should easily be able to run it. The e
 <summary markdown=0>Why "R.E.L.I.V.E."?</summary>
 <div>
 
-The engine's name is a portmanteau of A.L.I.V.E. (the name of the old engine that drives AO and AE) and the abbreviation of Reverse Engineering. It is also a pun referring to the fact that it breathes new life into these old games and allows them to work as new.
+The engine's name is a portmanteau of A.L.I.V.E. (the name of the old engine that drove AO and AE) and the abbreviation of Reverse Engineering. It is also a pun referring to the fact that it breathes new life into these old games and allows them to work as new.
 
 </div>
 </details>

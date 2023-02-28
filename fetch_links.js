@@ -38,7 +38,6 @@ function replaceURL(link, assets) {
   }
 }
 
-false &&
   window.addEventListener("load", async () => {
     const betaJson = await fetchJson(urls.beta);
     const stableJson = await fetchJson(urls.stable);

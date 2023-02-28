@@ -93,6 +93,24 @@ section {
     grid-template-columns: repeat(auto-fit, Min(calc(100vw - 4rem), 525px));
     list-style-type: none;
 
+    table, tr, th, td {
+      border: 1px solid var(--border);
+      border-collapse: collapse;
+    }
+
+    table {
+      text-align: center;
+      th {
+        background-color: rgba($color: #000000, $alpha: 0.4);
+        padding: 0.25rem;
+      }
+
+      td {
+        background-color: var(--panel);
+        padding: 0.25rem;
+      }
+    }
+
     p {
       margin: 0;
     }
@@ -120,20 +138,14 @@ section {
 }
 
 #support {
-  --font-color: #222;
+  --font-color: #fffff0;
 
-  --header-color: #444;
-  --bg: hsl(48, 65%, 45%);
-  --panel: #efefef;
-  --border: hsl(48, 75%, 30%);
+  --bg: hsl(335, 55%, 20%);
+  --panel: hsl(335, 45%, 20%);
+  --border: hsl(335, 15%, 50%);
 
   background: var(--bg);
   color: var(--font-color);
-
-
-  .header {
-    border-bottom-color: #efefef; 
-  }
 }
 
 #downloads>div {
@@ -147,7 +159,7 @@ section {
     row-gap: 1rem;
 
     .downloadPanel {
-      width: Min(370px, 100vw);
+      flex-basis: 545px;
     }
   }
 
@@ -160,7 +172,7 @@ section {
     gap: 1rem;
 
     a {
-      min-width: 370px;
+      flex-basis: 545px;
       font-size: 1.5rem;
 
       color: var(--font-color);
