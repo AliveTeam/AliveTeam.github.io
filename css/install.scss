@@ -1,0 +1,41 @@
+---
+---
+
+@import "header_bg";
+#title::before {
+  background-image: url("/imgs/bg.webp");
+}
+
+
+details {
+  border: 1px solid var(--border);
+  background-color: var(--panel);
+  margin-bottom: 1rem;
+
+  >div {
+    padding: 0.5rem;
+
+    >*:first-child {margin-top: 0;}
+    >*:last-child {margin-bottom: 0;}
+  }
+
+  img {
+    width: 32px;
+  }
+
+  &[open] summary {
+    border-bottom: 1px solid var(--border);
+  }
+
+  summary {
+    display: block;
+    background-color: #222;
+
+    div {
+      padding: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+  }
+}
