@@ -1,300 +1,278 @@
 ---
 ---
 
-<link rel="stylesheet" href="/css/index.css">
+  <link rel="stylesheet" href="/css/index.css">
+  <main>
 
-<script>
-  async function setDate(url, accessor, selector) {
-    const request = await fetch(url);
-    const json = await request.json();
-    const date = new Date(accessor(json));
-    const formatted = new Intl.DateTimeFormat("en-UK", {year: "numeric", month: "short", day: "numeric"}).format(date)
-
-    document.querySelector(selector).innerText = `(${formatted})`
-  }
-
-  window.addEventListener("load", () => {
-
-    setDate(
-      "https://api.github.com/repos/paulsapps/alive_reversing/commits/abi_break_refcount",
-      json => json.commit.author.date,
-      "#last_beta"
-    )
-
-    setDate(
-      "https://api.github.com/repos/AliveTeam/alive_reversing/releases/latest",
-      json => json.created_at,
-      "#last_stable"
-    )
-
-    setDate(
-      "https://api.github.com/repos/AliveTeam/qt-editor/releases/latest",
-      json => json.created_at,
-      "#editor_stable"
-    )
-  })
-
-</script>
-
-<main>
-  <section id="title">
-    <div>
-      <div id="title_blurb">
-        <h1>R.E.L.I.V.E.</h1>
-        <p><strong>R.E.L.I.V.E.</strong> is a fan effort to create a new engine, capable of replacing Digital Dialect's aging
-          PC port for Oddworld's first two cult-classic games.</p>
-        <p>More than twenty years after their release, both games struggle to run on modern platforms; usually requiring a
-          third-party application like DxWnd just to run them properly.</p>
-        <p>R.E.L.I.V.E. intends to become a complete replacement of both the original AbeWin.exe/Exoddus.exe and any
-          third-party tools by providing a variety of convenience and compatibility features.</p>
-      </div>
+    <section id="splash">
       <div>
-      <img alt="R.E.L.I.V.E. Engine logo" src="/imgs/scrab.webp">
+      <div id="start">
+        <div>
+          <h1>R.E.L.I.V.E.</h1>
+          <h2>Abe's Oddysee / Exoddus for modern platforms</h2>
+        </div>
+        <img src="/imgs/scrab.webp">
       </div>
-    </div>
-  </section>
-  
-  <section id="guide">
-    <div>
-      <div class="downloads">
-        {% include download.html link="https://github.com/AliveTeam/alive_reversing/releases/latest" text="Stable Release" button="Download" image="download.webp" release="last_stable" %}
 
-        {% include download.html link="https://dev.azure.com/MrSapps/AliveRev/_build?definitionId=1" text="Development Build" button="Download" image="gear.webp" release="last_beta" %}
-
-        {% include download.html link="https://aur.archlinux.org/packages/relive-git" text="AUR" button="Visit Page" image="arch_black.webp" %}
-
-        {% include download.html link="https://github.com/AliveTeam/alive_reversing" text="Source Code" button="Browse" image="gh.webp" %}
+      <div id="media">
+        <img src="./imgs/screenshot.webp">
       </div>
+
+      <div id="description">
+        <p><strong>R.E.L.I.V.E.</strong> is a fan effort to create a new, cross-platform engine, capable of replacing
+        Digital Dialect's aging PC ports for Oddworld's first two cult-classic games.</p>
+        <p>More than twenty years after their release, both games struggle to run on modern platforms; usually requiring a
+        third-party application like DxWnd just to run them properly or outright refusing to work for some.</p>
+        <p>R.E.L.I.V.E. intends to become a complete replacement of both the original AbeWin.exe/Exoddus.exe and any
+        third-party tools by providing a variety of convenience and compatibility features, along with making it
+        possible to run the games on platforms it wasn't capable of handling before.</p>
+      </div>
+      </div>
+    </section>
+
+    <section id="features">
+      <div>
+        <p class="header">Features</p>
+
+        <ul>
+          <li class="popup">
+            <p>
+            <span>Modern Platforms</span>
+            <span>R.E.L.I.V.E. natively supports Windows 10, MacOS and Linux.</span>
+            </p>
+          </li>
+          <li class="popup">
+            <p>
+            <span>Video Settings</span>
+            <span>
+              <table>
+                <tr>
+                  <th>F10</th>
+                  <th>F11</th>
+                  <th>F12</th>
+                </tr>
+                <tr>
+                  <td>Toggle Smoothing</td>
+                  <td>Toggle Stretching</td>
+                  <td>Toggle Fullscreen</td>
+              </table>
+            </span>
+            </p>
+          </li>
+          <li class="popup">
+            <p>
+            <span>Numerous Bugfixes</span>
+            <span>Tired of the crashes and weird things the game sometimes does? Worry not, the project's scope includes fixing all of these!</span>
+            </p>
+          </li>
+          <li class="popup">
+            <p>
+            <span>Controller Support</span>
+            <span>No need to fiddle with Steam or other third-party tools, just plug your gamepad in before starting the game and it'll work.</span>
+            </p>
+          </li>
+          <li class="popup">
+            <p>
+            <span>Native Resolution Support</span>
+            <span>It doesn't matter if your monitor is FullHD, 4k or perhaps an old rectangle CRT monitor, R.E.L.I.V.E. supports all.</span>
+            </p>
+          </li>
+          <li class="popup">
+            <p>
+            <span>Open Source</span>
+            <span>R.E.L.I.V.E. is a fully <a href="https://github.com/AliveTeam/alive_reversing">open-source codebase</a>, 
+              which you can freely use for your own projects or extend.</span>
+            </p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="downloads">
+      <div>
+        <p class="header">Get R.E.L.I.V.E.</p>
+
+        <script src="./fetch_links.js"></script>
+
+        <div class="panels">
+          <div class="downloadPanel stable">
+            <div class="type">
+              <p>Stable</p>
+              <p class="release" id="last_stable">(...)</p>
+            </div>
+
+            <div class="links">
+              <a class="artifact" data-type="win64" href="https://github.com/AliveTeam/alive_reversing/releases/latest">Windows</a>
+
+              <div>
+                <a class="artifact" data-type="win32" href="https://github.com/AliveTeam/alive_reversing/releases/latest">Windows 32-bit</a>
+                <a class="artifact" data-type="mac" href="https://github.com/AliveTeam/alive_reversing/releases/latest">MacOSX</a>
+              </div>
+
+              <div>
+                <a class="artifact" data-type="deb" href="https://github.com/AliveTeam/alive_reversing/releases/latest">Debian</a>
+                <a href="https://aur.archlinux.org/packages/relive-git">Arch</a>
+              </div>
+
+              <a href="https://github.com/AliveTeam/alive_reversing">Source</a>
+            </div>
+          </div>
+
+          <div class="downloadPanel beta">
+            <div class="type">
+              <p>Beta</p>
+              <p class="release" id="last_beta">(...)</p>
+            </div>
+
+            <div class="links">
+              <a href="https://ci.appveyor.com/api/projects/mouzedrift/alive-reversing/artifacts/build/RELIVE_Windows_Binaries_Lite_Debug_x64.zip?branch=abi_break_refcount&job=Windows64">Windows</a>
+
+              <div>
+                <a href="https://ci.appveyor.com/api/projects/mouzedrift/alive-reversing/artifacts/build/RELIVE_Windows_Binaries_Lite_Debug_x86.zip?branch=abi_break_refcount&job=Windows32">Windows 32-bit</a>
+                <a href="https://ci.appveyor.com/api/projects/mouzedrift/alive-reversing/artifacts/build/relive-0.1-Darwin.dmg?branch=abi_break_refcount&job=MacOS">MacOSX</a>
+              </div>
+
+              <a href="https://ci.appveyor.com/api/projects/mouzedrift/alive-reversing/artifacts/build/relive-0.1-Linux.deb?branch=abi_break_refcount&job=Linux">Debian</a>
+              <a href="https://github.com/mouzedrift/alive_reversing/tree/abi_break_refcount">Source</a>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="buttons">
+          <a href="/install.html">Install Instructions</a>
+          <a href="/faq.html">Frequently Asked Questions</a>
+        </div>
 
       <div class="warning" id="bugs">
         <h3>Here be Scrabs!</h3>
         <p>
-          While currently both Abe's Oddysee and Abe's Exoddus are in a playable state, both can present unexpected bugs, 
-          crashes and other regressions from the base game. We're working hard on fixing these and your reports help a lot to 
-          nail down where the issues are. If you'd like to see the list of current bugs or report one yourself feel free to check 
-          out the <a href="https://github.com/AliveTeam/alive_reversing/projects/1">bug-tracker.</a>
+          While currently both Abe's Oddysee and Abe's Exoddus are in a playable state, both can present unexpected bugs, crashes and other regressions from the
+          base game. We're working hard on fixing these and your reports help a lot to nail down where the issues are. If you'd like to see the list of current
+          bugs or report one yourself feel free to check out the <a href="https://github.com/AliveTeam/alive_reversing/projects/1">bug-tracker.</a>
         </p>
       </div>
 
       <div class="warning" id="buygames">
         <h3>You have to own the games!</h3>
-        <p>R.E.L.I.V.E. is a passion project created by fans and it will always be free to download
-        and to tinker with. However, since it is just an engine, you have to own the actual game
-        files to use the project.</p>
-        <p>The developers behind R.E.L.I.V.E. do not condone piracy and will never provide the game
-        files to anyone.</p>
-        <p>If you don't own the games, you can <a href="http://www.oddworld.com/buy-games/">buy them
-        here.</a></p>
+        <p>R.E.L.I.V.E. is a passion project created by fans and it will always be free to download and to tinker with. However, since it is
+        just an engine, you have to own the actual game files to use the project.</p>
+        <p>The developers behind R.E.L.I.V.E. do not condone piracy and will never provide the game files to anyone.</p>
+        <p>If you don't own the games, you can <a href="http://www.oddworld.com/buy-games/">buy them here.</a></p>
       </div>
+      </div>
+    </section>
 
-      <h2>Installation Guide</h2>
+    <section id="editor">
+      <div>
+        <p class="header">Level Editor</p>
 
-      <details>
-        <summary>
-          <div>
-            <img alt="Windows" src="/imgs/windows_s.webp">
-            <span>Windows</span>
+        <div class="imageWrapper">
+          <img src="/imgs/editor2.png">
+        </div>
+
+        <div class="split">
+          <div class="text">
+            <p>Team R.E.L.I.V.E. proudly presents the replacement for the <a href="/legacy.html">legacy</a> <i>Paul's Level Editor.</i></p>
+            <p>Compared to the old editor it allows for editing far more kinds of objects, removes the arbitrarty limitations the original engine imposed,
+            and features a vastly improved user interface.</p>
           </div>
-        </summary>
-        <div>
-          <p>These instructions work for both Abe's Oddysee and Abe's Exoddus.</p>
-          <ol>
-            <li><p>Download the zip that fits your architecture (most likely 64-bits) from the links above.</p></li>
-            <li><p>Unzip it somewhere.</p></li>
-            <li><p>Navigate to where you installed the game (GOG asks you where you want to install it, with
-                Steam you can right click on the game, select Manage -> Browse local files).</p></li>
-            <li><p>Copy relive.exe and SDL2.dll to the respective game's folder from the unzipped folder.</p></li>
-            <li><p>Run the game by launching relive.exe.</p></li>
-          </ol>
+
+            <div class="downloadPanel editor">
+              <div class="type">
+                <p>Level Editor</p>
+                <p class="release" id="editor_stable">(...)</p>
+              </div>
+
+              <div class="links">
+                <a class="artifact" data-type="editor_win64" href="https://github.com/AliveTeam/qt-editor/releases/latest">Download</a>
+                <a class="artifact" data-type="editor_win32" href="https://github.com/AliveTeam/qt-editor/releases/latest">Windows 32-bit</a>
+                <a href="https://github.com/AliveTeam/qt-editor">Source</a>
+              </div>
+            </div>
         </div>
-      </details>
 
-      <details>
-        <summary>
-          <div>
-            <img alt="Arch" src="/imgs/arch_s.webp">
-            <span>Arch Linux</span>
-          </div>
-        </summary>
-        <div>
-          <p>After installing <code>relive-git</code> simply launch <code>relive-ao</code> or <code>relive-ae</code> from a terminal or use the start menu entries.</p>
+        <div class="warning">
+          <h3>Not backwards-compatible!</h3>
+          <p>The new editor waas created with R.E.L.I.V.E. in mind. Trying to use levels edited with it in the retail engine is likely to
+          result in crashes, bugs, and glitches. Support for the old engine and the legacy editor are not part of the scope of the project
+          and users are encouraged to upgrade.</p>
         </div>
-      </details>
 
-      <details>
-        <summary>
-          <div>
-            <img alt="Tux" src="/imgs/tux_s.webp">
-            <span>Manual Linux</span>
-          </div>
-        </summary>
-        <div>
-          <p>Extract <code>relive</code> into the preferred game's folder and install your distribution's SDL package.</p>
-        </div>
-      </details>
-
-      <details>
-        <summary>
-          <div>
-            <img alt="Visual Studio" src="/imgs/gh_s.webp">
-            <span>Compile from Source</span>
-          </div>
-        </summary>
-        <div>
-          <p>For instructions please see the <a href="https://github.com/AliveTeam/alive_reversing/blob/master/README.md">README.</a></p>
-        </div>
-      </details>
-    </div>
-  </section>
-
-
-  <section id="features">
-    <div>
-      <h2>Features</h2>
-      <ul>
-        <li class="popup">
-          <h3>Native Resolution Support</h3>
-          <p>It doesn't matter if your monitor is FullHD, 4k or perhaps an old rectangle CRT monitor, R.E.L.I.V.E. supports all.</p>
-        <li class="popup">
-          <h3>Windowed mode</h3>
-          <p>Simply press F12 and the game goes into windowed mode or back to fullscreen on the fly.</p>
-        <li class="popup">
-          <h3>Modern Platforms</h3>
-          <p>R.E.L.I.V.E. natively supports <strong>Windows 10</strong>, <strong>MacOS</strong> and <strong>Linux</strong>.</p>
-        <li class="popup">
-          <h3>Controller Support</h3>
-          <p>No need to fiddle with Steam or other third-party tools, just plug your gamepad in before starting the game and it'll work.</p>
-        <li class="popup">
-          <h3>Open Source</h3>
-          <p>R.E.L.I.V.E. is a fully <a href="https://github.com/AliveTeam/alive_reversing">open-source codebase</a>, which you can freely use for your own projects or extend as you see fit.</p>
-        <li class="popup">
-          <h3>Numerous Bugfixes</h3>
-          <p>Tired of the crashes and weird things the game sometimes does? Worry not, the project's scope includes fixing all of these!</p>
-      </ul>
-    </div>
-  </section>
-
-  <section id="media">
-    <div>
-      <h2>Media</h2>
-      <div id="content">
-        <figure>
-          <a href="imgs/screenshot.webp" target="_blank"><img alt="The RELIVE engine running Abe's Exoddus" src="imgs/screenshot_s.webp"></a>
-          <figcaption>Abe's Exoddus running on R.E.L.I.V.E. under Arch Linux.</figcaption>
-        </figure>
-        <figure>
-          <iframe src="https://www.youtube-nocookie.com/embed/-75zRX2PdXY" frameborder="0" title="Youtube video depicting RELIVE in action."
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope;
-                  picture-in-picture" allowfullscreen></iframe>
-          <figcaption>Video demonstrating R.E.L.I.V.E. in action</figcaption>
-        </figure>
       </div>
-    </div>
-  </section>
+    </section>
 
-  
-  <section id="editor">
-    <div>
-      <h2>Level Editor</h2>
+    <section id="blog">
+      <div>
+        <p class="header">Latest on the Blog</p>
 
-      <img src="imgs/editor2.png">
-
-      <p>R.E.L.I.V.E. proudly presents the new Level Editor, replacing the <a href="/legacy.html">legacy</a> <i>Paul's Level Editor,</i> featuring a lot more options; a brand new, more user-friendly UI; and a lot less unexpected crashes.</p>
-
-      <div class="downloads">
-        {% include download.html link="https://github.com/AliveTeam/qt-editor/releases/latest" text="Stable Release" button="Download" image="download.webp" release="editor_stable" %}
-
-        {% include download.html link="https://github.com/AliveTeam/qt-editor" text="Source Code" button="Browse" image="gh.webp" %}
-      </div>
-
-      <div class="warning" id="backwards">
-        <h3>No backwards compatibility!</h3>
-        <p>Levels created using the new editor are only compatible with R.E.L.I.V.E. Trying to use them with the retail engine will most likely result in a crash or other unexpected bugs and glitches.</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="roadmap">
-    <div>
-      <h2>The Future</h2>
-      <div id="halver">
         <div>
-          <p>After the engine is fully reimplemented, the focus will shift to adding new features that were never part of the original.</p>
-          <ul>
-            <li>Subtitles for cutscenes.</li>
-            <li>Fixing the original games' bugs.</li>
-            <li>Modding support.</li>
-            <li>Integrated level editor.</li>
-            <li>Higher-resolution textures.</li>
-            <li><a href="https://github.com/AliveTeam/alive_reversing/projects/1">Feature requests by the community.</a></li>
-          </ul>
+          <h3><a href="{{site.posts[0].url}}">{{site.posts[0].title}}</a></h3>
+          <p>{{site.posts[0].content | truncatewords: 300}}</p>
         </div>
-        <figure>
-          <a href="imgs/roadmap.webp" target="_blank"><img alt="Roadmap of the RELIVE project." src="imgs/roadmap_s.webp"></a>
-          <figcaption>Click on the image to see it in full size.</figcaption>
-        </figure>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="support">
-    <div class="popup">
-      <div id="text">
-        <h2>Support Us!</h2>
-        <p>R.E.L.I.V.E. is made by a bunch of volunteers in their free time. If you have good
+    <section id="support">
+      <div>
+        <p class="header">Support us</p>
+
+        <div>
+          <p>R.E.L.I.V.E. is made by a bunch of volunteers in their free time. If you have good
           programming skills, feel free to join our Discord below and help us out with code or 
           documentation; or if you feel adventurous, we could always use a few playtesters.</p>
-        <p>If you're less technically-inclined, but would still like to help, you can support the
+          <p>If you're less technically-inclined, but would still like to help, you can support the
           project with a donation on PayPal or Patreon.</p>
-      </div>
-      <div id="links">
-        <a href="https://discord.gg/khs6KKS"><img alt="Join the Discord!" src="imgs/dc.webp"></a>
-        <a href="https://www.patreon.com/alive"><img alt="Support on Patreon!" src="imgs/patreon.webp"></a>
-        <a href="https://paypal.me/paulsapps"><img alt="Support on PayPal!" src="imgs/paypal.webp"></a>
-      </div>
-      <div id="supporters-list">
-        <h3>List of Supporters</h3>
-        <ul>
-          <li>10TC</li>
-          <li>Avenging Gibbons</li>
-          <li>Crashpunk</li>
-          <li>Dantini</li>
-          <li>Darkykitsune</li>
-          <li>D3nwah</li>
-          <li>Deanff</li>
-          <li>Ectomorph</li>
-          <li>FatWanker</li>
-          <li>FrozenFish24</li>
-          <li>GproKaru</li>
-          <li>HTML_Earth</li>
-          <li>J. Ingram</li>
-          <li>JayPeet</li>
-          <li>Jonathan Picques</li>
-          <li>Kari1993</li>
-          <li>Kylesoul</li>
-          <li>LegnaX</li>
-          <li>LeninWave</li>
-          <li>Leonard2</li>
-          <li>LIJI</li>
-          <li>Mariomuzic</li>
-          <li>mouzedrift</li>
-          <li>mlg</li>
-          <li>Nemin</li>
-          <li>Paul</li>
-          <li>Pryon</li>
-          <li>Ravo92</li>
-          <li>Retoxified</li>
-          <li>rozniak</li>
-          <li>Sita</li>
-          <li>Sean Horton</li>
-          <li>SiennaChain</li>
-          <li>SligStorm</li>
-          <li>THEONLYDarkShadow</li>
-          <li>UltraStars3000</li>
-          <li>Vittorio Romeo</li>
-          <li>Montana reactions</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-</main>
+
+          <div class="links">
+            <a href="https://discord.gg/khs6KKS"><img alt="Join the Discord!" src="imgs/dc.webp"></a>
+            <a href="https://www.patreon.com/alive"><img alt="Support on Patreon!" src="imgs/patreon.webp"></a>
+            <a href="https://paypal.me/paulsapps"><img alt="Support on PayPal!" src="imgs/paypal.webp"></a>
+          </div>
+
+          <div id="supporters-list">
+            <h2>List of Supporters</h2>
+            <ul>
+              <li>10TC</li>
+              <li>Avenging Gibbons</li>
+              <li>Crashpunk</li>
+              <li>Dantini</li>
+              <li>Darkykitsune</li>
+              <li>D3nwah</li>
+              <li>Deanff</li>
+              <li>Ectomorph</li>
+              <li>FatWanker</li>
+              <li>FrozenFish24</li>
+              <li>GproKaru</li>
+              <li>HTML_Earth</li>
+              <li>J. Ingram</li>
+              <li>JayPeet</li>
+              <li>Jonathan Picques</li>
+              <li>Kari1993</li>
+              <li>Kylesoul</li>
+              <li>LegnaX</li>
+              <li>LeninWave</li>
+              <li>Leonard2</li>
+              <li>LIJI</li>
+              <li>Mariomuzic</li>
+              <li>mouzedrift</li>
+              <li>mlg</li>
+              <li>Nemin</li>
+              <li>Paul</li>
+              <li>Pryon</li>
+              <li>Ravo92</li>
+              <li>Retoxified</li>
+              <li>rozniak</li>
+              <li>Sita</li>
+              <li>Sean Horton</li>
+              <li>SiennaChain</li>
+              <li>SligStorm</li>
+              <li>THEONLYDarkShadow</li>
+              <li>UltraStars3000</li>
+              <li>Vittorio Romeo</li>
+              <li>Montana reactions</li>
+            </ul>
+          </div>
+        </div>
+    </section>
+  </main>

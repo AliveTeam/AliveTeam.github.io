@@ -1,0 +1,29 @@
+html
+{
+    &[theme="old"]
+    {
+        --color: 260;
+        --bg-color: hsl(var(--color), 20%, 17.5%);
+        --header-color: hsl(48, 77%, 50%);
+        --font-color: hsl(0, 0%, 95%);
+
+        --border-color: hsl(var(--color), 20%, 30%);
+        --spec-color: hsl(var(--color), 20%, 16%); 
+        --popup-color: hsl(var(--color), 20%, 14.5%);
+    }
+
+    &[theme="dark"]
+    {
+        --header-color: hsl(48, 75%, 55%);
+        --font-color: hsl(0, 0%, 95%);
+
+        --bg: hsl(260, 30%, 20%);
+        --panel: hsl(260, 30%, 25%);
+        --border: hsl(260, 30%, 40%);
+
+        --green: hsl(80, 40%, 20%);
+        --red: hsl(0, 50%, 30%);
+        --darkGray: hsl(0, 0%, 10%);
+        --lightGray: hsl(0, 0%, 30%);
+    }
+}

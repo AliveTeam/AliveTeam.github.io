@@ -1,0 +1,24 @@
+---
+permalink: /blog
+layout: default
+---
+
+<link rel="stylesheet" href="/css/blog_index.css">
+
+<div id="title" markdown=0>
+    <div>
+        <h1>Devlog</h1>
+        <p>Here you can find all the development-related blogposts the team wrote since the beginning.</p>
+    </div>
+</div>
+
+<div id="blog_root">
+    <ul>
+    {% for post in site.posts %}
+    <li class="popup">
+        <a href="{{post.url}}"> <p class="header">{{post.title}}</p></a>
+        <div class="content"> {{ post.content | truncatewords: 40 }} </div>
+    </li>
+    {% endfor %}
+    </ul>
+</div>

@@ -1,0 +1,115 @@
+---
+---
+
+div.downloads {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    row-gap: 1rem;
+    column-gap: 1rem;
+
+    margin: 1rem 0;
+
+    p {
+        margin: 0;
+        text-align: center;
+        font-size: 1.75rem;
+
+        line-height: 1.35;
+    }
+
+    .release {
+        font-size: 1rem;
+        margin-bottom: 0.45rem;
+    }
+
+    a {
+        font-size: 1.25rem;
+
+        text-align: center;
+        padding: 0.5rem 0;
+        border-radius: 4px;
+        border: 1px solid var(--border-color);
+        text-decoration: none;
+        
+        background-color: var(--spec-color);
+        color: var(--header-color);
+
+        &:hover {
+            background-color: var(--header-color);
+            color: var(--popup-color);
+        }
+    }
+
+    >div {
+        background-color: var(--popup-color);
+        flex-basis: 35%;
+        min-width: 300px;
+        border: 1px solid var(--border-color);
+        padding: 0.5rem;
+    }
+
+    .links {
+        display: flex;
+        flex-direction: column;
+        row-gap: 0.25rem;
+
+        div {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            column-gap: 0.25rem;
+        }
+    }
+}
+
+#guide {
+    // For Chrome
+    details summary::-webkit-details-marker {
+        display:none;
+    }
+
+    details {
+        border: 1px solid var(--border-color);
+        background-color: var(--spec-color);
+
+        margin-bottom: 1rem;
+
+        &[open] summary {
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        summary {
+            cursor: pointer;
+            background-color: var(--popup-color);
+            list-style-type: none;
+
+            & > div {
+                display: inline-grid;
+                align-items: center;
+                grid-template-columns: 32px auto;
+                padding: 0.5rem;
+                grid-gap: 1rem;
+            }
+
+            img {
+                width: 32px;
+            }
+        }
+
+        & > div {
+            padding: 1rem;
+
+            ol {
+                padding-left: 1rem;
+                margin: 0;
+
+                & > li:first-child p { margin-top: 0;}
+                & > li:last-child p { margin-bottom: 0;}
+            }
+
+            & > p:first-child { margin-top: 0;}
+            & > p:last-child { margin-bottom: 0;}
+        }
+    }
+
+}

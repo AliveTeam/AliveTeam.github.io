@@ -50,8 +50,26 @@
         li
         {
             list-style-type: none;
-            padding: 1rem;
-            margin-bottom: 2rem;
+            margin-bottom: 1rem;
         }
+    }
+}
+
+.popup {
+    .header {
+        background-color: #222;
+        padding: 0.5rem;
+        margin: 0;
+        font-size: 1.25rem;
+    }
+
+    border: 1px solid var(--border);
+    background-color: var(--panel);
+
+    .content {
+        padding: 0.5rem;
+
+        >*:first-child {margin-top: 0;}
+        >*:last-child {margin-bottom: 0;}
     }
 }
