@@ -4,7 +4,7 @@ const fetchJson = (url) =>
 	fetch(`https://api.github.com/repos/${url}`).then((r) => r.json());
 const urls = {
 	stable: "AliveTeam/alive_reversing/releases/latest",
-	beta: "paulsapps/alive_reversing/commits/beta",
+	beta: "AliveTeam/alive_reversing/commits/beta",
 	editor: "AliveTeam/qt-editor/releases/latest",
 };
 
