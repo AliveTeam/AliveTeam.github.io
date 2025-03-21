@@ -21,10 +21,10 @@ function setDate(json, accessor, selector) {
 
 function replaceURL(link, assets) {
 	const fileNames = new Map([
-		["deb", "RELIVE-Linux.deb.zip"],
-		["win32", "RELIVE_Windows_Binaries_Lite_Debug_x86.zip"],
-		["win64", "RELIVE_Windows_Binaries_Lite_Debug_x64.zip"],
-		["mac", "RELIVE-MacOSX.dmg.zip"],
+		["deb", "Linux-Debug-relive.deb.zip"],
+		["win32", "Windows32-Debug-relive-binaries.zip"],
+		["win64", "Windows64-Debug-relive-binaries.zip"],
+		["mac", "macOS-Debug-relive.dmg.zip"],
 
 		["editor_win32", "Editor_Release_x86"],
 		["editor_win64", "Editor_Release_x64"],
